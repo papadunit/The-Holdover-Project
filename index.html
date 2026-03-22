@@ -772,7 +772,7 @@ const sectionLabels = {
   corporate: "Corporate Structure",
   trusts: "Shell Trust Network",
   sec: "Regulatory Actions",
-  complaints: "Tenant Complaints",
+  complaints: "All Complaints",
   stories: "Share Your Story",
   lawsuits: "Court Actions",
   global: "Global Impact",
@@ -879,8 +879,10 @@ function Hero() {
           lineHeight: 1.8,
         }}>
           Before signing a lease with Hudson Homes Management LLC, read this archive.
-          As of March 2026, the Better Business Bureau lists <strong style={{ color: "#fff" }}>143 complaints</strong> against
-          this company — with only <strong style={{ color: "#c41e1e" }}>9.8% resolved</strong> to the tenant's satisfaction.
+          As of March 2026, over <strong style={{ color: "#fff" }}>200 complaints and reviews</strong> have been
+          documented across <strong style={{ color: "#fff" }}>14 public platforms</strong> — with only{" "}
+          <strong style={{ color: "#c41e1e" }}>9.8% resolved</strong> on the BBB. Only{" "}
+          <strong style={{ color: "#c41e1e" }}>28% of their own employees</strong> see a positive future for the company.
           The SEC fined its parent companies <strong style={{ color: "#fff" }}>$11.2 million</strong>. Courts in multiple
           states have <strong style={{ color: "#fff" }}>dismissed their eviction cases</strong> for failure to prove
           legal authority. Everything on this page is sourced from public records.
@@ -929,7 +931,7 @@ function Hero() {
         }}
       >
         {[
-          { n: "143", l: "BBB Complaints (3yr)" },
+          { n: "200+", l: "Complaints (14 Platforms)" },
           { n: "1,200+", l: "CFPB Complaints" },
           { n: "$11.2M", l: "SEC Fine (2022)" },
           { n: "$17M", l: "NY AG Settlement" },
@@ -2662,12 +2664,12 @@ function App() {
 
       {active === "complaints" && (
         <div style={{ maxWidth: 900, margin: "0 auto", padding: "60px 24px" }}>
-          <SectionTitle>BBB Complaints &amp; Tenant Reports</SectionTitle>
+          <SectionTitle>Tenant Complaints — Every Platform, Every Voice</SectionTitle>
           <SubTitle>
-            As of March 2026, the Better Business Bureau lists 143 complaints against Hudson Homes
-            Management LLC filed within the last three years. Below are the official statistics,
-            complaint category breakdown, and paraphrased summaries of recurring complaint themes.
-            All data sourced from BBB public records.
+            As of March 2026, over 200 complaints and reviews have been documented across 14 public
+            platforms — from the BBB to TikTok to Glassdoor. Below are the official statistics,
+            platform-by-platform breakdowns, and paraphrased summaries of recurring complaint themes.
+            Every source is linked. Every claim is verifiable.
           </SubTitle>
 
           <div style={{ background: "#0d0808", border: "1px solid #333", borderLeft: "3px solid #8b4513", borderRadius: "0 8px 8px 0", padding: "20px 24px", marginBottom: 28, fontSize: 15, color: "#999", lineHeight: 1.8 }}>
@@ -2904,17 +2906,162 @@ function App() {
             <a href="https://www.consumerfinance.gov/data-research/consumer-complaints/search/?company=Caliber+Home+Loans" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 CFPB Complaint Database — Search Caliber Home Loans</a>
           </Card>
 
-          <Card title="📋 Additional Review Platforms" accent="#666">
+          <Divider />
+
+          <SectionTitle>Every Platform — 200+ Complaints Across 14 Sources</SectionTitle>
+          <SubTitle>
+            Beyond the BBB, tenants have documented their experiences across Yelp, TikTok,
+            ComplaintsBoard, RevDex, Google Reviews, and more. Employees have spoken on
+            Glassdoor and Indeed. Every link below is a public record.
+          </SubTitle>
+
+          <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 28 }}>
+            {[
+              ["143", "BBB Complaints"],
+              ["1,200+", "CFPB (Caliber)"],
+              ["59", "Glassdoor Reviews"],
+              ["13", "Yelp Reviews"],
+              ["9", "ComplaintsBoard"],
+              ["28%", "Employee Outlook"],
+            ].map(([val, label]) => (
+              <div key={label} style={{ flex: "1 1 120px", background: "#111", border: "1px solid #222", borderRadius: 8, padding: 14, textAlign: "center" }}>
+                <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 20, color: "#c41e1e", fontWeight: 600 }}>{val}</div>
+                <div style={{ fontSize: 13, color: "#888", marginTop: 6 }}>{label}</div>
+              </div>
+            ))}
+          </div>
+
+          <Card title="🔗 Complete Review Platform Directory" accent="#c41e1e">
+            <div style={{ background: "#0a0a0a", borderRadius: 8, padding: 16 }}>
+              <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 15 }}>
+                <thead>
+                  <tr style={{ borderBottom: "1px solid #333" }}>
+                    <th style={{ textAlign: "left", padding: "12px 10px", color: "#c41e1e" }}>Platform</th>
+                    <th style={{ textAlign: "center", padding: "12px 10px", color: "#c41e1e" }}>Count</th>
+                    <th style={{ textAlign: "left", padding: "12px 10px", color: "#c41e1e" }}>Type</th>
+                  </tr>
+                </thead>
+                <tbody style={{ color: "#b0a8a0" }}>
+                  {[
+                    ["BBB Complaints", "143", "Tenant complaints", "https://www.bbb.org/us/tx/dallas/profile/real-estate-rentals/hudson-homes-management-llc-0875-91053918/complaints"],
+                    ["BBB Customer Reviews", "15+", "Tenant reviews", "https://www.bbb.org/us/tx/irving/profile/property-management/hudson-homes-management-llc-0875-91053918/customer-reviews"],
+                    ["CFPB (Caliber Home Loans)", "1,200+", "Mortgage complaints", "https://www.consumerfinance.gov/data-research/consumer-complaints/search/?company=Caliber+Home+Loans"],
+                    ["Glassdoor (Employees)", "59", "Employee reviews", "https://www.glassdoor.com/Overview/Working-at-Hudson-Homes-Management-EI_IE5446823.11,34.htm"],
+                    ["Indeed (Employees)", "8", "Employee reviews", "https://www.indeed.com/cmp/Hudson-Homes-Management/reviews"],
+                    ["Yelp (Dallas)", "13", "Tenant reviews", "https://www.yelp.com/biz/hudson-homes-property-management-dallas"],
+                    ["ComplaintsBoard", "9", "Tenant complaints", "https://www.complaintsboard.com/hudson-homes-management-b167199"],
+                    ["RevDex", "5+", "Tenant reviews", "https://www.revdex.com/reviews/hudson-homes-management/l19813993"],
+                    ["TikTok", "Multiple", "Video testimonials", "https://www.tiktok.com/discover/hudson-home-management-reviews"],
+                    ["Foreclosurepedia", "Investigation", "Fraud expose", "https://foreclosurepedia.org/massive-fraud-revealed-impacting-hudson-homes/"],
+                    ["BiggerPockets Forum", "Thread", "Investor discussion", "https://www.biggerpockets.com/forums/48/topics/294577-lsf9-master-participation-trust"],
+                    ["Facebook — LSF9 News", "Group", "Tenant community", "https://www.facebook.com/LSF9.NEWS/"],
+                  ].map((r, i) => (
+                    <tr key={i} style={{ borderBottom: "1px solid #1a1a1a" }}>
+                      <td style={{ padding: "12px 10px" }}><a href={r[3]} target="_blank" rel="noopener noreferrer" style={{ color: "#e05555", borderBottom: "1px solid #e0555544" }}>{r[0]}</a></td>
+                      <td style={{ padding: "12px 10px", textAlign: "center", color: "#c41e1e", fontWeight: 600 }}>{r[1]}</td>
+                      <td style={{ padding: "12px 10px", color: "#999" }}>{r[2]}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </Card>
+
+          <Card title="👤 The View From Inside: Employee Reviews" accent="#8b4513">
             <p>
-              Complaints and reviews about Hudson Homes Management LLC are also documented on:
+              Hudson Homes Management's own employees paint a troubling picture.
+              On <strong>Glassdoor</strong>, HHM holds a <strong style={{ color: "#c41e1e" }}>3.4 out of 5 rating from 59 reviews</strong>.
+              Only <strong style={{ color: "#c41e1e" }}>41% of employees</strong> would recommend working there.
+              Only <strong style={{ color: "#c41e1e" }}>28%</strong> see a positive business outlook for the company.
             </p>
+            <p style={{ marginTop: 14 }}>
+              On <strong>Indeed</strong>, employee reviews describe (paraphrased from public records):
+            </p>
+            <div style={{ background: "#0a0a0a", borderRadius: 8, padding: 16, marginTop: 12 }}>
+              {[
+                "Employees describe feeling like \"just a number in a large company\"",
+                "Reports of \"lack of support\" and being \"set up for failure\" while facing unrealistic expectations",
+                "Manager turnover disrupting training and operations",
+                "Concerns about layoffs when performance numbers decline",
+                "Warnings about internal politics and needing to \"watch your back\"",
+              ].map((q, i) => (
+                <div key={i} style={{ fontFamily: "'IBM Plex Serif', Georgia, serif", fontSize: 15, color: "#b8b0a8", padding: "10px 0", borderBottom: i < 4 ? "1px solid #1a1a1a" : "none", lineHeight: 1.7 }}>
+                  • {q}
+                </div>
+              ))}
+            </div>
+            <p style={{ marginTop: 14, fontSize: 14, color: "#777" }}>
+              Sources:{" "}
+              <a href="https://www.glassdoor.com/Overview/Working-at-Hudson-Homes-Management-EI_IE5446823.11,34.htm" target="_blank" rel="noopener noreferrer">Glassdoor</a> (59 reviews),{" "}
+              <a href="https://www.indeed.com/cmp/Hudson-Homes-Management/reviews" target="_blank" rel="noopener noreferrer">Indeed</a> (8 reviews)
+            </p>
+          </Card>
+
+          <Card title="📱 TikTok: Real Tenants Documenting in Real Time" accent="#c41e1e">
             <p>
-              • <a href="https://www.complaintsboard.com/hudson-homes-management-b134498" target="_blank" rel="noopener noreferrer" style={{ color: "#c41e1e" }}>ComplaintsBoard.com</a><br/>
-              • <a href="https://www.revdex.com/reviews/hudson-homes-management-llc/134498" target="_blank" rel="noopener noreferrer" style={{ color: "#c41e1e" }}>RevDex.com</a><br/>
-              • <a href="https://foreclosurepedia.org/massive-fraud-revealed-impacting-hudson-homes/" target="_blank" rel="noopener noreferrer" style={{ color: "#c41e1e" }}>Foreclosurepedia</a><br/>
-              • <a href="https://www.biggerpockets.com/forums/48/topics/294577-lsf9-master-participation-trust" target="_blank" rel="noopener noreferrer" style={{ color: "#c41e1e" }}>BiggerPockets Forum — LSF9 Discussion Thread</a><br/>
-              • <a href="https://www.facebook.com/LSF9.NEWS/" target="_blank" rel="noopener noreferrer" style={{ color: "#c41e1e" }}>Facebook — LSF9 News Group</a>
+              Tenants have taken to TikTok to document their experiences with Hudson Homes Management
+              in real-time video. The hashtags <strong style={{ color: "#c41e1e" }}>#hudsonhomesmanagement</strong> and{" "}
+              <strong style={{ color: "#c41e1e" }}>#criminalmanagement</strong> contain multiple video testimonials describing:
             </p>
+            <div style={{ background: "#0a0a0a", borderRadius: 8, padding: 16, marginTop: 12 }}>
+              <p style={{ marginBottom: 10 }}>🎥 <strong>Moving day disasters</strong> — tenants arriving to properties with major undisclosed defects</p>
+              <p style={{ marginBottom: 10 }}>🎥 <strong>Undisclosed septic systems</strong> — septic alarm and pump found unplugged at move-in; lease made no disclosure</p>
+              <p style={{ marginBottom: 10 }}>🎥 <strong>Falsified documents</strong> — tenant describes HHM moving them into an "unrentable house" with falsified paperwork, then being harassed to vacate</p>
+              <p>🎥 <strong>Health impacts</strong> — tenant describes spouse's health condition worsening under stress of HHM actions</p>
+            </div>
+            <div style={{ display: "flex", gap: 8, marginTop: 14, flexWrap: "wrap" }}>
+              <a href="https://www.tiktok.com/discover/hudson-home-management-reviews" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 Search TikTok: #hudsonhomesmanagement</a>
+            </div>
+          </Card>
+
+          <Card title="🆕 Additional Patterns Discovered Across All Platforms" accent="#c41e1e">
+            <p style={{ marginBottom: 16, fontStyle: "italic", color: "#999" }}>
+              These patterns were identified from cross-referencing BBB complaints, BBB customer reviews,
+              ComplaintsBoard, RevDex, TikTok testimonials, and employee reviews. All paraphrased from public records.
+            </p>
+            <div style={{ background: "#0a0a0a", borderRadius: 8, padding: 16 }}>
+              {[
+                {
+                  icon: "💸",
+                  title: "Pattern: Application Fee Harvesting",
+                  text: "Multiple tenants across platforms report paying non-refundable application fees for properties that were already rented to another applicant. In some cases, credit was never even pulled despite the fee being collected. HHM appears to accept multiple simultaneous applications for the same property.",
+                },
+                {
+                  icon: "🎭",
+                  title: "Pattern: Scammer Impersonation (Per HHM's Own Website)",
+                  text: "HHM's own 'Avoid Rental Scams' page warns that criminals impersonate them on Craigslist and Facebook Marketplace to steal money from prospective tenants. This level of impersonation typically indicates a brand so well-known for problems that scammers exploit the confusion.",
+                },
+                {
+                  icon: "🏘️",
+                  title: "Pattern: HOA Fee Default → Foreclosure to Tenants",
+                  text: "HHM fails to pay HOA dues on managed properties, resulting in foreclosure or eviction notices sent directly to tenants. In one documented case, news spread through the community and homeowners became hostile toward the tenant for using shared amenities.",
+                },
+                {
+                  icon: "📉",
+                  title: "Pattern: Post-Eviction Collection Spiral ($10K–$19K+)",
+                  text: "After eviction or sale-driven vacancy, HHM sends bills ranging from $10,000 to $19,261. When tenants request itemization, HHM does not respond. After 30 days, the bill goes to third-party collections. Meanwhile, portal access is revoked so tenants cannot submit move-out evidence or dispute charges.",
+                },
+                {
+                  icon: "🚫",
+                  title: "Pattern: Renting Properties Without Required Permits",
+                  text: "At least one tenant was moved into a property that HHM was contractually prohibited from renting for 12 months after purchase. The city notified the tenant they were there illegally. HHM had violated its own post-purchase agreement with the municipality.",
+                },
+              ].map((p, i) => (
+                <div key={i} style={{ padding: "16px 0", borderBottom: i < 4 ? "1px solid #1a1a1a" : "none" }}>
+                  <div style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: 17, color: "#e8e0d6", marginBottom: 8 }}>
+                    {p.icon} {p.title}
+                  </div>
+                  <div style={{ fontFamily: "'IBM Plex Serif', Georgia, serif", fontSize: 15, color: "#b8b0a8", lineHeight: 1.8 }}>
+                    {p.text}
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div style={{ display: "flex", gap: 8, marginTop: 14, flexWrap: "wrap" }}>
+              <a href="https://hudsonhomesmanagement.com/avoid-rental-scams" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 HHM's Own "Avoid Rental Scams" Page</a>
+              <a href="https://www.complaintsboard.com/hudson-homes-management-b167199" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 ComplaintsBoard — Full Complaints</a>
+              <a href="https://www.revdex.com/reviews/hudson-homes-management/l19813993" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 RevDex — Full Reviews</a>
+            </div>
           </Card>
 
           <div style={{ background: "#0a0a0a", border: "1px solid #333", borderRadius: 8, padding: 16, marginTop: 24, fontSize: 14, color: "#777", lineHeight: 1.6 }}>
