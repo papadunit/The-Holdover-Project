@@ -456,11 +456,6 @@ footer { border-top: 1px solid var(--border); padding: 40px 0; margin-top: 60px;
   <table>
     <thead><tr><th>Name</th><th>Role</th></tr></thead>
     <tbody>
-      <tr><td class="entity">Tiffany Hall</td><td>HHM Operations</td></tr>
-      <tr><td class="entity">Erika Araujo</td><td>HHM Operations</td></tr>
-      <tr><td class="entity">Jamahl Wimberly</td><td>HHM Operations</td></tr>
-      <tr><td class="entity">Amber Sopha</td><td>HHM Operations</td></tr>
-      <tr><td class="entity">Marie Andrews</td><td>Pegasus Realty (local agent)</td></tr>
     </tbody>
   </table>
 </section>
@@ -582,7 +577,6 @@ footer { border-top: 1px solid var(--border); padding: 40px 0; margin-top: 60px;
       <tr><td>HOA v. HHM + US Bank Trust</td><td>FL — Manatee</td><td>Property Violations</td></tr>
       <tr><td>LSF8/HHM v. Persaud</td><td>NY — Queens</td><td>Eviction (LSF8)</td></tr>
       <tr><td>Tenants of 1507 St. Johns Place v. Lone Star</td><td>NY — Brooklyn</td><td>105 Code Violations</td></tr>
-      <tr><td>Dindia (2 cases)</td><td>MA — NE Housing Court</td><td>Holdover + Prior Nonpayment</td></tr>
     </tbody>
   </table>
 </section>
@@ -627,7 +621,7 @@ footer { border-top: 1px solid var(--border); padding: 40px 0; margin-top: 60px;
   <div class="card"><h4>3. Neglect Maintenance</h4><p>Properties are systematically under-maintained. Repair requests go unanswered for months or years.</p></div>
   <div class="card"><h4>4. Pressure Tenants to Leave</h4><p>Daily holdover emails, cash-for-keys offers, and legal actions create constant pressure.</p></div>
   <div class="card"><h4>5. File Eviction Actions</h4><p>When tenants don't leave voluntarily, HHM files eviction proceedings — often without proper standing or authority.</p></div>
-  <div class="card"><h4>6. Rotate Attorneys</h4><p>In the Massachusetts case, HHM cycled through three attorneys from the same firm (Barton Gilman LLP) in six months.</p></div>
+  <div class="card"><h4>6. Rotate Attorneys</h4><p>According to published court records, HHM has rotated through multiple attorneys in individual cases.</p></div>
   <div class="card"><h4>7. Sell Property / Repeat</h4><p>Once the tenant is removed, the property is sold or re-rented at market rate. The cycle begins again.</p></div>
 </section>
 
@@ -2036,24 +2030,24 @@ function App() {
             <div style={{ marginTop: 8, fontSize: 11, color: "#555" }}>Source: Hudson-Advisors.com/our-people, LoneStarFunds.com/team</div>
           </Card>
 
-          <Card title="TIER 3 — Operations: Hudson Homes Management LLC" accent="#666">
-            <p>HHM has 5 listed officers per Texas Secretary of State filings (names behind OpenCorporates paywall). The following operational staff are identified from court evidence and tenant correspondence:</p>
-            <div style={{ overflowX: "auto", marginTop: 12 }}>
+          <Card title="TIER 3 — Hudson Homes Management Operations (Internet-Verified)" accent="#666">
+            <p style={{ fontSize: 12, color: "#555", marginBottom: 12 }}>The following individuals are publicly listed on LinkedIn, corporate directories, or employment databases as working for Hudson Homes Management LLC.</p>
+            <div style={{ overflowX: "auto" }}>
               <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
                 <thead>
                   <tr style={{ borderBottom: "2px solid #333" }}>
                     <th style={{ padding: "8px", textAlign: "left", color: "#c41e1e" }}>Name</th>
                     <th style={{ padding: "8px", textAlign: "left", color: "#c41e1e" }}>Role</th>
-                    <th style={{ padding: "8px", textAlign: "left", color: "#c41e1e" }}>Source</th>
+                    <th style={{ padding: "8px", textAlign: "left", color: "#c41e1e" }}>Public Source</th>
                   </tr>
                 </thead>
                 <tbody>
                   {[
-                    ["Tiffany Hall", "HHM Representative", "Court evidence (text messages)"],
-                    ["Erika Araujo", "HHM Representative", "Court evidence (emails)"],
-                    ["Jamahl Wimberly", "HHM Correspondent", "Tenant correspondence records"],
-                    ["Amber Sopha", "HHM Correspondent", "Tenant correspondence records"],
-                    ["Marie Andrews", "Pegasus Realty (HHM Broker)", "Court evidence (emails, CFK offers)"],
+                    ["Raymond Templet", "Chief Operating Officer, Hudson Homes", "hudson-advisors.com/our-people/real-estate/"],
+                    ["Ryan Hill", "Vice President", "SignalHire employee directory, ZoomInfo"],
+                    ["Erika Araujo", "Property Portfolio Manager (NJ)", "LinkedIn (linkedin.com/in/erikaaraujovaldez), RocketReach"],
+                    ["Ronald Santos", "REO Asset Manager", "SignalHire employee directory"],
+                    ["Kenyada Garner", "Property Controller", "SignalHire employee directory"],
                   ].map((r, i) => (
                     <tr key={i} style={{ borderBottom: "1px solid #222" }}>
                       <td style={{ padding: "8px", color: "#e8e0d6", fontWeight: 600 }}>{r[0]}</td>
@@ -2064,21 +2058,20 @@ function App() {
                 </tbody>
               </table>
             </div>
+            <div style={{ marginTop: 8, fontSize: 11, color: "#555" }}>Sources: Hudson-Advisors.com, LinkedIn, SignalHire.com, RocketReach.co, ZoomInfo.com</div>
           </Card>
 
-          <Card title="TIER 4 — Legal Representation" accent="#c41e1e">
-            <p style={{ fontWeight: 600, color: "#e8e0d6", marginBottom: 8 }}>Barton Gilman LLP (Boston) — Primary Eviction Firm</p>
+          <Card title="TIER 4 — Law Firms Used in HHM Evictions (Public Court Records)" accent="#c41e1e">
+            <p style={{ fontSize: 12, color: "#555", marginBottom: 12 }}>The following law firms appear in publicly indexed court records on UniCourt and Trellis as representing HHM or LSF trusts in eviction and foreclosure actions.</p>
             <div style={{ overflowX: "auto" }}>
               <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
                 <tbody>
                   {[
-                    ["Shylah N. Luna, Esq.", "Associate", "Filed Dindia case Sep 2025, withdrew Nov 2025. Does pro bono tenant advocacy in Lynn while prosecuting evictions in Lynn. 2025 Rising Star."],
-                    ["Jennifer L. Joubert, Esq.", "Attorney", "Entered Nov 2025, withdrew Mar 12, 2026."],
-                    ["Kateryna Kingsbury, Esq.", "Attorney (Bar 716460)", "Entered Mar 13, 2026 — 11 days before hearing."],
-                    ["Charles S. Mancuso, Esq.", "Solo (Bar 316980)", "Prior Dindia case. Confirmed in writing: 'balance will be zero monthly.'"],
+                    ["Cruikshank Ersin LLC", "Florida evictions", "UniCourt: HHM v. Hayden (Palm Beach, 2020); WRI Property Mgmt v. Gruber on behalf of LSF9 MPT (Pinellas, 2019). Atlanta, GA office."],
+                    ["Lippman Law Offices, P.A.", "Florida evictions", "UniCourt: Multiple LSF9 MPT eviction cases in Hillsborough County (De Stio, Player, Fernandez)."],
                   ].map((r, i) => (
                     <tr key={i} style={{ borderBottom: "1px solid #222" }}>
-                      <td style={{ padding: "8px", color: "#e8e0d6", fontWeight: 600 }}>{r[0]}</td>
+                      <td style={{ padding: "8px", color: "#e8e0d6", fontWeight: 600, whiteSpace: "nowrap" }}>{r[0]}</td>
                       <td style={{ padding: "8px", color: "#999" }}>{r[1]}</td>
                       <td style={{ padding: "8px", color: "#777", fontSize: 12 }}>{r[2]}</td>
                     </tr>
@@ -2086,11 +2079,7 @@ function App() {
                 </tbody>
               </table>
             </div>
-            <p style={{ marginTop: 16, fontWeight: 600, color: "#e8e0d6", marginBottom: 8 }}>Other Law Firms Used Nationally</p>
-            <p>
-              <strong style={{ color: "#999" }}>Neubert Pepe & Monteith PC</strong> — Connecticut evictions<br/>
-              <strong style={{ color: "#999" }}>Cruikshank Ersin</strong> — Florida evictions (flevictions@cruikshankersin.com)
-            </p>
+            <div style={{ marginTop: 8, fontSize: 11, color: "#555" }}>Sources: UniCourt.com public court records</div>
           </Card>
 
           <Card title="TIER 5 — Trust & Financial Shell Entities" accent="#444">
@@ -2104,8 +2093,7 @@ function App() {
                     ["Lone Star Global Acquisitions Ltd.", "Legal entity", "SEC enforcement target. Agreed to cease-and-desist."],
                     ["LSF9 Mortgage Holdings LLC", "Actual loan purchaser", "Per PI Paatalo: the REAL entity — not LSF9 MPT."],
                     ["Caliber Home Loans", "Lone Star subsidiary", "Took payments without applying to accounts; foreclosed without notice."],
-                    ["Northsight Management LLC", "Co-defendant with HHM", "Named in Anderson v. HHM federal case."],
-                    ["Pegasus Realty", "HHM's real estate broker", "CFK offers with 'debt forgiveness.' Documented 93A violations."],
+                    ["Northsight Management LLC", "Co-defendant with HHM", "Named in Anderson v. HHM federal case (UniCourt)."],
                   ].map((r, i) => (
                     <tr key={i} style={{ borderBottom: "1px solid #222" }}>
                       <td style={{ padding: "8px", color: "#e8e0d6", fontWeight: 600, whiteSpace: "nowrap" }}>{r[0]}</td>
@@ -2329,7 +2317,7 @@ function App() {
                   <tr style={{ borderBottom: "1px solid #1a1a1a" }}>
                     <td style={{ padding: "8px 4px" }}><strong style={{ color: "#e8e0d6" }}>LSF9</strong> Master Participation Trust</td>
                     <td style={{ padding: "8px 4px" }}>LSF9 Mortgage Holdings LLC + VOLT LLCs</td>
-                    <td style={{ padding: "8px 4px" }}>FL (De Stio, Player, Boyd-Randle, Fernandez, Sellitti, Gaskin, Brooks), TX (Daniels, Berry, Jones, Poole), OH (HHM dismissed), ME (Cates, Summey, Keefe, Plummer), MA (Dindia — your case), CT (Kingsbury), OR (Weiss), WA (John), IN, CA, and dozens more</td>
+                    <td style={{ padding: "8px 4px" }}>FL (De Stio, Player, Boyd-Randle, Fernandez, Sellitti, Gaskin, Brooks), TX (Daniels, Berry, Jones, Poole), OH (HHM dismissed), ME (Cates, Summey, Keefe, Plummer), MA, CT, OR (Weiss), WA (John), IN, CA, and dozens more</td>
                   </tr>
                   <tr style={{ borderBottom: "1px solid #1a1a1a" }}>
                     <td style={{ padding: "8px 4px" }}><strong style={{ color: "#e8e0d6" }}>LSF10</strong> Master Participation Trust</td>
@@ -3025,22 +3013,14 @@ function App() {
             </div>
           </Card>
 
-          <Card title="🏛️ MASSACHUSETTS — Two Cases, Same Property, Same Tenant" accent="#8b4513">
+          <Card title="🏛️ MASSACHUSETTS — Northeast Housing Court" accent="#8b4513">
             <p>
-              <strong style={{ color: "#c41e1e" }}>Case 1 — 25H77SP004586 (ACTIVE)</strong><br/>
-              "No Cause" Summary Process. Filed 9/12/2025. Three Barton Gilman attorneys rotated
-              in 6 months (Luna → Joubert → Kingsbury). Motion to Compel Discovery pending.
-              Next hearing: March 24, 2026. $31,964.35 in manufactured holdover charges on a
-              court-ordered zero balance.
-            </p>
-            <p style={{ marginTop: 12 }}>
-              <strong style={{ color: "#e8e0d6" }}>Case 2 — 24H77SP001323 (CLOSED)</strong><br/>
-              Nonpayment. Filed 3/11/2024. Settled via April 2024 stipulation — ledger ordered
-              to $0.00. Dismissed with prejudice. HHM attorney Mancuso confirmed in writing that
-              the balance would be "zero monthly."
+              HHM has filed eviction proceedings in the Northeast Housing Court, Essex Division.
+              According to BBB complaints and published reports, HHM operates rental properties
+              in Massachusetts. Court records are searchable at the MA Trial Court E-Services portal.
             </p>
             <div style={{ display: "flex", gap: 8, marginTop: 12, flexWrap: "wrap" }}>
-              <a href="https://www.masscourts.org/eservices/home.page.2" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 MA Trial Court E-Services (Search: Dindia, Northeast Housing Court)</a>
+              <a href="https://www.masscourts.org/eservices/home.page.2" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 MA Trial Court E-Services — Search Housing Court Records</a>
             </div>
           </Card>
 
@@ -3049,7 +3029,7 @@ function App() {
               <strong style={{ color: "#e8e0d6" }}>HHM OBO US Bank NA as Trustee for LSF9 MPT v. Hayden, Marsha</strong><br/>
               Palm Beach County 15th Judicial Circuit (2020). Judge: Melanie D. Surber.<br/>
               <strong style={{ color: "#c41e1e" }}>RESULT: DISMISSED WITHOUT PREJUDICE</strong> (8/11/2020)<br/>
-              Attorney: Cruikshank Ersin (flevictions@cruikshankersin.com)
+              Attorney: Cruikshank Ersin (per UniCourt record)
             </p>
             <div style={{ display: "flex", gap: 8, marginTop: 8, flexWrap: "wrap" }}>
               <a href="https://unicourt.com/case/fl-pal-hudson-homes-management-llc-obo-us-bank-na-as-trustee-for-lsf9-master-participation-trust-v-hayden-marsha-753071" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 UniCourt — HHM v. Hayden (Dismissed)</a>
@@ -3091,8 +3071,7 @@ function App() {
           <Card title="🏛️ CONNECTICUT — Housing Summary Process (Uses LSF10 Trust)" accent="#666">
             <p>
               <strong style={{ color: "#e8e0d6" }}>HHM as Agent for U.S. Bank Trust N.A. as Trustee for LSF10 Master Participation Trust v. Kingsbury, Michael et al</strong><br/>
-              New London County Superior Courts (2023). Case No. KNO-CV23-6108816-S.<br/>
-              Attorney: Neubert Pepe & Monteith PC.<br/><br/>
+              New London County Superior Courts (2023). Case No. KNO-CV23-6108816-S.<br/><br/>
               <em style={{ color: "#c41e1e" }}>Note: This case uses LSF<strong>10</strong> MPT — a different shell trust
               than the LSF<strong>9</strong> MPT used in Massachusetts and Florida. Multiple trusts
               are deployed across different states.</em>
@@ -3526,8 +3505,7 @@ function App() {
           experiences. It is not affiliated with, endorsed by, or sponsored by
           Hudson Homes Management LLC, Hudson Advisors L.P., Lone Star Funds,
           Lone Star Global Acquisitions Ltd., U.S. Bank Trust N.A., LSF9 Master
-          Participation Trust, Pegasus Realty, Barton Gilman LLP, or the Boston
-          Housing Authority. All information is presented strictly as a documented
+          Participation Trust. All information is presented strictly as a documented
           compilation of publicly available records. Nothing on this website should
           be construed as legal advice or a formal legal accusation. Documents and
           information are provided for public interest, transparency, and educational
