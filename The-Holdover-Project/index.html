@@ -328,8 +328,6 @@ footer { border-top: 1px solid var(--border); padding: 40px 0; margin-top: 60px;
 }
 </style>
 
-
-<!-- React via CDN -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js" crossorigin></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js" crossorigin></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.9/babel.min.js" crossorigin></script>
@@ -337,35 +335,12 @@ footer { border-top: 1px solid var(--border); padding: 40px 0; margin-top: 60px;
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { background: #0a0a0a; }
   #root { min-height: 100vh; }
-  /* Hide the SEO content visually but keep it for crawlers */
-  #seo-content { 
-    position: absolute; 
-    left: -9999px; 
-    width: 1px; 
-    height: 1px; 
-    overflow: hidden; 
-  }
-  /* Loading state */
-  #loading {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: #0a0a0a;
-    color: #c41e1e;
-    font-family: Georgia, serif;
-    font-size: 24px;
-  }
+  #seo-content { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  #loading { display: flex; justify-content: center; align-items: center; min-height: 100vh; background: #0a0a0a; color: #c41e1e; font-family: Georgia, serif; font-size: 24px; }
 </style>
 </head>
 <body>
-
-<!-- React App Mount Point -->
-<div id="root">
-  <div id="loading">Loading The Holdover Project...</div>
-</div>
-
-<!-- Hidden SEO content for search engine crawlers (they don't execute JS) -->
+<div id="root"><div id="loading">Loading The Holdover Project...</div></div>
 <div id="seo-content" aria-hidden="true">
 
 <div class="container">
@@ -481,11 +456,6 @@ footer { border-top: 1px solid var(--border); padding: 40px 0; margin-top: 60px;
   <table>
     <thead><tr><th>Name</th><th>Role</th></tr></thead>
     <tbody>
-      <tr><td class="entity">Tiffany Hall</td><td>HHM Operations</td></tr>
-      <tr><td class="entity">Erika Araujo</td><td>HHM Operations</td></tr>
-      <tr><td class="entity">Jamahl Wimberly</td><td>HHM Operations</td></tr>
-      <tr><td class="entity">Amber Sopha</td><td>HHM Operations</td></tr>
-      <tr><td class="entity">Marie Andrews</td><td>Pegasus Realty (local agent)</td></tr>
     </tbody>
   </table>
 </section>
@@ -607,7 +577,6 @@ footer { border-top: 1px solid var(--border); padding: 40px 0; margin-top: 60px;
       <tr><td>HOA v. HHM + US Bank Trust</td><td>FL — Manatee</td><td>Property Violations</td></tr>
       <tr><td>LSF8/HHM v. Persaud</td><td>NY — Queens</td><td>Eviction (LSF8)</td></tr>
       <tr><td>Tenants of 1507 St. Johns Place v. Lone Star</td><td>NY — Brooklyn</td><td>105 Code Violations</td></tr>
-      <tr><td>Dindia (2 cases)</td><td>MA — NE Housing Court</td><td>Holdover + Prior Nonpayment</td></tr>
     </tbody>
   </table>
 </section>
@@ -652,7 +621,7 @@ footer { border-top: 1px solid var(--border); padding: 40px 0; margin-top: 60px;
   <div class="card"><h4>3. Neglect Maintenance</h4><p>Properties are systematically under-maintained. Repair requests go unanswered for months or years.</p></div>
   <div class="card"><h4>4. Pressure Tenants to Leave</h4><p>Daily holdover emails, cash-for-keys offers, and legal actions create constant pressure.</p></div>
   <div class="card"><h4>5. File Eviction Actions</h4><p>When tenants don't leave voluntarily, HHM files eviction proceedings — often without proper standing or authority.</p></div>
-  <div class="card"><h4>6. Rotate Attorneys</h4><p>In the Massachusetts case, HHM cycled through three attorneys from the same firm (Barton Gilman LLP) in six months.</p></div>
+  <div class="card"><h4>6. Rotate Attorneys</h4><p>According to published court records, HHM has rotated through multiple attorneys in individual cases.</p></div>
   <div class="card"><h4>7. Sell Property / Repeat</h4><p>Once the tenant is removed, the property is sold or re-rented at market rate. The cycle begins again.</p></div>
 </section>
 
@@ -744,10 +713,8 @@ footer { border-top: 1px solid var(--border); padding: 40px 0; margin-top: 60px;
 </div>
 
 </div>
-
-<!-- React App -->
-<script type="text/babel" data-type="module">
-import { useState, useEffect } from "react";
+<script type="text/babel">
+const { useState, useEffect } = React;
 
 const sections = [
   "overview",
@@ -788,9 +755,9 @@ function Nav({ active, setActive }) {
         position: "sticky",
         top: 0,
         zIndex: 100,
-        background: "rgba(10,10,10,0.97)",
-        backdropFilter: "blur(16px)",
-        borderBottom: "2px solid #1a0a0a",
+        background: "rgba(10,10,10,0.95)",
+        backdropFilter: "blur(12px)",
+        borderBottom: "1px solid #222",
         padding: "0 20px",
         display: "flex",
         alignItems: "center",
@@ -802,14 +769,13 @@ function Nav({ active, setActive }) {
       <div
         style={{
           fontFamily: "'DM Serif Display', Georgia, serif",
-          fontSize: 17,
+          fontSize: 15,
           color: "#c41e1e",
           fontWeight: 700,
-          marginRight: 28,
+          marginRight: 24,
           whiteSpace: "nowrap",
-          padding: "16px 0",
+          padding: "14px 0",
           letterSpacing: "0.5px",
-          borderBottom: "2px solid #c41e1e",
         }}
       >
         THE HOLDOVER PROJECT
@@ -821,16 +787,16 @@ function Nav({ active, setActive }) {
           style={{
             background: "none",
             border: "none",
-            color: active === s ? "#fff" : "#888",
+            color: active === s ? "#fff" : "#777",
             fontFamily: "'IBM Plex Sans', sans-serif",
-            fontSize: 13,
+            fontSize: 12,
             fontWeight: active === s ? 600 : 400,
-            padding: "18px 14px",
+            padding: "16px 12px",
             cursor: "pointer",
             whiteSpace: "nowrap",
             borderBottom: active === s ? "2px solid #c41e1e" : "2px solid transparent",
             textTransform: "uppercase",
-            letterSpacing: "0.8px",
+            letterSpacing: "1px",
             transition: "all 0.2s",
           }}
         >
@@ -845,56 +811,20 @@ function Hero() {
   return (
     <div
       style={{
-        background: "linear-gradient(145deg, #0a0a0a 0%, #1a0808 50%, #0a0a0a 100%)",
-        padding: "40px 20px 0",
+        background: "linear-gradient(145deg, #0a0a0a 0%, #1a0a0a 50%, #0a0a0a 100%)",
+        padding: "80px 20px 60px",
         textAlign: "center",
         borderBottom: "1px solid #1a1a1a",
       }}
     >
-      {/* FAMILY WARNING BANNER - psychological red = danger */}
-      <div style={{
-        background: "linear-gradient(90deg, #2a0808, #1a0505)",
-        border: "2px solid #c41e1e",
-        borderRadius: 10,
-        padding: "20px 28px",
-        maxWidth: 750,
-        margin: "0 auto 40px",
-        textAlign: "left",
-      }}>
-        <div style={{
-          fontFamily: "'DM Serif Display', Georgia, serif",
-          fontSize: 20,
-          color: "#c41e1e",
-          marginBottom: 10,
-          display: "flex",
-          alignItems: "center",
-          gap: 10,
-        }}>
-          <span style={{ fontSize: 28 }}>&#9888;</span> Warning to Families Considering Renting from Hudson Homes
-        </div>
-        <div style={{
-          fontFamily: "'IBM Plex Serif', Georgia, serif",
-          fontSize: 16,
-          color: "#ccc",
-          lineHeight: 1.8,
-        }}>
-          Before signing a lease with Hudson Homes Management LLC, read this archive.
-          As of March 2026, the Better Business Bureau lists <strong style={{ color: "#fff" }}>143 complaints</strong> against
-          this company — with only <strong style={{ color: "#c41e1e" }}>9.8% resolved</strong> to the tenant's satisfaction.
-          The SEC fined its parent companies <strong style={{ color: "#fff" }}>$11.2 million</strong>. Courts in multiple
-          states have <strong style={{ color: "#fff" }}>dismissed their eviction cases</strong> for failure to prove
-          legal authority. Everything on this page is sourced from public records.
-        </div>
-      </div>
-
       <div
         style={{
           fontFamily: "'DM Serif Display', Georgia, serif",
-          fontSize: "clamp(34px, 5vw, 58px)",
+          fontSize: "clamp(32px, 5vw, 56px)",
           color: "#e8e0d6",
           lineHeight: 1.15,
-          maxWidth: 820,
-          margin: "0 auto 24px",
+          maxWidth: 800,
+          margin: "0 auto 20px",
           letterSpacing: "-0.5px",
         }}
       >
@@ -905,15 +835,15 @@ function Hero() {
       <div
         style={{
           fontFamily: "'IBM Plex Serif', Georgia, serif",
-          fontSize: "clamp(16px, 2vw, 19px)",
-          color: "#999",
-          maxWidth: 660,
-          margin: "0 auto 36px",
-          lineHeight: 1.8,
+          fontSize: "clamp(15px, 2vw, 18px)",
+          color: "#888",
+          maxWidth: 620,
+          margin: "0 auto 30px",
+          lineHeight: 1.7,
           fontStyle: "italic",
         }}
       >
-        A public evidence archive of court records, regulatory actions, tenant
+        A public archive of court records, regulatory actions, tenant
         complaints, and corporate disclosures concerning a property management
         company operating across 61 U.S. markets — backed by a $95 billion
         private equity fund whose founder renounced his American citizenship.
@@ -921,37 +851,33 @@ function Hero() {
       <div
         style={{
           display: "flex",
-          gap: 20,
+          gap: 24,
           justifyContent: "center",
           flexWrap: "wrap",
-          margin: "0 auto 0",
-          padding: "0 0 50px",
+          margin: "30px auto 0",
         }}
       >
         {[
-          { n: "143", l: "BBB Complaints (3yr)" },
+          { n: "176+", l: "BBB Complaints (3yr)" },
           { n: "1,200+", l: "CFPB Complaints" },
           { n: "$11.2M", l: "SEC Fine (2022)" },
           { n: "$17M", l: "NY AG Settlement" },
-          { n: "20+", l: "Lawsuits Filed" },
         ].map((s) => (
           <div
             key={s.l}
             style={{
-              background: "linear-gradient(135deg, #151010, #111)",
-              border: "1px solid #c41e1e22",
-              padding: "20px 28px",
-              borderRadius: 8,
-              minWidth: 140,
-              textAlign: "center",
+              background: "#111",
+              border: "1px solid #222",
+              padding: "16px 24px",
+              borderRadius: 6,
+              minWidth: 130,
             }}
           >
             <div
               style={{
                 fontFamily: "'DM Serif Display', Georgia, serif",
-                fontSize: 28,
+                fontSize: 24,
                 color: "#c41e1e",
-                lineHeight: 1.2,
               }}
             >
               {s.n}
@@ -959,12 +885,11 @@ function Hero() {
             <div
               style={{
                 fontFamily: "'IBM Plex Sans', sans-serif",
-                fontSize: 12,
-                color: "#888",
+                fontSize: 11,
+                color: "#666",
                 textTransform: "uppercase",
                 letterSpacing: 1,
-                marginTop: 6,
-                lineHeight: 1.3,
+                marginTop: 4,
               }}
             >
               {s.l}
@@ -980,22 +905,21 @@ function Card({ title, children, accent }) {
   return (
     <div
       style={{
-        background: "linear-gradient(135deg, #131313, #111)",
+        background: "#111",
         border: "1px solid #1e1e1e",
-        borderLeft: `4px solid ${accent || "#c41e1e"}`,
-        padding: "32px 32px 28px",
-        borderRadius: "0 8px 8px 0",
-        marginBottom: 24,
+        borderLeft: `3px solid ${accent || "#c41e1e"}`,
+        padding: "28px 28px 24px",
+        borderRadius: "0 6px 6px 0",
+        marginBottom: 20,
       }}
     >
       {title && (
         <div
           style={{
             fontFamily: "'DM Serif Display', Georgia, serif",
-            fontSize: 22,
+            fontSize: 20,
             color: "#e8e0d6",
-            marginBottom: 18,
-            lineHeight: 1.3,
+            marginBottom: 16,
           }}
         >
           {title}
@@ -1004,9 +928,9 @@ function Card({ title, children, accent }) {
       <div
         style={{
           fontFamily: "'IBM Plex Serif', Georgia, serif",
-          fontSize: 16,
-          color: "#c0b8ae",
-          lineHeight: 1.85,
+          fontSize: 14.5,
+          color: "#aaa",
+          lineHeight: 1.8,
         }}
       >
         {children}
@@ -1023,12 +947,11 @@ function SourceTag({ children }) {
         background: "#1a1a1a",
         border: "1px solid #333",
         borderRadius: 4,
-        padding: "3px 10px",
-        fontSize: 12,
-        color: "#999",
+        padding: "2px 8px",
+        fontSize: 10,
+        color: "#888",
         fontFamily: "'IBM Plex Mono', monospace",
         marginLeft: 6,
-        verticalAlign: "middle",
       }}
     >
       {children}
@@ -1046,27 +969,27 @@ function OrgChart() {
   ];
 
   return (
-    <div style={{ position: "relative", padding: "24px 0 24px", overflowX: "auto" }}>
-      <div style={{ minWidth: 600, position: "relative", margin: "0 auto", maxWidth: 750 }}>
+    <div style={{ position: "relative", padding: "20px 0 20px", overflowX: "auto" }}>
+      <div style={{ minWidth: 600, position: "relative", margin: "0 auto", maxWidth: 700 }}>
         {nodes.map((n) => (
           <div
             key={n.id}
             style={{
               position: n.id < 4 ? "relative" : "relative",
-              marginTop: n.id === 0 ? 0 : n.id === 4 ? -88 : 18,
+              marginTop: n.id === 0 ? 0 : n.id === 4 ? -80 : 16,
               marginLeft: n.offset ? "55%" : n.id < 3 ? "10%" : "0%",
               width: n.offset ? "40%" : n.id < 3 ? "80%" : "50%",
               background: "#0d0d0d",
               border: `1px solid ${n.color}44`,
-              borderLeft: `4px solid ${n.color}`,
-              padding: "16px 20px",
-              borderRadius: "0 8px 8px 0",
+              borderLeft: `3px solid ${n.color}`,
+              padding: "14px 18px",
+              borderRadius: "0 6px 6px 0",
             }}
           >
-            <div style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: 17, color: n.color, lineHeight: 1.3 }}>
+            <div style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: 15, color: n.color }}>
               {n.label}
             </div>
-            <div style={{ fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 13, color: "#888", marginTop: 6, lineHeight: 1.6 }}>
+            <div style={{ fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 11, color: "#666", marginTop: 4, lineHeight: 1.5 }}>
               {n.sub}
             </div>
           </div>
@@ -1077,9 +1000,9 @@ function OrgChart() {
             style={{
               position: "absolute",
               left: "25%",
-              top: [92, 210, 326][i],
-              width: 2,
-              height: 28,
+              top: [85, 196, 306][i],
+              width: 1,
+              height: 26,
               background: "#333",
             }}
           />
@@ -1094,12 +1017,10 @@ function SectionTitle({ children }) {
     <div
       style={{
         fontFamily: "'DM Serif Display', Georgia, serif",
-        fontSize: "clamp(26px, 3.5vw, 38px)",
+        fontSize: "clamp(24px, 3vw, 34px)",
         color: "#e8e0d6",
-        marginBottom: 10,
-        lineHeight: 1.25,
-        paddingBottom: 14,
-        borderBottom: "2px solid #c41e1e22",
+        marginBottom: 8,
+        lineHeight: 1.3,
       }}
     >
       {children}
@@ -1112,12 +1033,11 @@ function SubTitle({ children }) {
     <div
       style={{
         fontFamily: "'IBM Plex Serif', Georgia, serif",
-        fontSize: 17,
-        color: "#999",
-        marginBottom: 36,
-        marginTop: 8,
+        fontSize: 15,
+        color: "#777",
+        marginBottom: 30,
         fontStyle: "italic",
-        lineHeight: 1.7,
+        lineHeight: 1.6,
       }}
     >
       {children}
@@ -1126,7 +1046,7 @@ function SubTitle({ children }) {
 }
 
 function Divider() {
-  return <div style={{ borderBottom: "1px solid #222", margin: "56px 0" }} />;
+  return <div style={{ borderBottom: "1px solid #1a1a1a", margin: "50px 0" }} />;
 }
 
 function ComplaintCard({ source, state, year, text }) {
@@ -1135,28 +1055,27 @@ function ComplaintCard({ source, state, year, text }) {
       style={{
         background: "#0d0d0d",
         border: "1px solid #1e1e1e",
-        borderLeft: "3px solid #c41e1e33",
-        padding: "24px 26px",
-        borderRadius: "0 8px 8px 0",
-        marginBottom: 18,
+        padding: "20px",
+        borderRadius: 6,
+        marginBottom: 14,
       }}
     >
-      <div style={{ display: "flex", gap: 10, marginBottom: 14, flexWrap: "wrap" }}>
-        <span style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "5px 13px", fontSize: 13, color: "#e05555", fontFamily: "'IBM Plex Mono', monospace", fontWeight: 500 }}>
+      <div style={{ display: "flex", gap: 8, marginBottom: 10, flexWrap: "wrap" }}>
+        <span style={{ background: "#1a1a1a", border: "1px solid #333", borderRadius: 4, padding: "2px 10px", fontSize: 11, color: "#c41e1e", fontFamily: "'IBM Plex Mono', monospace" }}>
           {source}
         </span>
         {state && (
-          <span style={{ background: "#1a1a1a", border: "1px solid #333", borderRadius: 4, padding: "5px 13px", fontSize: 13, color: "#999", fontFamily: "'IBM Plex Mono', monospace" }}>
+          <span style={{ background: "#1a1a1a", border: "1px solid #333", borderRadius: 4, padding: "2px 10px", fontSize: 11, color: "#888", fontFamily: "'IBM Plex Mono', monospace" }}>
             {state}
           </span>
         )}
         {year && (
-          <span style={{ background: "#1a1a1a", border: "1px solid #333", borderRadius: 4, padding: "5px 13px", fontSize: 13, color: "#777", fontFamily: "'IBM Plex Mono', monospace" }}>
+          <span style={{ background: "#1a1a1a", border: "1px solid #333", borderRadius: 4, padding: "2px 10px", fontSize: 11, color: "#666", fontFamily: "'IBM Plex Mono', monospace" }}>
             {year}
           </span>
         )}
       </div>
-      <div style={{ fontFamily: "'IBM Plex Serif', Georgia, serif", fontSize: 15.5, color: "#b8b0a8", lineHeight: 1.8, fontStyle: "italic" }}>
+      <div style={{ fontFamily: "'IBM Plex Serif', Georgia, serif", fontSize: 13.5, color: "#999", lineHeight: 1.7, fontStyle: "italic" }}>
         "{text}"
       </div>
     </div>
@@ -1202,10 +1121,10 @@ function StoriesForm() {
     background: "#0d0d0d",
     border: "1px solid #333",
     borderRadius: 6,
-    padding: "14px 16px",
+    padding: "12px 14px",
     color: "#e8e0d6",
     fontFamily: "'IBM Plex Sans', sans-serif",
-    fontSize: 15,
+    fontSize: 14,
     outline: "none",
     transition: "border-color 0.2s",
   };
@@ -1213,10 +1132,10 @@ function StoriesForm() {
   const labelStyle = {
     display: "block",
     fontFamily: "'IBM Plex Sans', sans-serif",
-    fontSize: 14,
+    fontSize: 13,
     fontWeight: 600,
-    color: "#aaa",
-    marginBottom: 8,
+    color: "#999",
+    marginBottom: 6,
     textTransform: "uppercase",
     letterSpacing: "0.5px",
   };
@@ -1442,7 +1361,7 @@ function StoriesForm() {
                   justifyContent: "center",
                   marginTop: 1,
                   background: form.issues.includes(issue) ? "#c41e1e" : "transparent",
-                  fontSize: 12,
+                  fontSize: 10,
                   color: "#fff",
                 }}
               >
@@ -1457,7 +1376,7 @@ function StoriesForm() {
       {/* Story Textarea */}
       <div style={{ marginBottom: 24 }}>
         <label style={labelStyle}>Tell Your Story</label>
-        <div style={{ fontSize: 14, color: "#888", fontFamily: "'IBM Plex Sans', sans-serif", marginBottom: 8 }}>
+        <div style={{ fontSize: 12, color: "#666", fontFamily: "'IBM Plex Sans', sans-serif", marginBottom: 8 }}>
           Include dates, dollar amounts, names of HHM representatives you dealt with, and
           what happened. The more specific you are, the more valuable your account becomes
           for pattern-and-practice documentation.
@@ -1489,7 +1408,7 @@ function StoriesForm() {
           <option value="no">No documentation available</option>
         </select>
         {form.hasDocuments === "yes-willing" && (
-          <div style={{ marginTop: 10, padding: 12, background: "#1a1a1a", borderRadius: 6, fontSize: 14, color: "#999", fontFamily: "'IBM Plex Sans', sans-serif" }}>
+          <div style={{ marginTop: 10, padding: 12, background: "#1a1a1a", borderRadius: 6, fontSize: 12, color: "#888", fontFamily: "'IBM Plex Sans', sans-serif" }}>
             To share documents securely, email them to <strong style={{ color: "#c41e1e" }}>theholdoverproject@proton.me</strong> with the subject line "Document Submission." Please redact Social Security numbers, bank account numbers, and other highly sensitive information before sending.
           </div>
         )}
@@ -1520,7 +1439,7 @@ function StoriesForm() {
               alignItems: "center",
               justifyContent: "center",
               background: form.consent ? "#c41e1e" : "transparent",
-              fontSize: 12,
+              fontSize: 11,
               color: "#fff",
               marginTop: 1,
             }}
@@ -1554,7 +1473,7 @@ function StoriesForm() {
               alignItems: "center",
               justifyContent: "center",
               background: form.contactConsent ? "#c41e1e" : "transparent",
-              fontSize: 12,
+              fontSize: 11,
               color: "#fff",
               marginTop: 1,
             }}
@@ -1591,7 +1510,7 @@ function StoriesForm() {
         Submit Your Story
       </button>
       {(form.story.length < 20 || !form.consent) && (
-        <div style={{ textAlign: "center", marginTop: 8, fontSize: 14, color: "#777", fontFamily: "'IBM Plex Sans', sans-serif" }}>
+        <div style={{ textAlign: "center", marginTop: 8, fontSize: 12, color: "#555", fontFamily: "'IBM Plex Sans', sans-serif" }}>
           {!form.consent ? "Please check the consent box above to submit." : "Please write at least a few sentences about your experience."}
         </div>
       )}
@@ -1599,7 +1518,7 @@ function StoriesForm() {
   );
 }
 
-export default function App() {
+function App() {
   const [active, setActive] = useState("overview");
 
   return (
@@ -1613,17 +1532,11 @@ export default function App() {
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        html { font-size: 16px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
         ::-webkit-scrollbar-track { background: #0a0a0a; }
-        ::-webkit-scrollbar-thumb { background: #444; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #555; }
-        ::selection { background: #c41e1e44; color: #fff; }
-        a { color: #e05555; text-decoration: none; border-bottom: 1px solid #e0555544; transition: all 0.15s; }
-        a:hover { color: #ff6b6b; border-bottom-color: #ff6b6b; text-decoration: none; }
-        strong { color: #e8e0d6; font-weight: 600; }
-        p { margin-bottom: 14px; }
-        p:last-child { margin-bottom: 0; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+        a { color: #c41e1e; text-decoration: none; }
+        a:hover { text-decoration: underline; }
       `}</style>
 
       <Nav active={active} setActive={setActive} />
@@ -1631,7 +1544,7 @@ export default function App() {
       {active === "overview" && (
         <>
           <Hero />
-          <div style={{ maxWidth: 900, margin: "0 auto", padding: "60px 24px" }}>
+          <div style={{ maxWidth: 800, margin: "0 auto", padding: "50px 20px" }}>
             <SectionTitle>What Is This Archive?</SectionTitle>
             <SubTitle>
               A factual, document-driven repository of publicly available records
@@ -1709,7 +1622,7 @@ export default function App() {
       )}
 
       {active === "pipeline" && (
-        <div style={{ maxWidth: 900, margin: "0 auto", padding: "60px 24px" }}>
+        <div style={{ maxWidth: 800, margin: "0 auto", padding: "50px 20px" }}>
           <SectionTitle>The Foreclosure-to-Eviction Pipeline</SectionTitle>
           <SubTitle>
             How distressed mortgage debt moves from government auctions to Wall Street bonds — 
@@ -1728,12 +1641,12 @@ export default function App() {
             ].map(([val, label]) => (
               <div key={label} style={{ flex: "1 1 120px", background: "#111", border: "1px solid #222", borderRadius: 8, padding: 16, textAlign: "center" }}>
                 <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 22, color: "#c41e1e", fontWeight: 600 }}>{val}</div>
-                <div style={{ fontSize: 13, color: "#888", marginTop: 6 }}>{label}</div>
+                <div style={{ fontSize: 12, color: "#666", marginTop: 4 }}>{label}</div>
               </div>
             ))}
           </div>
 
-          <p style={{ fontSize: 14, color: "#777", marginBottom: 24, fontStyle: "italic" }}>
+          <p style={{ fontSize: 12, color: "#555", marginBottom: 24, fontStyle: "italic" }}>
             Source: Lone Star Funds press release, BusinessWire, March 18, 2026; Alternatives Watch; Lone Star Funds website (lonestarfunds.com/investment-strategies/credit/)
           </p>
 
@@ -1763,10 +1676,10 @@ export default function App() {
               caused the financial crisis."
             </p>
             <div style={{ display: "flex", gap: 8, marginTop: 12, flexWrap: "wrap" }}>
-              <a href="https://publicintegrity.org/2016/02/03/19248/hud-loan-investment-program-draws-scrutiny" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 Center for Public Integrity</a>
-              <a href="http://america.aljazeera.com/watch/shows/fault-lines/FaultLinesBlog/2014/9/9/feds-accused-of-sellingoutneighborhoodstowallst.html" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 Al Jazeera America</a>
-              <a href="https://populardemocracy.org/sites/default/files/HUD.DASP_.RTC_.v15.pdf" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 Center for Popular Democracy Report (PDF)</a>
-              <a href="https://nextcity.org/features/hud-troubled-mortgage-auctions-foreclosure-blight" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 Next City</a>
+              <a href="https://publicintegrity.org/2016/02/03/19248/hud-loan-investment-program-draws-scrutiny" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 Center for Public Integrity</a>
+              <a href="http://america.aljazeera.com/watch/shows/fault-lines/FaultLinesBlog/2014/9/9/feds-accused-of-sellingoutneighborhoodstowallst.html" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 Al Jazeera America</a>
+              <a href="https://populardemocracy.org/sites/default/files/HUD.DASP_.RTC_.v15.pdf" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 Center for Popular Democracy Report (PDF)</a>
+              <a href="https://nextcity.org/features/hud-troubled-mortgage-auctions-foreclosure-blight" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 Next City</a>
             </div>
           </Card>
 
@@ -1793,9 +1706,9 @@ export default function App() {
               properties through foreclosure or holding on to them until they can be sold."
             </p>
             <div style={{ display: "flex", gap: 8, marginTop: 12, flexWrap: "wrap" }}>
-              <a href="https://finance.yahoo.com/news/lone-star-funds-announces-final-160000599.html" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 Lone Star Press Release (Yahoo Finance, March 2026)</a>
-              <a href="https://www.cnbc.com/2008/07/30/an-investment-firm-that-prospered-from-past-crises-turns-to-mortgages.html" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 CNBC Investigation</a>
-              <a href="https://bpinvestigativeagency.com/lsf9-master-participation-trust-is-a-straw-man-and-heres-some-proof/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 BP Investigative Agency</a>
+              <a href="https://finance.yahoo.com/news/lone-star-funds-announces-final-160000599.html" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 Lone Star Press Release (Yahoo Finance, March 2026)</a>
+              <a href="https://www.cnbc.com/2008/07/30/an-investment-firm-that-prospered-from-past-crises-turns-to-mortgages.html" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 CNBC Investigation</a>
+              <a href="https://bpinvestigativeagency.com/lsf9-master-participation-trust-is-a-straw-man-and-heres-some-proof/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 BP Investigative Agency</a>
             </div>
           </Card>
 
@@ -1833,8 +1746,8 @@ export default function App() {
               or after a single late payment.
             </p>
             <div style={{ display: "flex", gap: 8, marginTop: 12, flexWrap: "wrap" }}>
-              <a href="https://www.chicagoreporter.com/lincoln-yards-investor-lone-star-funds-accused-of-predatory-lending/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 Chicago Reporter — Full Investigation</a>
-              <a href="https://www.pecloserlook.org/lone-star-funds-becomes-lightning-rod/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 PE Closer Look</a>
+              <a href="https://www.chicagoreporter.com/lincoln-yards-investor-lone-star-funds-accused-of-predatory-lending/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 Chicago Reporter — Full Investigation</a>
+              <a href="https://www.pecloserlook.org/lone-star-funds-becomes-lightning-rod/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 PE Closer Look</a>
             </div>
           </Card>
 
@@ -1866,7 +1779,7 @@ export default function App() {
               management is assigned to <strong style={{ color: "#e8e0d6" }}>Hudson Homes Management LLC</strong>.
             </p>
             <div style={{ display: "flex", gap: 8, marginTop: 12, flexWrap: "wrap" }}>
-              <a href="https://www.chicagoreporter.com/lincoln-yards-investor-lone-star-funds-accused-of-predatory-lending/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 Chicago Reporter (citing NYT bond document)</a>
+              <a href="https://www.chicagoreporter.com/lincoln-yards-investor-lone-star-funds-accused-of-predatory-lending/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 Chicago Reporter (citing NYT bond document)</a>
             </div>
           </Card>
 
@@ -1899,8 +1812,8 @@ export default function App() {
               According to court records, HHM filed no responsive brief, and the case was dismissed.
             </p>
             <div style={{ display: "flex", gap: 8, marginTop: 12, flexWrap: "wrap" }}>
-              <a href="https://www.bbb.org/us/tx/dallas/profile/property-management/hudson-homes-management-llc-0875-90729524/complaints" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 BBB: 176+ Complaints</a>
-              <a href="https://bpinvestigativeagency.com/hudson-homes-management-llc-fails-to-defend-its-agency-with-u-s-bank-trust-n-a-as-trustee-for-lsf9-master-participation-trust/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 BPIA: Ohio Standing Dismissed</a>
+              <a href="https://www.bbb.org/us/tx/dallas/profile/property-management/hudson-homes-management-llc-0875-90729524/complaints" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 BBB: 176+ Complaints</a>
+              <a href="https://bpinvestigativeagency.com/hudson-homes-management-llc-fails-to-defend-its-agency-with-u-s-bank-trust-n-a-as-trustee-for-lsf9-master-participation-trust/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 BPIA: Ohio Standing Dismissed</a>
             </div>
           </Card>
 
@@ -1932,8 +1845,8 @@ export default function App() {
               has been produced in any case he has reviewed.
             </p>
             <div style={{ display: "flex", gap: 8, marginTop: 12, flexWrap: "wrap" }}>
-              <a href="https://unicourt.com/case/ny-sue1-caseggdd44370b4707-3249944" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 Shannon Fair v. HHM (UniCourt)</a>
-              <a href="https://bpinvestigativeagency.com/the-lsf9-master-participation-trust-story-unravels-its-just-a-pseudonym-that-holds-nothing/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 BPIA: "Just a Pseudonym"</a>
+              <a href="https://unicourt.com/case/ny-sue1-caseggdd44370b4707-3249944" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 Shannon Fair v. HHM (UniCourt)</a>
+              <a href="https://bpinvestigativeagency.com/the-lsf9-master-participation-trust-story-unravels-its-just-a-pseudonym-that-holds-nothing/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 BPIA: "Just a Pseudonym"</a>
             </div>
           </Card>
 
@@ -1967,10 +1880,10 @@ export default function App() {
               of this page.
             </p>
             <div style={{ display: "flex", gap: 8, marginTop: 12, flexWrap: "wrap" }}>
-              <a href="https://www.businesswire.com/news/home/20260318654949/en/Lone-Star-Funds-Announces-Final-Closing-of-Residential-Mortgage-Fund-IV" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 BusinessWire: Fund IV Closes $1B+ (March 18, 2026)</a>
-              <a href="https://www.alternativeswatch.com/2026/03/19/lone-star-residential-mortgage-fund-iv-close/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 Alternatives Watch</a>
-              <a href="https://www.housingwire.com/articles/31572-lone-star-invests-1-billion-in-high-risk-loans-from-caliber-home-loans/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 HousingWire</a>
-              <a href="https://www.lonestarfunds.com/investment-strategies/credit/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 Lone Star Funds: Credit Strategy (Own Website)</a>
+              <a href="https://www.businesswire.com/news/home/20260318654949/en/Lone-Star-Funds-Announces-Final-Closing-of-Residential-Mortgage-Fund-IV" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 BusinessWire: Fund IV Closes $1B+ (March 18, 2026)</a>
+              <a href="https://www.alternativeswatch.com/2026/03/19/lone-star-residential-mortgage-fund-iv-close/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 Alternatives Watch</a>
+              <a href="https://www.housingwire.com/articles/31572-lone-star-invests-1-billion-in-high-risk-loans-from-caliber-home-loans/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 HousingWire</a>
+              <a href="https://www.lonestarfunds.com/investment-strategies/credit/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 Lone Star Funds: Credit Strategy (Own Website)</a>
             </div>
           </Card>
 
@@ -1999,9 +1912,9 @@ export default function App() {
               This business plan is destined for failure as recent history has already taught us."
             </p>
             <div style={{ display: "flex", gap: 8, marginTop: 12, flexWrap: "wrap" }}>
-              <a href="https://www.lonestarfunds.com/about-us/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 Lone Star Funds: About Us (Own Website)</a>
-              <a href="http://www.legalservicesnyc.org/index.php?Itemid=98&id=706&option=com_content&task=view" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 Legal Services NYC: Brooklyn Tenants</a>
-              <a href="https://en.wikipedia.org/wiki/Lone_Star_Funds" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 Wikipedia: Lone Star Funds</a>
+              <a href="https://www.lonestarfunds.com/about-us/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 Lone Star Funds: About Us (Own Website)</a>
+              <a href="http://www.legalservicesnyc.org/index.php?Itemid=98&id=706&option=com_content&task=view" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 Legal Services NYC: Brooklyn Tenants</a>
+              <a href="https://en.wikipedia.org/wiki/Lone_Star_Funds" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 Wikipedia: Lone Star Funds</a>
             </div>
           </Card>
 
@@ -2031,14 +1944,14 @@ export default function App() {
               outside Lone Star's Washington office.
             </p>
             <div style={{ display: "flex", gap: 8, marginTop: 12, flexWrap: "wrap" }}>
-              <a href="https://www.chicagoreporter.com/lincoln-yards-investor-lone-star-funds-accused-of-predatory-lending/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 Chicago Reporter</a>
-              <a href="https://www.nbcnewyork.com/news/local/Pension-Scam-Foreclosure-New-York-Investigation-439677863.html" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 NBC I-Team Investigation</a>
-              <a href="https://ecbawm.com/news/class-action-challenges-racially-discriminatory-predatory-practices-hud-private-equity-fund/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 ECBAWM: Class Action Details</a>
-              <a href="https://www.pecloserlook.org/lone-star-funds-becomes-lightning-rod/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 PE Closer Look</a>
+              <a href="https://www.chicagoreporter.com/lincoln-yards-investor-lone-star-funds-accused-of-predatory-lending/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 Chicago Reporter</a>
+              <a href="https://www.nbcnewyork.com/news/local/Pension-Scam-Foreclosure-New-York-Investigation-439677863.html" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 NBC I-Team Investigation</a>
+              <a href="https://ecbawm.com/news/class-action-challenges-racially-discriminatory-predatory-practices-hud-private-equity-fund/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 ECBAWM: Class Action Details</a>
+              <a href="https://www.pecloserlook.org/lone-star-funds-becomes-lightning-rod/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 PE Closer Look</a>
             </div>
           </div>
 
-          <div style={{ background: "#0a0a0a", border: "1px solid #333", borderRadius: 8, padding: 16, marginTop: 24, fontSize: 14, color: "#777", lineHeight: 1.6 }}>
+          <div style={{ background: "#0a0a0a", border: "1px solid #333", borderRadius: 8, padding: 16, marginTop: 24, fontSize: 12, color: "#555", lineHeight: 1.6 }}>
             <strong style={{ color: "#888" }}>Note on sources:</strong> Every claim in this section is attributed
             to a specific published source — including the New York Times, Chicago Reporter, Center for
             Public Integrity, Al Jazeera America, Center for Popular Democracy, CNBC, HousingWire,
@@ -2051,7 +1964,7 @@ export default function App() {
       )}
 
       {active === "people" && (
-        <div style={{ maxWidth: 900, margin: "0 auto", padding: "60px 24px" }}>
+        <div style={{ maxWidth: 800, margin: "0 auto", padding: "50px 20px" }}>
           <SectionTitle>Named Individuals & Entities</SectionTitle>
           <SubTitle>
             Every publicly identifiable person and entity in the corporate chain,
@@ -2061,12 +1974,12 @@ export default function App() {
 
           <Card title="TIER 1 — Ownership: Lone Star Funds">
             <div style={{ overflowX: "auto" }}>
-              <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 15 }}>
+              <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
                 <thead>
                   <tr style={{ borderBottom: "2px solid #333" }}>
-                    <th style={{ padding: "10px 12px", textAlign: "left", color: "#c41e1e" }}>Name</th>
-                    <th style={{ padding: "10px 12px", textAlign: "left", color: "#c41e1e" }}>Title</th>
-                    <th style={{ padding: "10px 12px", textAlign: "left", color: "#c41e1e" }}>Key Facts</th>
+                    <th style={{ padding: "8px", textAlign: "left", color: "#c41e1e" }}>Name</th>
+                    <th style={{ padding: "8px", textAlign: "left", color: "#c41e1e" }}>Title</th>
+                    <th style={{ padding: "8px", textAlign: "left", color: "#c41e1e" }}>Key Facts</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -2077,25 +1990,25 @@ export default function App() {
                     ["Andre Collin", "Senior Leadership", "Listed on Lone Star team page."],
                   ].map((r, i) => (
                     <tr key={i} style={{ borderBottom: "1px solid #222" }}>
-                      <td style={{ padding: "10px 12px", color: "#e8e0d6", fontWeight: 600 }}>{r[0]}</td>
-                      <td style={{ padding: "10px 12px", color: "#999" }}>{r[1]}</td>
-                      <td style={{ padding: "10px 12px", color: "#999", fontSize: 14 }}>{r[2]}</td>
+                      <td style={{ padding: "8px", color: "#e8e0d6", fontWeight: 600 }}>{r[0]}</td>
+                      <td style={{ padding: "8px", color: "#999" }}>{r[1]}</td>
+                      <td style={{ padding: "8px", color: "#777", fontSize: 12 }}>{r[2]}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
-            <div style={{ marginTop: 8, fontSize: 13, color: "#777" }}>Source: LoneStarFunds.com/team, Wikipedia, Forbes, SEC</div>
+            <div style={{ marginTop: 8, fontSize: 11, color: "#555" }}>Source: LoneStarFunds.com/team, Wikipedia, Forbes, SEC</div>
           </Card>
 
           <Card title="TIER 2 — Management: Hudson Advisors L.P." accent="#8b4513">
             <div style={{ overflowX: "auto" }}>
-              <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 15 }}>
+              <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
                 <thead>
                   <tr style={{ borderBottom: "2px solid #333" }}>
-                    <th style={{ padding: "10px 12px", textAlign: "left", color: "#c41e1e" }}>Name</th>
-                    <th style={{ padding: "10px 12px", textAlign: "left", color: "#c41e1e" }}>Title</th>
-                    <th style={{ padding: "10px 12px", textAlign: "left", color: "#c41e1e" }}>Key Facts</th>
+                    <th style={{ padding: "8px", textAlign: "left", color: "#c41e1e" }}>Name</th>
+                    <th style={{ padding: "8px", textAlign: "left", color: "#c41e1e" }}>Title</th>
+                    <th style={{ padding: "8px", textAlign: "left", color: "#c41e1e" }}>Key Facts</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -2106,26 +2019,26 @@ export default function App() {
                     ["[Mr.] Beevers", "Former Chairman & CEO", "Prior: President North America, EVP & Chief of Staff. 8 years at J.P. Morgan."],
                   ].map((r, i) => (
                     <tr key={i} style={{ borderBottom: "1px solid #222" }}>
-                      <td style={{ padding: "10px 12px", color: "#e8e0d6", fontWeight: 600 }}>{r[0]}</td>
-                      <td style={{ padding: "10px 12px", color: "#999" }}>{r[1]}</td>
-                      <td style={{ padding: "10px 12px", color: "#999", fontSize: 14 }}>{r[2]}</td>
+                      <td style={{ padding: "8px", color: "#e8e0d6", fontWeight: 600 }}>{r[0]}</td>
+                      <td style={{ padding: "8px", color: "#999" }}>{r[1]}</td>
+                      <td style={{ padding: "8px", color: "#777", fontSize: 12 }}>{r[2]}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
-            <div style={{ marginTop: 8, fontSize: 13, color: "#777" }}>Source: Hudson-Advisors.com/our-people, LoneStarFunds.com/team</div>
+            <div style={{ marginTop: 8, fontSize: 11, color: "#555" }}>Source: Hudson-Advisors.com/our-people, LoneStarFunds.com/team</div>
           </Card>
 
           <Card title="TIER 3 — Hudson Homes Management Operations (Internet-Verified)" accent="#666">
-            <p style={{ fontSize: 14, color: "#777", marginBottom: 12 }}>The following individuals are publicly listed on LinkedIn, corporate directories, or employment databases as working for Hudson Homes Management LLC.</p>
+            <p style={{ fontSize: 12, color: "#555", marginBottom: 12 }}>The following individuals are publicly listed on LinkedIn, corporate directories, or employment databases as working for Hudson Homes Management LLC.</p>
             <div style={{ overflowX: "auto" }}>
-              <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 15 }}>
+              <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
                 <thead>
                   <tr style={{ borderBottom: "2px solid #333" }}>
-                    <th style={{ padding: "10px 12px", textAlign: "left", color: "#c41e1e" }}>Name</th>
-                    <th style={{ padding: "10px 12px", textAlign: "left", color: "#c41e1e" }}>Role</th>
-                    <th style={{ padding: "10px 12px", textAlign: "left", color: "#c41e1e" }}>Public Source</th>
+                    <th style={{ padding: "8px", textAlign: "left", color: "#c41e1e" }}>Name</th>
+                    <th style={{ padding: "8px", textAlign: "left", color: "#c41e1e" }}>Role</th>
+                    <th style={{ padding: "8px", textAlign: "left", color: "#c41e1e" }}>Public Source</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -2137,41 +2050,41 @@ export default function App() {
                     ["Kenyada Garner", "Property Controller", "SignalHire employee directory"],
                   ].map((r, i) => (
                     <tr key={i} style={{ borderBottom: "1px solid #222" }}>
-                      <td style={{ padding: "10px 12px", color: "#e8e0d6", fontWeight: 600 }}>{r[0]}</td>
-                      <td style={{ padding: "10px 12px", color: "#999" }}>{r[1]}</td>
-                      <td style={{ padding: "10px 12px", color: "#999", fontSize: 14 }}>{r[2]}</td>
+                      <td style={{ padding: "8px", color: "#e8e0d6", fontWeight: 600 }}>{r[0]}</td>
+                      <td style={{ padding: "8px", color: "#999" }}>{r[1]}</td>
+                      <td style={{ padding: "8px", color: "#777", fontSize: 12 }}>{r[2]}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
-            <div style={{ marginTop: 8, fontSize: 13, color: "#777" }}>Sources: Hudson-Advisors.com, LinkedIn, SignalHire.com, RocketReach.co, ZoomInfo.com</div>
+            <div style={{ marginTop: 8, fontSize: 11, color: "#555" }}>Sources: Hudson-Advisors.com, LinkedIn, SignalHire.com, RocketReach.co, ZoomInfo.com</div>
           </Card>
 
           <Card title="TIER 4 — Law Firms Used in HHM Evictions (Public Court Records)" accent="#c41e1e">
-            <p style={{ fontSize: 14, color: "#777", marginBottom: 12 }}>The following law firms appear in publicly indexed court records on UniCourt and Trellis as representing HHM or LSF trusts in eviction and foreclosure actions.</p>
+            <p style={{ fontSize: 12, color: "#555", marginBottom: 12 }}>The following law firms appear in publicly indexed court records on UniCourt and Trellis as representing HHM or LSF trusts in eviction and foreclosure actions.</p>
             <div style={{ overflowX: "auto" }}>
-              <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 15 }}>
+              <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
                 <tbody>
                   {[
                     ["Cruikshank Ersin LLC", "Florida evictions", "UniCourt: HHM v. Hayden (Palm Beach, 2020); WRI Property Mgmt v. Gruber on behalf of LSF9 MPT (Pinellas, 2019). Atlanta, GA office."],
                     ["Lippman Law Offices, P.A.", "Florida evictions", "UniCourt: Multiple LSF9 MPT eviction cases in Hillsborough County (De Stio, Player, Fernandez)."],
                   ].map((r, i) => (
                     <tr key={i} style={{ borderBottom: "1px solid #222" }}>
-                      <td style={{ padding: "10px 12px", color: "#e8e0d6", fontWeight: 600, whiteSpace: "nowrap" }}>{r[0]}</td>
-                      <td style={{ padding: "10px 12px", color: "#999" }}>{r[1]}</td>
-                      <td style={{ padding: "10px 12px", color: "#999", fontSize: 14 }}>{r[2]}</td>
+                      <td style={{ padding: "8px", color: "#e8e0d6", fontWeight: 600, whiteSpace: "nowrap" }}>{r[0]}</td>
+                      <td style={{ padding: "8px", color: "#999" }}>{r[1]}</td>
+                      <td style={{ padding: "8px", color: "#777", fontSize: 12 }}>{r[2]}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
-            <div style={{ marginTop: 8, fontSize: 13, color: "#777" }}>Sources: UniCourt.com public court records</div>
+            <div style={{ marginTop: 8, fontSize: 11, color: "#555" }}>Sources: UniCourt.com public court records</div>
           </Card>
 
           <Card title="TIER 5 — Trust & Financial Shell Entities" accent="#444">
             <div style={{ overflowX: "auto" }}>
-              <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 15 }}>
+              <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
                 <tbody>
                   {[
                     ["LSF9 Master Participation Trust", "Named trust in evictions", "PI Paatalo: shell entity holding no assets. HHM failed to prove standing in Ohio."],
@@ -2183,9 +2096,9 @@ export default function App() {
                     ["Northsight Management LLC", "Co-defendant with HHM", "Named in Anderson v. HHM federal case (UniCourt)."],
                   ].map((r, i) => (
                     <tr key={i} style={{ borderBottom: "1px solid #222" }}>
-                      <td style={{ padding: "10px 12px", color: "#e8e0d6", fontWeight: 600, whiteSpace: "nowrap" }}>{r[0]}</td>
-                      <td style={{ padding: "10px 12px", color: "#999" }}>{r[1]}</td>
-                      <td style={{ padding: "10px 12px", color: "#999", fontSize: 14 }}>{r[2]}</td>
+                      <td style={{ padding: "8px", color: "#e8e0d6", fontWeight: 600, whiteSpace: "nowrap" }}>{r[0]}</td>
+                      <td style={{ padding: "8px", color: "#999" }}>{r[1]}</td>
+                      <td style={{ padding: "8px", color: "#777", fontSize: 12 }}>{r[2]}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -2197,7 +2110,7 @@ export default function App() {
             <p>Per hudsonhomesmanagement.com, HHM lists rental properties in the following markets:</p>
             <p style={{ marginTop: 12, lineHeight: 2.2 }}>
               {["Atlanta, GA", "Birmingham, AL", "Charlotte, NC", "Dallas-Fort Worth, TX", "Houston, TX", "Jacksonville, FL", "Kansas City, KS", "Memphis, TN", "Nashville, TN", "Orlando, FL", "Phoenix, AZ", "Raleigh-Durham, NC", "San Antonio, TX", "Tampa, FL", "Abilene, TX", "Amarillo, TX", "Bonham, TX", "Corsicana, TX", "Denison-Sherman, TX", "Greenville, TX", "Killeen-Temple, TX", "Longview-Kilgore, TX", "Lubbock, TX", "San Angelo, TX", "Tyler-Bullard, TX", "Wichita Falls, TX", "Waco, TX", "+ 34 more markets"].map((s) => (
-                <span key={s} style={{ display: "inline-block", background: "#1a1a1a", border: "1px solid #333", borderRadius: 4, padding: "4px 12px", fontSize: 13, color: "#aaa", fontFamily: "'IBM Plex Mono', monospace", marginRight: 6, marginBottom: 4 }}>{s}</span>
+                <span key={s} style={{ display: "inline-block", background: "#1a1a1a", border: "1px solid #333", borderRadius: 4, padding: "2px 10px", fontSize: 12, color: "#999", fontFamily: "'IBM Plex Mono', monospace", marginRight: 6, marginBottom: 4 }}>{s}</span>
               ))}
             </p>
             <p style={{ marginTop: 12 }}>
@@ -2213,7 +2126,7 @@ export default function App() {
       )}
 
       {active === "corporate" && (
-        <div style={{ maxWidth: 900, margin: "0 auto", padding: "60px 24px" }}>
+        <div style={{ maxWidth: 800, margin: "0 auto", padding: "50px 20px" }}>
           <SectionTitle>The Corporate Structure</SectionTitle>
           <SubTitle>
             From a billionaire's London mansion to your doorstep: following the
@@ -2334,7 +2247,7 @@ export default function App() {
       )}
 
       {active === "trusts" && (
-        <div style={{ maxWidth: 900, margin: "0 auto", padding: "60px 24px" }}>
+        <div style={{ maxWidth: 800, margin: "0 auto", padding: "50px 20px" }}>
           <SectionTitle>The Shell Trust Network: LSF6 Through LSF11</SectionTitle>
           <SubTitle>
             How Lone Star Funds uses a web of Delaware Statutory Trusts, phantom trustees, and
@@ -2370,9 +2283,9 @@ export default function App() {
               or any documented chain of authority</strong> from the actual loan originator to the named plaintiff.
             </p>
             <div style={{ display: "flex", gap: 8, marginTop: 12, flexWrap: "wrap" }}>
-              <a href="https://bpinvestigativeagency.com/beware-the-lsf9-master-participation-trust-is-operating-as-a-secret-agent/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 BPIA: LSF9 Operating as Secret Agent (2016)</a>
-              <a href="https://bpinvestigativeagency.com/lsf9-master-participation-trust-is-a-straw-man-and-heres-some-proof/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 BPIA: LSF9 Is a "Straw Man" — Proof (2018)</a>
-              <a href="https://bpinvestigativeagency.com/the-lsf9-master-participation-trust-story-unravels-its-just-a-pseudonym-that-holds-nothing/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 BPIA: "Just a Pseudonym That Holds Nothing" (2022)</a>
+              <a href="https://bpinvestigativeagency.com/beware-the-lsf9-master-participation-trust-is-operating-as-a-secret-agent/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 BPIA: LSF9 Operating as Secret Agent (2016)</a>
+              <a href="https://bpinvestigativeagency.com/lsf9-master-participation-trust-is-a-straw-man-and-heres-some-proof/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 BPIA: LSF9 Is a "Straw Man" — Proof (2018)</a>
+              <a href="https://bpinvestigativeagency.com/the-lsf9-master-participation-trust-story-unravels-its-just-a-pseudonym-that-holds-nothing/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 BPIA: "Just a Pseudonym That Holds Nothing" (2022)</a>
             </div>
           </Card>
 
@@ -2382,44 +2295,44 @@ export default function App() {
               under the Lone Star umbrella, plus hidden VOLT LLC entities:
             </p>
             <div style={{ background: "#0a0a0a", borderRadius: 8, padding: 16, marginTop: 12 }}>
-              <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 15, fontFamily: "'IBM Plex Serif', Georgia, serif" }}>
+              <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13, fontFamily: "'IBM Plex Serif', Georgia, serif" }}>
                 <thead>
                   <tr style={{ borderBottom: "1px solid #333" }}>
-                    <th style={{ textAlign: "left", padding: "12px 10px", color: "#c41e1e" }}>Trust Name</th>
-                    <th style={{ textAlign: "left", padding: "12px 10px", color: "#c41e1e" }}>Hidden Purchaser</th>
-                    <th style={{ textAlign: "left", padding: "12px 10px", color: "#c41e1e" }}>Known Cases</th>
+                    <th style={{ textAlign: "left", padding: "8px 4px", color: "#c41e1e" }}>Trust Name</th>
+                    <th style={{ textAlign: "left", padding: "8px 4px", color: "#c41e1e" }}>Hidden Purchaser</th>
+                    <th style={{ textAlign: "left", padding: "8px 4px", color: "#c41e1e" }}>Known Cases</th>
                   </tr>
                 </thead>
-                <tbody style={{ color: "#b0a8a0" }}>
+                <tbody style={{ color: "#999" }}>
                   <tr style={{ borderBottom: "1px solid #1a1a1a" }}>
-                    <td style={{ padding: "12px 10px" }}><strong style={{ color: "#e8e0d6" }}>LSF7</strong> Master Participation Trust</td>
-                    <td style={{ padding: "12px 10px" }}>Unknown</td>
-                    <td style={{ padding: "12px 10px" }}>Referenced in Paatalo filings</td>
+                    <td style={{ padding: "8px 4px" }}><strong style={{ color: "#e8e0d6" }}>LSF7</strong> Master Participation Trust</td>
+                    <td style={{ padding: "8px 4px" }}>Unknown</td>
+                    <td style={{ padding: "8px 4px" }}>Referenced in Paatalo filings</td>
                   </tr>
                   <tr style={{ borderBottom: "1px solid #1a1a1a" }}>
-                    <td style={{ padding: "12px 10px" }}><strong style={{ color: "#e8e0d6" }}>LSF8</strong> Master Participation Trust</td>
-                    <td style={{ padding: "12px 10px" }}>LSF8 Mortgage Holdings LLC</td>
-                    <td style={{ padding: "12px 10px" }}>NJ (Sims, Campbell), NY-Queens (Persaud), NY-Kings (Alphonso), OK (Northern), PA-Federal (Dougherty), FL (Robelto)</td>
+                    <td style={{ padding: "8px 4px" }}><strong style={{ color: "#e8e0d6" }}>LSF8</strong> Master Participation Trust</td>
+                    <td style={{ padding: "8px 4px" }}>LSF8 Mortgage Holdings LLC</td>
+                    <td style={{ padding: "8px 4px" }}>NJ (Sims, Campbell), NY-Queens (Persaud), NY-Kings (Alphonso), OK (Northern), PA-Federal (Dougherty), FL (Robelto)</td>
                   </tr>
                   <tr style={{ borderBottom: "1px solid #1a1a1a" }}>
-                    <td style={{ padding: "12px 10px" }}><strong style={{ color: "#e8e0d6" }}>LSF9</strong> Master Participation Trust</td>
-                    <td style={{ padding: "12px 10px" }}>LSF9 Mortgage Holdings LLC + VOLT LLCs</td>
-                    <td style={{ padding: "12px 10px" }}>FL (De Stio, Player, Boyd-Randle, Fernandez, Sellitti, Gaskin, Brooks), TX (Daniels, Berry, Jones, Poole), OH (HHM dismissed), ME (Cates, Summey, Keefe, Plummer), MA, CT, OR (Weiss), WA (John), IN, CA, and dozens more</td>
+                    <td style={{ padding: "8px 4px" }}><strong style={{ color: "#e8e0d6" }}>LSF9</strong> Master Participation Trust</td>
+                    <td style={{ padding: "8px 4px" }}>LSF9 Mortgage Holdings LLC + VOLT LLCs</td>
+                    <td style={{ padding: "8px 4px" }}>FL (De Stio, Player, Boyd-Randle, Fernandez, Sellitti, Gaskin, Brooks), TX (Daniels, Berry, Jones, Poole), OH (HHM dismissed), ME (Cates, Summey, Keefe, Plummer), MA, CT, OR (Weiss), WA (John), IN, CA, and dozens more</td>
                   </tr>
                   <tr style={{ borderBottom: "1px solid #1a1a1a" }}>
-                    <td style={{ padding: "12px 10px" }}><strong style={{ color: "#e8e0d6" }}>LSF10</strong> Master Participation Trust</td>
-                    <td style={{ padding: "12px 10px" }}>LSF10 Mortgage Holdings LLC</td>
-                    <td style={{ padding: "12px 10px" }}>ME-Federal (Campo, Geno — foreclosure granted), <strong style={{ color: "#c41e1e" }}>NY-Orleans (Shannon Fair v. HHM — ACTIVE fraud lawsuit, Lone Star named directly)</strong>, PA (Downing — HHM as attorney-in-fact), CT (Kingsbury)</td>
+                    <td style={{ padding: "8px 4px" }}><strong style={{ color: "#e8e0d6" }}>LSF10</strong> Master Participation Trust</td>
+                    <td style={{ padding: "8px 4px" }}>LSF10 Mortgage Holdings LLC</td>
+                    <td style={{ padding: "8px 4px" }}>ME-Federal (Campo, Geno — foreclosure granted), <strong style={{ color: "#c41e1e" }}>NY-Orleans (Shannon Fair v. HHM — ACTIVE fraud lawsuit, Lone Star named directly)</strong>, PA (Downing — HHM as attorney-in-fact), CT (Kingsbury)</td>
                   </tr>
                   <tr style={{ borderBottom: "1px solid #1a1a1a" }}>
-                    <td style={{ padding: "12px 10px" }}><strong style={{ color: "#e8e0d6" }}>LSF11</strong> Master Participation Trust</td>
-                    <td style={{ padding: "12px 10px" }}>Unknown</td>
-                    <td style={{ padding: "12px 10px" }}>Referenced in Paatalo filings</td>
+                    <td style={{ padding: "8px 4px" }}><strong style={{ color: "#e8e0d6" }}>LSF11</strong> Master Participation Trust</td>
+                    <td style={{ padding: "8px 4px" }}>Unknown</td>
+                    <td style={{ padding: "8px 4px" }}>Referenced in Paatalo filings</td>
                   </tr>
                 </tbody>
               </table>
             </div>
-            <p style={{ fontSize: 14, color: "#999", marginTop: 12 }}>
+            <p style={{ fontSize: 13, color: "#777", marginTop: 12 }}>
               <em>All trusts are registered in Delaware. Trust Agreements are dated around July 2014.
               No unredacted Trust Agreement or Pooling & Servicing Agreement has ever been produced in any known case.</em>
             </p>
@@ -2438,8 +2351,8 @@ export default function App() {
               "like horseshoes and hand grenades — close enough."
             </p>
             <div style={{ display: "flex", gap: 8, marginTop: 12, flexWrap: "wrap" }}>
-              <a href="https://bpinvestigativeagency.com/settlement-agreement-between-the-city-of-los-angeles-u-s-bank-n-a-proves-that-u-s-bank-trust-n-a-as-trustee-for-lsf9-master-participation-trust-is-a-misrepresentation/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 BPIA: LA Settlement Agreement Proves Misrepresentation</a>
-              <a href="https://bpinvestigativeagency.com/u-s-bank-trust-n-a-files-false-fraudulent-disclosure-in-massachusetts-federal-court/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 BPIA: False Disclosure in MA Federal Court (2023)</a>
+              <a href="https://bpinvestigativeagency.com/settlement-agreement-between-the-city-of-los-angeles-u-s-bank-n-a-proves-that-u-s-bank-trust-n-a-as-trustee-for-lsf9-master-participation-trust-is-a-misrepresentation/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 BPIA: LA Settlement Agreement Proves Misrepresentation</a>
+              <a href="https://bpinvestigativeagency.com/u-s-bank-trust-n-a-files-false-fraudulent-disclosure-in-massachusetts-federal-court/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 BPIA: False Disclosure in MA Federal Court (2023)</a>
             </div>
           </Card>
 
@@ -2512,7 +2425,7 @@ export default function App() {
       )}
 
       {active === "sec" && (
-        <div style={{ maxWidth: 900, margin: "0 auto", padding: "60px 24px" }}>
+        <div style={{ maxWidth: 800, margin: "0 auto", padding: "50px 20px" }}>
           <SectionTitle>Regulatory Actions & Government Enforcement</SectionTitle>
           <SubTitle>
             Federal enforcement actions, fines, and settlements involving
@@ -2661,7 +2574,7 @@ export default function App() {
       )}
 
       {active === "complaints" && (
-        <div style={{ maxWidth: 900, margin: "0 auto", padding: "60px 24px" }}>
+        <div style={{ maxWidth: 800, margin: "0 auto", padding: "50px 20px" }}>
           <SectionTitle>BBB Complaints &amp; Tenant Reports</SectionTitle>
           <SubTitle>
             As of March 2026, the Better Business Bureau lists 143 complaints against Hudson Homes
@@ -2670,8 +2583,8 @@ export default function App() {
             All data sourced from BBB public records.
           </SubTitle>
 
-          <div style={{ background: "#0d0808", border: "1px solid #333", borderLeft: "3px solid #8b4513", borderRadius: "0 8px 8px 0", padding: "20px 24px", marginBottom: 28, fontSize: 15, color: "#999", lineHeight: 1.8 }}>
-            <strong style={{ color: "#aaa" }}>Legal note:</strong> The complaint summaries below are paraphrased
+          <div style={{ background: "#0a0a0a", border: "1px solid #333", borderRadius: 8, padding: 16, marginBottom: 24, fontSize: 12, color: "#666", lineHeight: 1.6 }}>
+            <strong style={{ color: "#888" }}>Legal note:</strong> The complaint summaries below are paraphrased
             descriptions of complaint themes, not direct reproductions of BBB complaint text.
             Original complaints, including full text and business responses, are available at the
             BBB links provided. All statistics are from BBB public records as of March 2026.
@@ -2688,7 +2601,7 @@ export default function App() {
             ].map(([val, label]) => (
               <div key={label} style={{ flex: "1 1 120px", background: "#111", border: "1px solid #222", borderRadius: 8, padding: 14, textAlign: "center" }}>
                 <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 22, color: "#c41e1e", fontWeight: 600 }}>{val}</div>
-                <div style={{ fontSize: 13, color: "#888", marginTop: 4 }}>{label}</div>
+                <div style={{ fontSize: 11, color: "#666", marginTop: 4 }}>{label}</div>
               </div>
             ))}
           </div>
@@ -2701,15 +2614,15 @@ export default function App() {
           {/* COMPLAINT TYPE BREAKDOWN */}
           <Card title="📊 Complaint Breakdown by Type (BBB Data)" accent="#c41e1e">
             <div style={{ background: "#0a0a0a", borderRadius: 8, padding: 16 }}>
-              <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 15 }}>
+              <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
                 <thead>
                   <tr style={{ borderBottom: "1px solid #333" }}>
-                    <th style={{ textAlign: "left", padding: "12px 10px", color: "#c41e1e" }}>Category</th>
-                    <th style={{ textAlign: "right", padding: "12px 10px", color: "#c41e1e" }}>Count</th>
-                    <th style={{ textAlign: "right", padding: "12px 10px", color: "#c41e1e" }}>%</th>
+                    <th style={{ textAlign: "left", padding: "8px 4px", color: "#c41e1e" }}>Category</th>
+                    <th style={{ textAlign: "right", padding: "8px 4px", color: "#c41e1e" }}>Count</th>
+                    <th style={{ textAlign: "right", padding: "8px 4px", color: "#c41e1e" }}>%</th>
                   </tr>
                 </thead>
-                <tbody style={{ color: "#b0a8a0" }}>
+                <tbody style={{ color: "#999" }}>
                   {[
                     ["Service or Repair Issues", 94, "65.7%"],
                     ["Billing Issues", 21, "14.7%"],
@@ -2719,15 +2632,15 @@ export default function App() {
                     ["Customer Service Issues", 2, "1.4%"],
                   ].map(([cat, count, pct]) => (
                     <tr key={cat} style={{ borderBottom: "1px solid #1a1a1a" }}>
-                      <td style={{ padding: "12px 10px", color: "#e8e0d6" }}>{cat}</td>
-                      <td style={{ padding: "12px 10px", textAlign: "right", fontFamily: "'JetBrains Mono', monospace", color: "#c41e1e" }}>{count}</td>
-                      <td style={{ padding: "12px 10px", textAlign: "right", color: "#666" }}>{pct}</td>
+                      <td style={{ padding: "8px 4px", color: "#e8e0d6" }}>{cat}</td>
+                      <td style={{ padding: "8px 4px", textAlign: "right", fontFamily: "'JetBrains Mono', monospace", color: "#c41e1e" }}>{count}</td>
+                      <td style={{ padding: "8px 4px", textAlign: "right", color: "#666" }}>{pct}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
-            <p style={{ fontSize: 14, color: "#777", marginTop: 8 }}>
+            <p style={{ fontSize: 12, color: "#555", marginTop: 8 }}>
               <em>Nearly two-thirds of all complaints relate to maintenance and repair failures.
               Only 14 of 143 complaints (9.8%) were resolved to the tenant's satisfaction,
               according to BBB records.</em>
@@ -2757,7 +2670,7 @@ export default function App() {
               medication and food to spoil<br/>
               • A tenant reporting a broken front door lock that went unrepaired for six months
             </p>
-            <p style={{ fontSize: 14, color: "#777" }}>
+            <p style={{ fontSize: 12, color: "#555" }}>
               In multiple responses, HHM acknowledged "poor communication" and "extended timelines"
               but stated the bid review process was "for the best interest of all parties."
             </p>
@@ -2882,7 +2795,7 @@ export default function App() {
               as it is "an ongoing civil matter"<br/>
               6. End with "we consider this case to be resolved"
             </p>
-            <p style={{ fontSize: 14, color: "#777" }}>
+            <p style={{ fontSize: 12, color: "#555" }}>
               Of 143 total complaints, only 14 (9.8%) were marked as "Resolved" — meaning the
               tenant confirmed the issue was resolved to their satisfaction. The remaining 129
               were marked as "Answered" — meaning HHM responded but the tenant either did not
@@ -2901,7 +2814,7 @@ export default function App() {
               against Caliber Home Loans, Inc. (now Newrez LLC) — the Lone Star subsidiary that
               services mortgage loans before properties are transferred to HHM management.
             </p>
-            <a href="https://www.consumerfinance.gov/data-research/consumer-complaints/search/?company=Caliber+Home+Loans" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 CFPB Complaint Database — Search Caliber Home Loans</a>
+            <a href="https://www.consumerfinance.gov/data-research/consumer-complaints/search/?company=Caliber+Home+Loans" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 CFPB Complaint Database — Search Caliber Home Loans</a>
           </Card>
 
           <Card title="📋 Additional Review Platforms" accent="#666">
@@ -2917,7 +2830,7 @@ export default function App() {
             </p>
           </Card>
 
-          <div style={{ background: "#0a0a0a", border: "1px solid #333", borderRadius: 8, padding: 16, marginTop: 24, fontSize: 14, color: "#777", lineHeight: 1.6 }}>
+          <div style={{ background: "#0a0a0a", border: "1px solid #333", borderRadius: 8, padding: 16, marginTop: 24, fontSize: 12, color: "#555", lineHeight: 1.6 }}>
             <strong style={{ color: "#888" }}>Note:</strong> The complaint themes above are paraphrased
             summaries of publicly available BBB records. The Holdover Project does not independently
             verify individual complaints. To read the full original complaint text and HHM's
@@ -2929,7 +2842,7 @@ export default function App() {
       )}
 
       {active === "stories" && (
-        <div style={{ maxWidth: 900, margin: "0 auto", padding: "60px 24px" }}>
+        <div style={{ maxWidth: 800, margin: "0 auto", padding: "50px 20px" }}>
           <SectionTitle>Share Your Story</SectionTitle>
           <SubTitle>
             Have you rented from Hudson Homes Management? Your documented experience
@@ -3001,7 +2914,7 @@ export default function App() {
       )}
 
       {active === "lawsuits" && (
-        <div style={{ maxWidth: 900, margin: "0 auto", padding: "60px 24px" }}>
+        <div style={{ maxWidth: 800, margin: "0 auto", padding: "50px 20px" }}>
           <SectionTitle>Court Actions Across the United States</SectionTitle>
           <SubTitle>
             Every documented lawsuit, eviction, and legal challenge — with direct
@@ -3011,7 +2924,7 @@ export default function App() {
 
           <div style={{ background: "#0d0d0d", border: "2px solid #c41e1e33", borderRadius: 6, padding: "20px", marginBottom: 30 }}>
             <div style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: 16, color: "#c41e1e", marginBottom: 8 }}>How to Verify This Information</div>
-            <div style={{ fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 14, color: "#999", lineHeight: 1.8 }}>
+            <div style={{ fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 12, color: "#888", lineHeight: 1.7 }}>
               Every case below includes a direct link to the public court record or reporting source.
               You can search for HHM cases yourself at:{" "}
               <a href="https://unicourt.com" target="_blank" rel="noopener noreferrer">UniCourt.com</a> |{" "}
@@ -3060,26 +2973,26 @@ export default function App() {
             U.S. District Court, District of Oregon — Case No. 6:2019cv01104<br/>
             Filed: July 18, 2019 — Contract: Other Contract Actions<br/>
             <span style={{ display: "flex", gap: 8, marginTop: 8, flexWrap: "wrap" }}>
-              <a href="https://dockets.justia.com/docket/oregon/ordce/6:2019cv01104/146670" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 View on Justia</a>
-              <a href="https://www.law360.com/cases/5d30c8f75dea2702817adf39" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 View on Law360</a>
+              <a href="https://dockets.justia.com/docket/oregon/ordce/6:2019cv01104/146670" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 View on Justia</a>
+              <a href="https://www.law360.com/cases/5d30c8f75dea2702817adf39" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 View on Law360</a>
             </span></p>
 
             <p style={{ marginBottom: 16 }}><strong style={{ color: "#e8e0d6" }}>2. Hudson Homes Management v. Cooks</strong><br/>
             U.S. District Courts — Case No. 1:22-CV-04142 (2022) — Property<br/>
-            <a href="https://unicourt.com/case/fl-pal-hudson-homes-management-llc-obo-us-bank-na-as-trustee-for-lsf9-master-participation-trust-v-hayden-marsha-753071" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none", display: "inline-block", marginTop: 8 }}>📄 View on UniCourt</a></p>
+            <a href="https://unicourt.com/case/fl-pal-hudson-homes-management-llc-obo-us-bank-na-as-trustee-for-lsf9-master-participation-trust-v-hayden-marsha-753071" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none", display: "inline-block", marginTop: 8 }}>📄 View on UniCourt</a></p>
 
             <p style={{ marginBottom: 16 }}><strong style={{ color: "#e8e0d6" }}>3. HSFRF 3 et al v. Cooks</strong><br/>
             U.S. District Courts — Case No. 1:23-CV-01298 (2023) — Property<br/>
-            <span style={{ fontSize: 14, color: "#888" }}>Related to HHM operations — UniCourt records</span></p>
+            <span style={{ fontSize: 12, color: "#666" }}>Related to HHM operations — UniCourt records</span></p>
 
             <p style={{ marginBottom: 16 }}><strong style={{ color: "#e8e0d6" }}>4. Raymond Anderson v. Hudson Homes Management LLC, Northsight Management LLC</strong><br/>
             U.S. District Courts — Tenant sued HHM and co-defendant Northsight jointly<br/>
-            <span style={{ fontSize: 14, color: "#888" }}>UniCourt records — demonstrates tenants are fighting back in federal court</span></p>
+            <span style={{ fontSize: 12, color: "#666" }}>UniCourt records — demonstrates tenants are fighting back in federal court</span></p>
 
             <p><strong style={{ color: "#e8e0d6" }}>5. Class Action: HUD / Lone Star Funds — Racial Discrimination</strong><br/>
             U.S. District Court, Eastern District of New York (2016)<br/>
             Alleged HUD disproportionately sold FHA loans to African-American borrowers, and Lone Star preyed on homeowners after purchase.<br/>
-            <a href="https://ecbawm.com/news/class-action-challenges-racially-discriminatory-predatory-practices-hud-private-equity-fund/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none", display: "inline-block", marginTop: 8 }}>📄 ECBAWM — Full Case Details</a></p>
+            <a href="https://ecbawm.com/news/class-action-challenges-racially-discriminatory-predatory-practices-hud-private-equity-fund/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none", display: "inline-block", marginTop: 8 }}>📄 ECBAWM — Full Case Details</a></p>
           </Card>
 
           <Card title="🏛️ OHIO — Standing Challenge: HHM FAILED, CASE DISMISSED" accent="#c41e1e">
@@ -3096,7 +3009,7 @@ export default function App() {
               thereof, do not own the properties they foreclosed upon."
             </p>
             <div style={{ display: "flex", gap: 8, marginTop: 12, flexWrap: "wrap" }}>
-              <a href="https://bpinvestigativeagency.com/hudson-homes-management-llc-fails-to-defend-its-agency-with-u-s-bank-trust-n-a-as-trustee-for-lsf9-master-participation-trust/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 BP Investigative Agency — Full Investigation + Court Decision</a>
+              <a href="https://bpinvestigativeagency.com/hudson-homes-management-llc-fails-to-defend-its-agency-with-u-s-bank-trust-n-a-as-trustee-for-lsf9-master-participation-trust/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 BP Investigative Agency — Full Investigation + Court Decision</a>
             </div>
           </Card>
 
@@ -3107,7 +3020,7 @@ export default function App() {
               in Massachusetts. Court records are searchable at the MA Trial Court E-Services portal.
             </p>
             <div style={{ display: "flex", gap: 8, marginTop: 12, flexWrap: "wrap" }}>
-              <a href="https://www.masscourts.org/eservices/home.page.2" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 MA Trial Court E-Services — Search Housing Court Records</a>
+              <a href="https://www.masscourts.org/eservices/home.page.2" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 MA Trial Court E-Services — Search Housing Court Records</a>
             </div>
           </Card>
 
@@ -3119,7 +3032,7 @@ export default function App() {
               Attorney: Cruikshank Ersin (per UniCourt record)
             </p>
             <div style={{ display: "flex", gap: 8, marginTop: 8, flexWrap: "wrap" }}>
-              <a href="https://unicourt.com/case/fl-pal-hudson-homes-management-llc-obo-us-bank-na-as-trustee-for-lsf9-master-participation-trust-v-hayden-marsha-753071" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 UniCourt — HHM v. Hayden (Dismissed)</a>
+              <a href="https://unicourt.com/case/fl-pal-hudson-homes-management-llc-obo-us-bank-na-as-trustee-for-lsf9-master-participation-trust-v-hayden-marsha-753071" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 UniCourt — HHM v. Hayden (Dismissed)</a>
             </div>
             <p style={{ marginTop: 16 }}>
               <strong style={{ color: "#e8e0d6" }}>Qwanean Smith v. Hudson Homes Management LLC</strong><br/>
@@ -3127,7 +3040,7 @@ export default function App() {
               <strong style={{ color: "#c41e1e" }}>A TENANT SUED HHM</strong> — Contract / Debt Collection
             </p>
             <div style={{ display: "flex", gap: 8, marginTop: 8, flexWrap: "wrap" }}>
-              <a href="https://unicourt.com/case/fl-sem-caseeo1801a5244b8e-635679" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 UniCourt — Smith v. HHM (Tenant Fought Back)</a>
+              <a href="https://unicourt.com/case/fl-sem-caseeo1801a5244b8e-635679" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 UniCourt — Smith v. HHM (Tenant Fought Back)</a>
             </div>
           </Card>
 
@@ -3140,7 +3053,7 @@ export default function App() {
               HHM appeared via Zoom while tenant lost their home.
             </p>
             <div style={{ display: "flex", gap: 8, marginTop: 8, flexWrap: "wrap" }}>
-              <a href="https://unicourt.com/case/tx-tr-hudson-homes-management-llc-vs-kyesha-white-and-all-occupants-1364907" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 UniCourt — HHM v. White (Full Docket)</a>
+              <a href="https://unicourt.com/case/tx-tr-hudson-homes-management-llc-vs-kyesha-white-and-all-occupants-1364907" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 UniCourt — HHM v. White (Full Docket)</a>
             </div>
           </Card>
 
@@ -3151,7 +3064,7 @@ export default function App() {
               Landlord-Tenant Dispossessory Proceeding.
             </p>
             <div style={{ display: "flex", gap: 8, marginTop: 8, flexWrap: "wrap" }}>
-              <a href="https://trellis.law/case/13135/24-m-07389/hudson-homes-management-vs-bryant" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 Trellis Law — HHM v. Bryant (Full Case)</a>
+              <a href="https://trellis.law/case/13135/24-m-07389/hudson-homes-management-vs-bryant" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 Trellis Law — HHM v. Bryant (Full Case)</a>
             </div>
           </Card>
 
@@ -3164,7 +3077,7 @@ export default function App() {
               are deployed across different states.</em>
             </p>
             <div style={{ display: "flex", gap: 8, marginTop: 8, flexWrap: "wrap" }}>
-              <a href="https://trellis.law/case/9011/kno-cv23-6108816-s/hudson-homes-management-llc-as-agent-legal-re-v-kingsbury-michael-et-al" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 Trellis Law — HHM v. Kingsbury (Full Case)</a>
+              <a href="https://trellis.law/case/9011/kno-cv23-6108816-s/hudson-homes-management-llc-as-agent-legal-re-v-kingsbury-michael-et-al" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 Trellis Law — HHM v. Kingsbury (Full Case)</a>
             </div>
           </Card>
 
@@ -3175,7 +3088,7 @@ export default function App() {
               Exhibit Index and Exhibits filed November 30, 2023.
             </p>
             <div style={{ display: "flex", gap: 8, marginTop: 8, flexWrap: "wrap" }}>
-              <a href="https://pennrecord.com/stories/666519427-court-activity-on-nov-30-2023-hudson-homes-management-llc-vs-curnoles-jason" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 Pennsylvania Record — Court Activity</a>
+              <a href="https://pennrecord.com/stories/666519427-court-activity-on-nov-30-2023-hudson-homes-management-llc-vs-curnoles-jason" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 Pennsylvania Record — Court Activity</a>
             </div>
           </Card>
 
@@ -3186,7 +3099,7 @@ export default function App() {
               Tenants developed health issues from mold.
             </p>
             <div style={{ display: "flex", gap: 8, marginTop: 8, flexWrap: "wrap" }}>
-              <a href="http://www.legalservicesnyc.org/index.php?Itemid=98&id=706&option=com_content&task=view" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 Legal Services NYC — Full Press Release</a>
+              <a href="http://www.legalservicesnyc.org/index.php?Itemid=98&id=706&option=com_content&task=view" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 Legal Services NYC — Full Press Release</a>
             </div>
           </Card>
 
@@ -3197,7 +3110,7 @@ export default function App() {
               <em style={{ color: "#c41e1e" }}>Note: Uses LSF<strong>8</strong> MPT — a third shell trust variant (in addition to LSF9 and LSF10 used in other states).</em>
             </p>
             <div style={{ display: "flex", gap: 8, marginTop: 8, flexWrap: "wrap" }}>
-              <a href="https://unicourt.com/case/ny-loc1-us-bank-trust-na-as-trustee-for-lsf8-master-participation-trust-co-hudson-homes-management-llc-vs-persaud-chanwatti-aka-chanwattie-persaud-persaud-chamraj-damri-deo-doe-john-doe-jane-953598" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 UniCourt — LSF8/HHM v. Persaud (Queens)</a>
+              <a href="https://unicourt.com/case/ny-loc1-us-bank-trust-na-as-trustee-for-lsf8-master-participation-trust-co-hudson-homes-management-llc-vs-persaud-chanwatti-aka-chanwattie-persaud-persaud-chamraj-damri-deo-doe-john-doe-jane-953598" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 UniCourt — LSF8/HHM v. Persaud (Queens)</a>
             </div>
           </Card>
 
@@ -3208,7 +3121,7 @@ export default function App() {
               A homeowner association sued HHM, U.S. Bank Trust N.A., and unknown tenants for property violations — demonstrating that even HOAs are taking legal action against HHM's management practices.
             </p>
             <div style={{ display: "flex", gap: 8, marginTop: 8, flexWrap: "wrap" }}>
-              <a href="https://unicourt.com/case/fl-man-carpentras-at-the-villages-of-avignon-homeowners-a-vs-hudson-homes-management-llc-et-al-382033" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 UniCourt — HOA v. HHM (Manatee County)</a>
+              <a href="https://unicourt.com/case/fl-man-carpentras-at-the-villages-of-avignon-homeowners-a-vs-hudson-homes-management-llc-et-al-382033" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 UniCourt — HOA v. HHM (Manatee County)</a>
             </div>
           </Card>
 
@@ -3220,8 +3133,8 @@ export default function App() {
               the company to prey on customers. CFPB had received 1,200+ complaints about Caliber.
             </p>
             <div style={{ display: "flex", gap: 8, marginTop: 8, flexWrap: "wrap" }}>
-              <a href="https://therealdeal.com/new-york/2020/06/24/lone-star-affiliate-reaches-17m-settlement-with-ny-homeowners/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 The Real Deal — $17M Settlement Details</a>
-              <a href="https://www.nbcnewyork.com/news/local/Pension-Scam-Foreclosure-New-York-Investigation-439677863.html" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 NBC I-Team Investigation</a>
+              <a href="https://therealdeal.com/new-york/2020/06/24/lone-star-affiliate-reaches-17m-settlement-with-ny-homeowners/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 The Real Deal — $17M Settlement Details</a>
+              <a href="https://www.nbcnewyork.com/news/local/Pension-Scam-Foreclosure-New-York-Investigation-439677863.html" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 NBC I-Team Investigation</a>
             </div>
           </Card>
 
@@ -3233,7 +3146,7 @@ export default function App() {
               accepted, and profited from through higher sale prices.
             </p>
             <div style={{ display: "flex", gap: 8, marginTop: 8, flexWrap: "wrap" }}>
-              <a href="https://www.housingwire.com/articles/38307-exclusive-caliber-home-loans-sued-by-chronos-solutions-over-nearly-3-million-in-unpaid-bills/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 HousingWire Exclusive — Full Story</a>
+              <a href="https://www.housingwire.com/articles/38307-exclusive-caliber-home-loans-sued-by-chronos-solutions-over-nearly-3-million-in-unpaid-bills/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 HousingWire Exclusive — Full Story</a>
             </div>
           </Card>
 
@@ -3247,7 +3160,7 @@ export default function App() {
               repeatedly claiming documentation was not received when proof of fax existed.
             </p>
             <div style={{ display: "flex", gap: 8, marginTop: 8, flexWrap: "wrap" }}>
-              <a href="https://www.chicagoreporter.com/lincoln-yards-investor-lone-star-funds-accused-of-predatory-lending/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 Chicago Reporter — Full Investigation</a>
+              <a href="https://www.chicagoreporter.com/lincoln-yards-investor-lone-star-funds-accused-of-predatory-lending/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 Chicago Reporter — Full Investigation</a>
             </div>
           </Card>
 
@@ -3258,7 +3171,7 @@ export default function App() {
               charged to 14 private equity funds. $11.2M penalty + $68.5M reimbursement.
             </p>
             <div style={{ display: "flex", gap: 8, marginTop: 8, flexWrap: "wrap" }}>
-              <a href="https://www.sec.gov/newsroom/press-releases/2022-159" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 SEC.gov — Official Press Release</a>
+              <a href="https://www.sec.gov/newsroom/press-releases/2022-159" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 SEC.gov — Official Press Release</a>
             </div>
           </Card>
 
@@ -3269,7 +3182,7 @@ export default function App() {
               compliance failures.
             </p>
             <div style={{ display: "flex", gap: 8, marginTop: 8, flexWrap: "wrap" }}>
-              <a href="https://www.fincen.gov/system/files/enforcement_action/2023-04-05/Lone_Star.ASSESSMENT_OF_CIVIL_MONEY_PENALTY_Final_11.01_0.pdf" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 FinCEN.gov — Full Penalty Document (PDF)</a>
+              <a href="https://www.fincen.gov/system/files/enforcement_action/2023-04-05/Lone_Star.ASSESSMENT_OF_CIVIL_MONEY_PENALTY_Final_11.01_0.pdf" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 FinCEN.gov — Full Penalty Document (PDF)</a>
             </div>
           </Card>
 
@@ -3277,7 +3190,7 @@ export default function App() {
 
           <div style={{ textAlign: "center" }}>
             <div style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: 18, color: "#e8e0d6", marginBottom: 8 }}>Search for More Cases Yourself</div>
-            <div style={{ fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 14, color: "#999", marginBottom: 16 }}>
+            <div style={{ fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 13, color: "#777", marginBottom: 16 }}>
               Search "Hudson Homes Management" on any of these platforms to find additional cases:
             </div>
             <div style={{ display: "flex", gap: 10, justifyContent: "center", flexWrap: "wrap" }}>
@@ -3292,7 +3205,7 @@ export default function App() {
       )}
 
       {active === "global" && (
-        <div style={{ maxWidth: 900, margin: "0 auto", padding: "60px 24px" }}>
+        <div style={{ maxWidth: 800, margin: "0 auto", padding: "50px 20px" }}>
           <SectionTitle>Global Impact: The "Vulture Fund" Label</SectionTitle>
           <SubTitle>
             Lone Star Funds — HHM's ultimate parent — has faced international
@@ -3314,9 +3227,9 @@ export default function App() {
               47,000 Irish homes owned by vulture funds.
             </p>
             <div style={{ display: "flex", gap: 8, marginTop: 12, flexWrap: "wrap" }}>
-              <a href="https://www.irishexaminer.com/news/arid-30859449.html" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 Irish Examiner — PTSB Loan Sale</a>
-              <a href="https://www.focusireland.ie/press-release/focus-ireland-launches-campaign-calling-for-govt-action-to-protect-homes-from-vulture-funds/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 Focus Ireland — Vulture Shock Campaign</a>
-              <a href="https://www.dublininquirer.com/andy-the-vulture-funds-are-picking-our-bones/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 Dublin Inquirer — "Picking Our Bones"</a>
+              <a href="https://www.irishexaminer.com/news/arid-30859449.html" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 Irish Examiner — PTSB Loan Sale</a>
+              <a href="https://www.focusireland.ie/press-release/focus-ireland-launches-campaign-calling-for-govt-action-to-protect-homes-from-vulture-funds/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 Focus Ireland — Vulture Shock Campaign</a>
+              <a href="https://www.dublininquirer.com/andy-the-vulture-funds-are-picking-our-bones/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 Dublin Inquirer — "Picking Our Bones"</a>
             </div>
           </Card>
 
@@ -3328,9 +3241,9 @@ export default function App() {
               Grayken and publicly stated the conduct was "unacceptable."
             </p>
             <div style={{ display: "flex", gap: 8, marginTop: 12, flexWrap: "wrap" }}>
-              <a href="https://ecbawm.com/news/class-action-challenges-racially-discriminatory-predatory-practices-hud-private-equity-fund/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 ECBAWM — Class Action Details</a>
-              <a href="https://www.nbcnewyork.com/news/local/Pension-Scam-Foreclosure-New-York-Investigation-439677863.html" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 NBC I-Team — Pension Fund Investigation</a>
-              <a href="https://therealdeal.com/new-york/2020/06/24/lone-star-affiliate-reaches-17m-settlement-with-ny-homeowners/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 The Real Deal — $17M Settlement</a>
+              <a href="https://ecbawm.com/news/class-action-challenges-racially-discriminatory-predatory-practices-hud-private-equity-fund/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 ECBAWM — Class Action Details</a>
+              <a href="https://www.nbcnewyork.com/news/local/Pension-Scam-Foreclosure-New-York-Investigation-439677863.html" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 NBC I-Team — Pension Fund Investigation</a>
+              <a href="https://therealdeal.com/new-york/2020/06/24/lone-star-affiliate-reaches-17m-settlement-with-ny-homeowners/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 The Real Deal — $17M Settlement</a>
             </div>
           </Card>
 
@@ -3344,8 +3257,8 @@ export default function App() {
               clear part of Lone Star's business model."
             </p>
             <div style={{ display: "flex", gap: 8, marginTop: 12, flexWrap: "wrap" }}>
-              <a href="https://www.chicagoreporter.com/lincoln-yards-investor-lone-star-funds-accused-of-predatory-lending/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 Chicago Reporter — Full Investigation</a>
-              <a href="https://www.pecloserlook.org/report/due-diligence-questions-re-lone-star-funds-lone-star-real-estate-fund-iv/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 PE Closer Look — Due Diligence Questions</a>
+              <a href="https://www.chicagoreporter.com/lincoln-yards-investor-lone-star-funds-accused-of-predatory-lending/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 Chicago Reporter — Full Investigation</a>
+              <a href="https://www.pecloserlook.org/report/due-diligence-questions-re-lone-star-funds-lone-star-real-estate-fund-iv/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 PE Closer Look — Due Diligence Questions</a>
             </div>
           </Card>
 
@@ -3357,7 +3270,7 @@ export default function App() {
               Homesteading Assistance Board called Lone Star's model "destined for failure."
             </p>
             <div style={{ display: "flex", gap: 8, marginTop: 12, flexWrap: "wrap" }}>
-              <a href="http://www.legalservicesnyc.org/index.php?Itemid=98&id=706&option=com_content&task=view" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 Legal Services NYC — Full Press Release</a>
+              <a href="http://www.legalservicesnyc.org/index.php?Itemid=98&id=706&option=com_content&task=view" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 Legal Services NYC — Full Press Release</a>
             </div>
           </Card>
 
@@ -3368,7 +3281,7 @@ export default function App() {
               RattanIndia Finance ownership.
             </p>
             <div style={{ display: "flex", gap: 8, marginTop: 12, flexWrap: "wrap" }}>
-              <a href="https://en.wikipedia.org/wiki/John_Grayken" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 Wikipedia — John Grayken</a>
+              <a href="https://en.wikipedia.org/wiki/John_Grayken" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 Wikipedia — John Grayken</a>
             </div>
           </Card>
 
@@ -3379,18 +3292,18 @@ export default function App() {
               Jersey. 40,000+ Irish citizens petitioned against vulture funds.
             </p>
             <div style={{ display: "flex", gap: 8, marginTop: 12, flexWrap: "wrap" }}>
-              <a href="https://www.opendemocracy.net/en/transformation/how-to-fight-glo/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 openDemocracy — Global Fight</a>
-              <a href="https://rupture.ie/articles/homes-for-people-not-for-vultures" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 Rupture.ie — Homes Not Vultures</a>
-              <a href="https://www.thecanary.co/feature/2022/01/30/this-vulture-capitalist-property-company-is-forcibly-evicting-long-standing-tenants/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 The Canary — Forced Evictions</a>
-              <a href="https://www.irishexaminer.com/news/politics/arid-40713683.html" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 Irish Examiner — 40,000 Petition</a>
-              <a href="https://www.lenderliabilitylawyer.com/blog/121/lone-star-funds-distressed-investors-or-vultures/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 5, padding: "6px 14px", fontSize: 13, color: "#e05555", textDecoration: "none" }}>📄 "Distressed Investors or Vultures?"</a>
+              <a href="https://www.opendemocracy.net/en/transformation/how-to-fight-glo/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 openDemocracy — Global Fight</a>
+              <a href="https://rupture.ie/articles/homes-for-people-not-for-vultures" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 Rupture.ie — Homes Not Vultures</a>
+              <a href="https://www.thecanary.co/feature/2022/01/30/this-vulture-capitalist-property-company-is-forcibly-evicting-long-standing-tenants/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 The Canary — Forced Evictions</a>
+              <a href="https://www.irishexaminer.com/news/politics/arid-40713683.html" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 Irish Examiner — 40,000 Petition</a>
+              <a href="https://www.lenderliabilitylawyer.com/blog/121/lone-star-funds-distressed-investors-or-vultures/" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 "Distressed Investors or Vultures?"</a>
             </div>
           </Card>
         </div>
       )}
 
       {active === "patterns" && (
-        <div style={{ maxWidth: 900, margin: "0 auto", padding: "60px 24px" }}>
+        <div style={{ maxWidth: 800, margin: "0 auto", padding: "50px 20px" }}>
           <SectionTitle>Documented Patterns</SectionTitle>
           <SubTitle>
             Recurring themes across tenant complaints, court filings, and
@@ -3442,7 +3355,7 @@ export default function App() {
       )}
 
       {active === "timeline" && (
-        <div style={{ maxWidth: 900, margin: "0 auto", padding: "60px 24px" }}>
+        <div style={{ maxWidth: 800, margin: "0 auto", padding: "50px 20px" }}>
           <SectionTitle>Corporate Timeline</SectionTitle>
           <SubTitle>Key dates in the history of the entity chain.</SubTitle>
 
@@ -3472,7 +3385,7 @@ export default function App() {
               >
                 {t.year}
               </div>
-              <div style={{ borderLeft: "2px solid #333", paddingLeft: 22, fontFamily: "'IBM Plex Serif', Georgia, serif", fontSize: 16, color: "#b8b0a8", lineHeight: 1.8 }}>
+              <div style={{ borderLeft: "2px solid #222", paddingLeft: 20, fontFamily: "'IBM Plex Serif', Georgia, serif", fontSize: 14, color: "#999", lineHeight: 1.7 }}>
                 {t.text}
               </div>
             </div>
@@ -3481,7 +3394,7 @@ export default function App() {
       )}
 
       {active === "resources" && (
-        <div style={{ maxWidth: 900, margin: "0 auto", padding: "60px 24px" }}>
+        <div style={{ maxWidth: 800, margin: "0 auto", padding: "50px 20px" }}>
           <SectionTitle>Resources & Sources</SectionTitle>
           <SubTitle>
             Primary sources, regulatory filings, and reporting referenced in this archive.
@@ -3557,7 +3470,7 @@ export default function App() {
             <p style={{ marginTop: 12, fontSize: 16, color: "#c41e1e" }}>
               theholdoverproject@proton.me
             </p>
-            <p style={{ marginTop: 12, fontSize: 14, color: "#888" }}>
+            <p style={{ marginTop: 12, fontSize: 12, color: "#666" }}>
               Submissions should include only documentation you have the legal
               right to share. Please redact Social Security numbers, bank account
               numbers, and other highly sensitive personal information before
@@ -3570,24 +3483,23 @@ export default function App() {
       {/* Footer */}
       <footer
         style={{
-          borderTop: "2px solid #1a1111",
-          padding: "50px 24px",
+          borderTop: "1px solid #1a1a1a",
+          padding: "40px 20px",
           textAlign: "center",
-          marginTop: 50,
-          background: "linear-gradient(180deg, #0a0a0a, #080505)",
+          marginTop: 40,
         }}
       >
         <div
           style={{
-            maxWidth: 780,
+            maxWidth: 700,
             margin: "0 auto",
             fontFamily: "'IBM Plex Sans', sans-serif",
-            fontSize: 13,
-            color: "#777",
-            lineHeight: 1.9,
+            fontSize: 11,
+            color: "#555",
+            lineHeight: 1.8,
           }}
         >
-          <strong style={{ color: "#999" }}>LEGAL DISCLAIMER:</strong> This website
+          <strong style={{ color: "#777" }}>LEGAL DISCLAIMER:</strong> This website
           is an independent, privately operated archive of public court records,
           government filings, corporate disclosures, and publicly posted tenant
           experiences. It is not affiliated with, endorsed by, or sponsored by
@@ -3601,11 +3513,10 @@ export default function App() {
         </div>
         <div
           style={{
-            marginTop: 24,
+            marginTop: 20,
             fontFamily: "'IBM Plex Mono', monospace",
-            fontSize: 13,
-            color: "#444",
-            letterSpacing: "1px",
+            fontSize: 10,
+            color: "#333",
           }}
         >
           THE HOLDOVER PROJECT · Est. 2026 · An Independent Public Archive
@@ -3619,6 +3530,5 @@ export default function App() {
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<App />);
 </script>
-
 </body>
 </html>
