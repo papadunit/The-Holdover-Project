@@ -746,8 +746,8 @@ footer { border-top: 1px solid var(--border); padding: 40px 0; margin-top: 60px;
 </div>
 
 <!-- React App -->
-<script type="text/babel" data-type="module">
-import { useState, useEffect } from "react";
+<script type="text/babel">
+const { useState, useEffect } = React;
 
 const sections = [
   "overview",
@@ -1599,7 +1599,7 @@ function StoriesForm() {
   );
 }
 
-export default function App() {
+function App() {
   const [active, setActive] = useState("overview");
 
   return (
