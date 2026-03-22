@@ -695,7 +695,7 @@ footer { border-top: 1px solid var(--border); padding: 40px 0; margin-top: 60px;
   </div>
   <div class="card">
     <h4>Expert &amp; Legal Resources</h4>
-    <p><a href="https://bpinvestigativeagency.com">BP Investigative Agency</a> — Bill Paatalo, expert witness on LSF trust standing challenges (bill.bpia@gmail.com, 406-328-4075)</p>
+    <p><a href="https://bpinvestigativeagency.com">BP Investigative Agency</a> — Bill Paatalo, expert witness on LSF trust fraud (bill.bpia@gmail.com, 406-328-4075)</p>
     <p><a href="https://www.naca.net/find-an-attorney">National Association of Consumer Advocates</a> — Find a consumer lawyer in your state</p>
     <p><a href="https://parkplacesecurities.com/caliber.html">Park Place Securities</a> — Foreclosure defense resources for Caliber/LSF cases</p>
   </div>
@@ -2352,7 +2352,7 @@ function App() {
 
           <Card title="⚠️ The 'Two U.S. Banks' Deception" accent="#c41e1e">
             <p>
-              According to Paatalo's investigation, a critical element involves <strong style={{ color: "#c41e1e" }}>what appears to be confusion between two separate legal entities</strong>:<br/><br/>
+              A critical element of the fraud involves <strong style={{ color: "#c41e1e" }}>deliberately confusing two separate legal entities</strong>:<br/><br/>
               <strong style={{ color: "#e8e0d6" }}>1. "U.S. Bank, N.A."</strong> — The actual national bank, regulated by the OCC. Claims to be the real trustee
               for the trust that owns the mortgage. <strong style={{ color: "#c41e1e" }}>States Caliber/HHM "are not affiliated with U.S. Bank in any way."</strong><br/><br/>
               <strong style={{ color: "#e8e0d6" }}>2. "U.S. Bank Trust, N.A."</strong> — A separate entity that appears in court filings as "Trustee for LSF9 Master
@@ -2404,7 +2404,7 @@ function App() {
               <a href="https://www.hoferhagan.com/blog/whats-the-story-with-lsf9-master-participation-trust/" target="_blank" rel="noopener noreferrer" style={{ color: "#c41e1e", fontSize: 12 }}>📄 Hofer Hagan LLP: What's the Story with LSF9?</a><br/><br/>
               <strong style={{ color: "#e8e0d6" }}>Park Place Securities (Florida):</strong> Describes LSF trusts (LSF6-LSF10) as "vulture debt collectors" who
               buy defaulted notes at 60% of value, then foreclose to profit from resale — not from mortgage payments.
-              Describes documented instances of rubber-stamped "ORIGINAL" notes and what it terms lost-note issues.<br/>
+              Documents rubber-stamped "ORIGINAL" notes and lost-note fraud.<br/>
               <a href="https://parkplacesecurities.com/caliber.html" target="_blank" rel="noopener noreferrer" style={{ color: "#c41e1e", fontSize: 12 }}>📄 Park Place Securities: Fighting Caliber & LSF Trusts</a><br/><br/>
               <strong style={{ color: "#e8e0d6" }}>Academia — "Fraud on the Court":</strong> Compilation of court filings, homeowner complaints, and class action materials
               documenting the pattern across multiple states.<br/>
@@ -2587,128 +2587,268 @@ function App() {
 
       {active === "complaints" && (
         <div style={{ maxWidth: 800, margin: "0 auto", padding: "50px 20px" }}>
-          <SectionTitle>Tenant Complaints Nationwide</SectionTitle>
+          <SectionTitle>BBB Complaints &amp; Tenant Reports</SectionTitle>
           <SubTitle>
-            Publicly posted complaints from the Better Business Bureau, ComplaintsBoard,
-            RevDex, and other review platforms. All excerpts are from public sources.
+            As of March 2026, the Better Business Bureau lists 143 complaints against Hudson Homes
+            Management LLC filed within the last three years. Below are the official statistics,
+            complaint category breakdown, and paraphrased summaries of recurring complaint themes.
+            All data sourced from BBB public records.
           </SubTitle>
 
-          <div style={{ background: "#111", border: "1px solid #222", borderRadius: 6, padding: "16px 20px", marginBottom: 30, fontSize: 12, color: "#888", fontFamily: "'IBM Plex Sans', sans-serif" }}>
-            <strong style={{ color: "#c41e1e" }}>176 complaints filed with the BBB in the last 3 years.</strong> 29 closed in the last 12 months alone. Below is a representative sample paraphrased from publicly posted sources. Original complaints are available at their respective platforms.
+          <div style={{ background: "#0a0a0a", border: "1px solid #333", borderRadius: 8, padding: 16, marginBottom: 24, fontSize: 12, color: "#666", lineHeight: 1.6 }}>
+            <strong style={{ color: "#888" }}>Legal note:</strong> The complaint summaries below are paraphrased
+            descriptions of complaint themes, not direct reproductions of BBB complaint text.
+            Original complaints, including full text and business responses, are available at the
+            BBB links provided. All statistics are from BBB public records as of March 2026.
           </div>
 
-          <ComplaintCard
-            source="BBB"
-            state="Multi-State"
-            year="2025"
-            text="A Section 8 tenant reported being told in November 2024 to vacate because the property was being sold. After moving out, the tenant was informed they owed thousands in holdover charges extending months past their departure. The tenant was unable to submit evidence through the portal and now faces collections."
-          />
-          <ComplaintCard
-            source="BBB"
-            state="Multi-State"
-            year="2025"
-            text="A tenant of 4.5 years received an email stating the property was being sold. After vacating and providing a forwarding address, the tenant received no response to multiple emails over several weeks — and no security deposit return or itemized statement within the legally required timeframe."
-          />
-          <ComplaintCard
-            source="BBB"
-            state="Multi-State"
-            year="2024"
-            text="After renting for nearly 2 years, a tenant received a move-out bill stating they would receive none of their security deposit and owed thousands more. The tenant was charged for repainted walls and damaged carpet — conditions that existed at move-in and were documented in maintenance requests."
-          />
-          <ComplaintCard
-            source="RevDex"
-            state="Multi-State"
-            year="2024"
-            text="Tenant reports being moved into a property without the company obtaining a renter's permit — making the tenancy technically illegal. After one missed payment, the company added enormous late fees, ignored all communication attempts for 5 months, then successfully evicted the tenant."
-          />
-          <ComplaintCard
-            source="BBB"
-            state="Multi-State"
-            year="2024"
-            text="A tenant reports repeated attempts by the company to file insurance claims for pre-existing conditions, described as an 'insurance scam,' until the tenant's insurance company intervened. The tenant reports being overcharged for final rent with no adjustments or return calls."
-          />
-          <ComplaintCard
-            source="ComplaintsBoard"
-            state="Oklahoma"
-            year="2023"
-            text="Tenant reports no A/C in extreme heat above 80°F, electrical system tripping, broken stairs, uneven flooring, draft from kitchen trim, unsecured light switches, and exposed insulation — conditions that appear to indicate the property was not properly inspected before rental."
-          />
-          <ComplaintCard
-            source="RevDex"
-            state="Multi-State"
-            year="2023"
-            text="After move-in, tenants discovered a burst water pipe, no working kitchen, and received an electric bill of $850 for two people due to the property's condition. The company stated there was nothing wrong and directed them to contact the energy company."
-          />
-          <ComplaintCard
-            source="ComplaintsBoard"
-            state="Multi-State"
-            year="2022"
-            text="Tenant reports the septic system backing up repeatedly. Vendors showed up unannounced multiple times. The company never notified the tenant of scheduled visits. Water was leaking through the walls, making the home uninhabitable."
-          />
+          {/* STATS */}
+          <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 24 }}>
+            {[
+              ["143", "Total complaints (3 years)"],
+              ["19", "Closed in last 12 months"],
+              ["129", "Answered by business"],
+              ["14", "Resolved to satisfaction"],
+              ["A+", "BBB Rating (Accredited)"],
+            ].map(([val, label]) => (
+              <div key={label} style={{ flex: "1 1 120px", background: "#111", border: "1px solid #222", borderRadius: 8, padding: 14, textAlign: "center" }}>
+                <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 22, color: "#c41e1e", fontWeight: 600 }}>{val}</div>
+                <div style={{ fontSize: 11, color: "#666", marginTop: 4 }}>{label}</div>
+              </div>
+            ))}
+          </div>
 
-          <ComplaintCard
-            source="BBB"
-            state="Multi-State"
-            year="2024"
-            text="In December, tenant received a certified letter stating the property was being sold and they had to vacate by March 31. They left March 1. On April 2, they received a move-out bill for $19,000. When they asked for a detailed breakdown, they received no response. The balance was sent to collections at $19,261.64 without any itemized statement ever provided."
-          />
-          <ComplaintCard
-            source="BBB"
-            state="Multi-State"
-            year="2024"
-            text="Tenant was charged a $70 late fee for an underpayment of 68 cents on a $2,651 rent payment. The company refused to waive the fee despite the tenant demonstrating it was an honest mistake. Subsequent late fees compounded because the original $70 was unpaid."
-          />
-          <ComplaintCard
-            source="BBB"
-            state="Multi-State"
-            year="2025"
-            text="Tenant denied full security deposit of $3,800 after 3 years of tenancy — and was charged additional thousands for move-out 'damages.' When the tenant disputed the charges in November 2024, they were told a 60-day dispute period had passed — despite never being informed of such a deadline."
-          />
-          <ComplaintCard
-            source="RevDex"
-            state="Florida"
-            year="2024"
-            text="Applicant paid $100+ in application fees. After clearing screening, the property was already rented to someone else. The company kept the non-refundable fee and had no other available properties in the area. They stopped responding to emails when the applicant pointed out the practice was unethical."
-          />
-          <ComplaintCard
-            source="RevDex"
-            state="Multi-State"
-            year="2022"
-            text="Company promised security deposit return for over 3 months, repeatedly claiming 'the check is in the mail.' Each time the tenant called back after non-receipt, the check was 'cancelled' and a new one issued — extending the process by another month each time. Tenant described it as 'smoke and mirrors.'"
-          />
-          <ComplaintCard
-            source="ComplaintsBoard"
-            state="Multi-State"
-            year="2022"
-            text="Family moved into a property listed on a rental platform — found someone already living there. Paid $180 in fees and demanded a refund, with no response."
-          />
-          <ComplaintCard
-            source="ComplaintsBoard"
-            state="Multi-State"
-            year="2021"
-            text="Tenant has been in the property since 2019 with ongoing sulfur water smell. Unexplained sewer charges appeared on rent after 1.5 years — despite having well water. The company provided no explanation for the new charges."
-          />
-          <ComplaintCard
-            source="Foreclosurepedia"
-            state="National"
-            year="2021"
-            text="Industry publication titled article 'Massive Fraud Revealed Impacting Hudson Homes,' describing Hudson Homes as 'a minor cog in the wheel' of John Grayken's Lone Star Funds empire, attempting to manage a massive nationwide portfolio while being fundamentally constrained."
-          />
+          <div style={{ display: "flex", gap: 8, marginBottom: 32, flexWrap: "wrap" }}>
+            <a href="https://www.bbb.org/us/tx/dallas/profile/real-estate-rentals/hudson-homes-management-llc-0875-91053918/complaints" target="_blank" rel="noopener noreferrer" style={{ background: "#c41e1e", border: "none", borderRadius: 4, padding: "8px 20px", fontSize: 14, color: "#fff", textDecoration: "none", fontWeight: 600 }}>📄 View All 143 BBB Complaints — Full Text</a>
+            <a href="https://www.bbb.org/us/tx/dallas/profile/real-estate-rentals/hudson-homes-management-llc-0875-91053918/customer-reviews" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "8px 20px", fontSize: 14, color: "#c41e1e", textDecoration: "none", fontWeight: 600 }}>📄 BBB Customer Reviews</a>
+          </div>
 
-          <div style={{ textAlign: "center", marginTop: 30 }}>
-            <div style={{ fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 12, color: "#666" }}>
-              Additional complaints are available on the{" "}
-              <a href="https://www.bbb.org/us/tx/dallas/profile/real-estate-rentals/hudson-homes-management-llc-0875-91053918/complaints" target="_blank" rel="noopener noreferrer">
-                BBB
-              </a>,{" "}
-              <a href="https://www.complaintsboard.com/hudson-homes-management-b167199" target="_blank" rel="noopener noreferrer">
-                ComplaintsBoard
-              </a>, and{" "}
-              <a href="https://www.revdex.com/reviews/hudson-homes-management/l16593964" target="_blank" rel="noopener noreferrer">
-                RevDex
-              </a>{" "}
-              platforms.
+          {/* COMPLAINT TYPE BREAKDOWN */}
+          <Card title="📊 Complaint Breakdown by Type (BBB Data)" accent="#c41e1e">
+            <div style={{ background: "#0a0a0a", borderRadius: 8, padding: 16 }}>
+              <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
+                <thead>
+                  <tr style={{ borderBottom: "1px solid #333" }}>
+                    <th style={{ textAlign: "left", padding: "8px 4px", color: "#c41e1e" }}>Category</th>
+                    <th style={{ textAlign: "right", padding: "8px 4px", color: "#c41e1e" }}>Count</th>
+                    <th style={{ textAlign: "right", padding: "8px 4px", color: "#c41e1e" }}>%</th>
+                  </tr>
+                </thead>
+                <tbody style={{ color: "#999" }}>
+                  {[
+                    ["Service or Repair Issues", 94, "65.7%"],
+                    ["Billing Issues", 21, "14.7%"],
+                    ["Product Issues", 14, "9.8%"],
+                    ["Order Issues", 7, "4.9%"],
+                    ["Sales and Advertising Issues", 5, "3.5%"],
+                    ["Customer Service Issues", 2, "1.4%"],
+                  ].map(([cat, count, pct]) => (
+                    <tr key={cat} style={{ borderBottom: "1px solid #1a1a1a" }}>
+                      <td style={{ padding: "8px 4px", color: "#e8e0d6" }}>{cat}</td>
+                      <td style={{ padding: "8px 4px", textAlign: "right", fontFamily: "'JetBrains Mono', monospace", color: "#c41e1e" }}>{count}</td>
+                      <td style={{ padding: "8px 4px", textAlign: "right", color: "#666" }}>{pct}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
+            <p style={{ fontSize: 12, color: "#555", marginTop: 8 }}>
+              <em>Nearly two-thirds of all complaints relate to maintenance and repair failures.
+              Only 14 of 143 complaints (9.8%) were resolved to the tenant's satisfaction,
+              according to BBB records.</em>
+            </p>
+          </Card>
+
+          {/* RECURRING THEMES */}
+          <div style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: 22, color: "#e8e0d6", marginTop: 40, marginBottom: 16 }}>
+            Recurring Complaint Themes (Paraphrased from BBB Records)
+          </div>
+
+          <Card title="🔧 Theme 1: Maintenance Delays — Weeks to Months for Urgent Repairs" accent="#c41e1e">
+            <p>
+              The most common complaint category (94 of 143). Tenants report submitting maintenance
+              requests for urgent issues — water leaks, mold growth, broken HVAC systems in extreme
+              temperatures, non-functioning toilets, pest infestations — and waiting weeks or months
+              for resolution. Multiple tenants report that the only way to get a response was to
+              file a BBB complaint.
+            </p>
+            <p>
+              <strong style={{ color: "#e8e0d6" }}>Reported examples include:</strong><br/>
+              • A tenant reporting a water leak that went unrepaired for 15 days, resulting in mold
+              growth and wood decay behind drywall, leaving a 4x4 hole from the bedroom to the garage<br/>
+              • A tenant reporting indoor temperatures near 90°F with four separate HVAC companies
+              confirming the unit was inadequate, and HHM declining to correct the problem<br/>
+              • A tenant reporting that a broken refrigerator went five days without repair, causing
+              medication and food to spoil<br/>
+              • A tenant reporting a broken front door lock that went unrepaired for six months
+            </p>
+            <p style={{ fontSize: 12, color: "#555" }}>
+              In multiple responses, HHM acknowledged "poor communication" and "extended timelines"
+              but stated the bid review process was "for the best interest of all parties."
+            </p>
+          </Card>
+
+          <Card title="💰 Theme 2: Security Deposit Disputes — Charges for Pre-Existing Conditions" accent="#c41e1e">
+            <p>
+              Tenants repeatedly report that HHM withheld some or all of their security deposit,
+              charged for damages that were pre-existing at move-in, or added charges that tenants
+              describe as unjustified. Several tenants report that HHM did not provide an itemized
+              breakdown until after a BBB complaint was filed.
+            </p>
+            <p>
+              <strong style={{ color: "#e8e0d6" }}>Reported examples include:</strong><br/>
+              • A military family charged for cigarette odor that they reported was present at move-in
+              and was never addressed during the tenancy<br/>
+              • A tenant charged for full interior and exterior repainting after four-plus years of
+              tenancy, which would typically constitute normal wear and tear<br/>
+              • A tenant who left the home cleaner than at move-in, according to their own documentation,
+              and was charged $850 without receiving receipts despite three requests<br/>
+              • A tenant who moved out at HHM's request (property being sold) and waited over two months
+              without receiving a deposit refund or any response to multiple emails
+            </p>
+          </Card>
+
+          <Card title="📈 Theme 3: Fee Escalation — Late Fees, Holdover Charges, Collections" accent="#c41e1e">
+            <p>
+              Tenants report that small balance discrepancies trigger large late fees, which then
+              compound into larger balances, which are then sent to collections — sometimes without
+              the tenant's knowledge or opportunity to resolve.
+            </p>
+            <p>
+              <strong style={{ color: "#e8e0d6" }}>Reported examples include:</strong><br/>
+              • A tenant who paid $2,651 in rent but had a remaining balance of $0.68, which triggered
+              a $70 late fee that HHM declined to waive<br/>
+              • A tenant who broke their lease and paid per the agreement, but HHM continued to charge
+              rent, utilities, late fees, and interest for months afterward — a judge eventually
+              dismissed the case, but the debt remained on the tenant's credit<br/>
+              • A tenant who was told they owed over $4,000 in daily holdover charges after moving
+              out at HHM's request, even though Section 8 had paid for that period<br/>
+              • A tenant who submitted a 55-day notice instead of 60-day, resulting in charges totaling
+              $4,660 — a full month's rent plus 20% penalty
+            </p>
+          </Card>
+
+          <Card title="📵 Theme 4: Communication Blackout — No Responses to Calls or Emails" accent="#c41e1e">
+            <p>
+              A recurring theme across nearly all complaint types is that tenants report being unable
+              to reach anyone at HHM who can resolve their issues. Tenants describe phone transfers
+              to lines that no one answers, emails that go unanswered for weeks or months, and
+              requests for callbacks from managers that never come.
+            </p>
+            <p>
+              <strong style={{ color: "#e8e0d6" }}>Reported examples include:</strong><br/>
+              • A tenant who emailed multiple addresses over four weeks with no response, then received
+              a collections notice for a debt they had been trying to pay<br/>
+              • A tenant who reports that every email they sent was auto-deleted with a system message
+              saying it was "deleted without reading"<br/>
+              • A tenant who was told "someone will call you back" on repeated occasions — and no
+              one ever called<br/>
+              • Multiple tenants reporting that the only way to get a response was to file a BBB
+              complaint
+            </p>
+          </Card>
+
+          <Card title="🔒 Theme 5: Payment Portal Lockouts" accent="#c41e1e">
+            <p>
+              Tenants report that HHM disabled their online payment portal, then required them to
+              pay via cash at retail stores (CVS, Walgreens) through a third-party service, or by
+              mailing money orders. When tenants express concern about this payment method, they
+              report that eviction proceedings are initiated.
+            </p>
+            <p>
+              <strong style={{ color: "#e8e0d6" }}>Reported examples include:</strong><br/>
+              • A tenant whose payment was rejected by the portal (though funds were available),
+              who was then blocked from paying online and told to use a cash payment service.
+              The tenant researched the service and found complaints about lost payments. When they
+              raised concerns, HHM initiated eviction proceedings and billed nearly $10,000
+              including early termination, late fees, and cleaning charges.
+            </p>
+          </Card>
+
+          <Card title="🏠 Theme 6: Forced Move-Outs for Property Sales" accent="#c41e1e">
+            <p>
+              Tenants report receiving emails from HHM informing them the property is being sold
+              and they must vacate — sometimes with as little as 30 days notice. After vacating
+              at HHM's request, tenants report difficulties getting their security deposits returned,
+              having post-move-out charges applied, and being unable to reach anyone to resolve
+              disputes.
+            </p>
+            <p>
+              <strong style={{ color: "#e8e0d6" }}>Reported examples include:</strong><br/>
+              • A tenant who lived in the property for over 4.5 years, was told to vacate because
+              HHM was selling, moved out promptly, and then waited over two months with no
+              security deposit refund and no response to repeated emails<br/>
+              • A tenant told to move out, who was then charged daily holdover fees even though
+              Section 8 had paid for the month after move-out
+            </p>
+          </Card>
+
+          <Card title="⚡ Theme 7: Utility Billing Disputes" accent="#c41e1e">
+            <p>
+              Tenants report that HHM handles utilities through third-party billing, and that
+              charges appear inflated or unexplained. One tenant reported being charged more
+              than four times the expected amount because HHM had let the utility contract lapse.
+              When questioned, the tenant reports being told HHM had "too many houses" to keep
+              track of all the utility accounts.
+            </p>
+          </Card>
+
+          <Card title="🔄 Theme 8: HHM's Standard Response Pattern" accent="#666">
+            <p>
+              Across the 143 complaints, HHM's responses follow a consistent pattern, according
+              to BBB records:
+            </p>
+            <p>
+              1. Acknowledge the complaint and thank the tenant for "expressing their concerns"<br/>
+              2. State that the account has been "reviewed"<br/>
+              3. In maintenance cases: acknowledge "poor communication" but defend the process<br/>
+              4. In billing cases: state that charges are "valid and correct" and the "matter is closed"<br/>
+              5. In cases involving active legal proceedings: state "no additional information to provide"
+              as it is "an ongoing civil matter"<br/>
+              6. End with "we consider this case to be resolved"
+            </p>
+            <p style={{ fontSize: 12, color: "#555" }}>
+              Of 143 total complaints, only 14 (9.8%) were marked as "Resolved" — meaning the
+              tenant confirmed the issue was resolved to their satisfaction. The remaining 129
+              were marked as "Answered" — meaning HHM responded but the tenant either did not
+              accept the response or did not confirm satisfaction.
+            </p>
+          </Card>
+
+          {/* ADDITIONAL PLATFORMS */}
+          <div style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: 20, color: "#e8e0d6", marginTop: 40, marginBottom: 16 }}>
+            Complaints on Other Platforms
+          </div>
+
+          <Card title="📋 CFPB: 1,200+ Complaints Against Caliber Home Loans" accent="#8b4513">
+            <p>
+              The Consumer Financial Protection Bureau database contains over 1,200 complaints
+              against Caliber Home Loans, Inc. (now Newrez LLC) — the Lone Star subsidiary that
+              services mortgage loans before properties are transferred to HHM management.
+            </p>
+            <a href="https://www.consumerfinance.gov/data-research/consumer-complaints/search/?company=Caliber+Home+Loans" target="_blank" rel="noopener noreferrer" style={{ background: "#1a1111", border: "1px solid #c41e1e44", borderRadius: 4, padding: "4px 12px", fontSize: 12, color: "#c41e1e", textDecoration: "none" }}>📄 CFPB Complaint Database — Search Caliber Home Loans</a>
+          </Card>
+
+          <Card title="📋 Additional Review Platforms" accent="#666">
+            <p>
+              Complaints and reviews about Hudson Homes Management LLC are also documented on:
+            </p>
+            <p>
+              • <a href="https://www.complaintsboard.com/hudson-homes-management-b134498" target="_blank" rel="noopener noreferrer" style={{ color: "#c41e1e" }}>ComplaintsBoard.com</a><br/>
+              • <a href="https://www.revdex.com/reviews/hudson-homes-management-llc/134498" target="_blank" rel="noopener noreferrer" style={{ color: "#c41e1e" }}>RevDex.com</a><br/>
+              • <a href="https://foreclosurepedia.org/massive-fraud-revealed-impacting-hudson-homes/" target="_blank" rel="noopener noreferrer" style={{ color: "#c41e1e" }}>Foreclosurepedia</a><br/>
+              • <a href="https://www.biggerpockets.com/forums/48/topics/294577-lsf9-master-participation-trust" target="_blank" rel="noopener noreferrer" style={{ color: "#c41e1e" }}>BiggerPockets Forum — LSF9 Discussion Thread</a><br/>
+              • <a href="https://www.facebook.com/LSF9.NEWS/" target="_blank" rel="noopener noreferrer" style={{ color: "#c41e1e" }}>Facebook — LSF9 News Group</a>
+            </p>
+          </Card>
+
+          <div style={{ background: "#0a0a0a", border: "1px solid #333", borderRadius: 8, padding: 16, marginTop: 24, fontSize: 12, color: "#555", lineHeight: 1.6 }}>
+            <strong style={{ color: "#888" }}>Note:</strong> The complaint themes above are paraphrased
+            summaries of publicly available BBB records. The Holdover Project does not independently
+            verify individual complaints. To read the full original complaint text and HHM's
+            responses, visit the{" "}
+            <a href="https://www.bbb.org/us/tx/dallas/profile/real-estate-rentals/hudson-homes-management-llc-0875-91053918/complaints" target="_blank" rel="noopener noreferrer" style={{ color: "#c41e1e" }}>BBB complaints page</a> directly.
+            BBB statistics are as of March 2026.
           </div>
         </div>
       )}
