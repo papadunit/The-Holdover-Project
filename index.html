@@ -766,21 +766,20 @@ function Nav({ active, setActive }) {
         style={{
           position: "sticky",
           top: 0,
-          zIndex: 120,
-          background: "rgba(7,7,7,0.96)",
-          backdropFilter: "blur(14px)",
-          borderBottom: "1px solid rgba(196,30,30,0.12)",
-          boxShadow: "0 12px 30px rgba(0,0,0,0.22)",
+          zIndex: 100,
+          background: "rgba(10,10,10,0.96)",
+          backdropFilter: "blur(12px)",
+          borderBottom: "1px solid rgba(196,30,30,0.14)",
+          boxShadow: "0 10px 24px rgba(0,0,0,0.22)",
         }}
       >
-        <div style={{ maxWidth: 1240, margin: "0 auto", padding: "12px 14px 14px" }}>
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, marginBottom: 10 }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "12px 14px 14px" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 10, marginBottom: 10 }}>
             <div>
-              <div style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: 17, color: "#f2e8dc", lineHeight: 1 }}>Hudson Homes Exposed</div>
-              <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 10, color: "#9a8c8c", textTransform: "uppercase", letterSpacing: "1px", marginTop: 4 }}>The Holdover Project</div>
+              <div style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: 18, color: "#f2e8dc", lineHeight: 1 }}>Hudson Homes Exposed</div>
+              <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 10, color: "#8e8080", textTransform: "uppercase", letterSpacing: "1px", marginTop: 4 }}>The Holdover Project</div>
             </div>
-            <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(196,30,30,0.08)", border: "1px solid rgba(196,30,30,0.28)", borderRadius: 999, padding: "7px 10px", color: "#e7b3b3", fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 10, textTransform: "uppercase", letterSpacing: "1px" }}>
-              <span style={{ width: 7, height: 7, borderRadius: 999, background: "#c41e1e", boxShadow: "0 0 12px rgba(196,30,30,0.8)" }} />
+            <div style={{ background: "rgba(196,30,30,0.08)", color: "#e9b8b8", border: "1px solid rgba(196,30,30,0.24)", borderRadius: 999, padding: "6px 10px", fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 10, textTransform: "uppercase", letterSpacing: "1px" }}>
               Archive
             </div>
           </div>
@@ -790,7 +789,7 @@ function Nav({ active, setActive }) {
             onChange={(e) => setActive(e.target.value)}
             style={{
               width: "100%",
-              background: "linear-gradient(180deg, #131313, #0c0c0c)",
+              background: "linear-gradient(180deg, #141414, #0e0e0e)",
               color: "#f2e8dc",
               border: "1px solid rgba(255,255,255,0.08)",
               borderRadius: 14,
@@ -798,7 +797,6 @@ function Nav({ active, setActive }) {
               fontFamily: "'IBM Plex Sans', sans-serif",
               fontSize: 14,
               outline: "none",
-              boxShadow: "0 10px 24px rgba(0,0,0,0.16)",
             }}
           >
             {sections.map((s) => (
@@ -817,70 +815,60 @@ function Nav({ active, setActive }) {
       style={{
         position: "sticky",
         top: 0,
-        zIndex: 120,
-        background: "rgba(8,8,8,0.9)",
-        backdropFilter: "blur(14px)",
-        borderBottom: "1px solid rgba(196,30,30,0.10)",
-        boxShadow: "0 12px 32px rgba(0,0,0,0.20)",
+        zIndex: 100,
+        background: "rgba(10,10,10,0.95)",
+        backdropFilter: "blur(12px)",
+        borderBottom: "1px solid #222",
+        padding: "0 20px",
+        display: "flex",
+        alignItems: "center",
+        gap: 0,
+        overflowX: "auto",
+        WebkitOverflowScrolling: "touch",
       }}
     >
       <div
         style={{
-          maxWidth: 1320,
-          margin: "0 auto",
-          padding: "0 22px",
-          display: "flex",
-          alignItems: "center",
-          gap: 16,
-          overflowX: "auto",
-          scrollbarWidth: "none",
+          fontFamily: "'DM Serif Display', Georgia, serif",
+          fontSize: 15,
+          color: "#c41e1e",
+          fontWeight: 700,
+          marginRight: 24,
+          whiteSpace: "nowrap",
+          padding: "14px 0",
+          letterSpacing: "0.5px",
         }}
       >
-        <div
+        THE HOLDOVER PROJECT
+      </div>
+      {sections.map((s) => (
+        <button
+          key={s}
+          onClick={() => setActive(s)}
           style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            minWidth: 240,
-            padding: "14px 0",
-            position: "sticky",
-            left: 0,
-            background: "linear-gradient(90deg, rgba(8,8,8,1) 72%, rgba(8,8,8,0.92) 86%, rgba(8,8,8,0) 100%)",
-            zIndex: 2,
+            background: active === s ? "rgba(196,30,30,0.10)" : "none",
+            border: active === s ? "1px solid rgba(196,30,30,0.24)" : "1px solid transparent",
+            color: active === s ? "#fff" : "#8b8580",
+            fontFamily: "'IBM Plex Sans', sans-serif",
+            fontSize: 12,
+            fontWeight: active === s ? 600 : 400,
+            padding: "10px 12px",
+            margin: "10px 6px 10px 0",
+            cursor: "pointer",
+            whiteSpace: "nowrap",
+            borderRadius: 999,
+            textTransform: "uppercase",
+            letterSpacing: "1px",
+            transition: "all 0.2s",
           }}
         >
-          <div style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: 18, color: "#f2e8dc", lineHeight: 1 }}>Hudson Homes Exposed</div>
-          <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 10, color: "#9a8c8c", textTransform: "uppercase", letterSpacing: "1px", marginTop: 4 }}>The Holdover Project</div>
-        </div>
-
-        {sections.map((s) => (
-          <button
-            key={s}
-            onClick={() => setActive(s)}
-            style={{
-              background: active === s ? "rgba(196,30,30,0.10)" : "transparent",
-              border: active === s ? "1px solid rgba(196,30,30,0.34)" : "1px solid transparent",
-              color: active === s ? "#fff" : "#8f8a84",
-              fontFamily: "'IBM Plex Sans', sans-serif",
-              fontSize: 12,
-              fontWeight: active === s ? 600 : 500,
-              padding: "12px 13px",
-              margin: "10px 0",
-              cursor: "pointer",
-              whiteSpace: "nowrap",
-              borderRadius: 999,
-              textTransform: "uppercase",
-              letterSpacing: ".8px",
-              transition: "all 0.2s ease",
-            }}
-          >
-            {sectionLabels[s]}
-          </button>
-        ))}
-      </div>
+          {sectionLabels[s]}
+        </button>
+      ))}
     </nav>
   );
 }
+
 
 function useIsMobile(bp = 768) {
   const [isMobile, setIsMobile] = useState(typeof window !== "undefined" ? window.innerWidth <= bp : false);
