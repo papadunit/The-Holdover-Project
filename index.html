@@ -816,6 +816,20 @@ function Nav({ active, setActive }) {
   );
 }
 
+
+function useIsMobile(bp = 768) {
+  const [isMobile, setIsMobile] = useState(typeof window !== "undefined" ? window.innerWidth <= bp : false);
+
+  useEffect(() => {
+    const onResize = () => setIsMobile(window.innerWidth <= bp);
+    onResize();
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, [bp]);
+
+  return isMobile;
+}
+
 function Hero({ setActive }) {
   const mob = useIsMobile(600);
   return (
