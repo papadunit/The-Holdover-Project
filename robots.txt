@@ -6,7 +6,7 @@ User-agent: *
 Allow: /
 Disallow:
 
-Sitemap: https://theholdoverproject.org/sitemap.xml
+Sitemap: https://www.hudsonhomesexposed.com/sitemap.xml
 
 # Welcome all search engines — this is a public interest resource
 User-agent: Googlebot
