@@ -230,7 +230,7 @@
 <!-- FONTS -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
 :root {
@@ -1098,6 +1098,7 @@ function StoriesForm() {
     contactConsent: false,
   });
   const [submitted, setSubmitted] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState("");
 
   const issueOptions = [
     "Security deposit withheld or not returned",
@@ -1149,6 +1150,62 @@ function StoriesForm() {
     }));
   };
 
+  const buildSubmissionText = () => {
+    const lines = [
+      "New Holdover Project submission",
+      "",
+      `Name: ${form.name || "Anonymous"}`,
+      `Email: ${form.email || "Not provided"}`,
+      `State: ${form.state || "Not provided"}`,
+      `City: ${form.city || "Not provided"}`,
+      `Length of tenancy: ${form.yearsRented || "Not provided"}`,
+      `Tenant status: ${form.currentOrFormer || "Not provided"}`,
+      `Section 8 / subsidy: ${form.section8 || "Not provided"}`,
+      `Supporting documents: ${form.hasDocuments || "Not provided"}`,
+      `Consent to publish anonymized summary: ${form.consent ? "Yes" : "No"}`,
+      `Consent to follow up: ${form.contactConsent ? "Yes" : "No"}`,
+      "",
+      "Issues selected:",
+      form.issues.length ? form.issues.map((issue) => `- ${issue}`).join("\n") : "- None selected",
+      "",
+      "Story:",
+      form.story.trim(),
+    ];
+
+    return lines.join("\n");
+  };
+
+  const handleSubmit = async () => {
+    if (form.story.trim().length < 20 || !form.consent) {
+      return;
+    }
+
+    const body = buildSubmissionText();
+    const subject = encodeURIComponent(`Holdover Project Submission${form.state ? ` — ${form.state}` : ""}${form.city ? ` / ${form.city}` : ""}`);
+    const encodedBody = encodeURIComponent(body);
+    const mailtoHref = `mailto:theholdoverproject@proton.me?subject=${subject}&body=${encodedBody}`;
+
+    let copied = false;
+
+    if (navigator.clipboard && window.isSecureContext) {
+      try {
+        await navigator.clipboard.writeText(body);
+        copied = true;
+      } catch (error) {
+        copied = false;
+      }
+    }
+
+    window.location.href = mailtoHref;
+
+    setSubmitMessage(
+      copied
+        ? "We opened an email draft to theholdoverproject@proton.me and copied your full submission to your clipboard as a backup."
+        : "We opened an email draft to theholdoverproject@proton.me with your submission details."
+    );
+    setSubmitted(true);
+  };
+
   if (submitted) {
     return (
       <div
@@ -1170,7 +1227,7 @@ function StoriesForm() {
             marginBottom: 12,
           }}
         >
-          Thank You for Sharing Your Story
+          Submission Ready to Send
         </div>
         <div
           style={{
@@ -1182,9 +1239,7 @@ function StoriesForm() {
             margin: "0 auto",
           }}
         >
-          Your submission has been recorded. Every story strengthens the archive
-          and helps protect other families. If you provided contact information
-          and consented to follow-up, we may reach out with additional resources.
+          {submitMessage || "We prepared your submission details for email delivery to theholdoverproject@proton.me."} Every story strengthens the archive and helps protect other families. If you provided contact information and consented to follow-up, the project team may reach out with additional resources.
         </div>
       </div>
     );
@@ -1487,11 +1542,7 @@ function StoriesForm() {
 
       {/* Submit Button */}
       <button
-        onClick={() => {
-          if (form.story.length > 20 && form.consent) {
-            setSubmitted(true);
-          }
-        }}
+        onClick={handleSubmit}
         disabled={form.story.length < 20 || !form.consent}
         style={{
           width: "100%",
