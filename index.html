@@ -86,6 +86,7 @@ const pages=[
   {id:"watchlist",label:"Property Watchlist"},
   {id:"methodology",label:"Methodology"},
   {id:"resources",label:"Resources"},
+  {id:"press",label:"Press"},
 ];
 
 /* ═══════════════════════════════════════════════════════
@@ -205,6 +206,11 @@ function CaseCard({c,compact}){
   );
 }
 
+/* CITATION BLOCK — for press-quotable statements */
+function CitationBlock({children}){
+  return React.createElement("div",{style:{background:"#f5f0eb",borderLeft:`3px solid ${T.accent}`,borderRadius:`0 ${T.radius}px ${T.radius}px 0`,padding:"20px 24px",margin:"28px 0",fontFamily:T.fontHead,fontSize:17,color:T.textDark,lineHeight:1.65,fontStyle:"italic"}},children);
+}
+
 /* EVIDENCE CARD */
 function EvidenceCard({item}){
   return React.createElement("article",{style:{background:T.card,border:`1px solid ${T.border}`,borderRadius:T.radius,padding:"20px 24px",display:"flex",justifyContent:"space-between",alignItems:"flex-start",gap:16,flexWrap:"wrap"}},
@@ -316,6 +322,16 @@ function App(){
         )
       ),
 
+      /* === ABOUT THIS PROJECT === */
+      Wrap({bg:T.card,pad:48,children:[
+        React.createElement("div",{style:{maxWidth:720}},
+          React.createElement("h2",{style:{fontFamily:T.fontHead,fontSize:"clamp(22px,3vw,28px)",color:T.textDark,fontWeight:700,marginBottom:14}},"About This Project"),
+          React.createElement("p",{style:{fontFamily:T.fontBody,fontSize:16,color:T.text,lineHeight:1.8,marginBottom:14}},"This project organizes publicly available court records, regulatory actions, and tenant-submitted reports into a structured archive for review."),
+          React.createElement("p",{style:{fontFamily:T.fontBody,fontSize:16,color:T.text,lineHeight:1.8,marginBottom:14}},"The goal is to present information in a clear and accessible format so patterns and timelines can be independently evaluated using original source material."),
+          React.createElement("p",{style:{fontFamily:T.fontBody,fontSize:14,color:T.textLight,fontStyle:"italic"}},"Sources include public court databases, government agencies, and documented filings.")
+        )
+      ]}),
+
       /* === 2. DOCUMENTED ACTIVITY SNAPSHOT === */
       React.createElement("div",{style:{background:T.card,borderBottom:`1px solid ${T.border}`,padding:"0 24px"}},
         React.createElement("div",{style:{maxWidth:T.maxW,margin:"0 auto",display:"flex",flexWrap:"wrap",justifyContent:"center"}},
@@ -330,6 +346,23 @@ function App(){
           ))
         )
       ),
+
+      /* === KEY OBSERVATIONS === */
+      Wrap({pad:48,children:[
+        React.createElement("div",{style:{background:T.card,border:`1px solid ${T.border}`,borderRadius:T.radius,padding:mob?"24px":"32px 36px"}},
+          React.createElement("h3",{style:{fontFamily:T.fontHead,fontSize:20,color:T.textDark,fontWeight:600,marginBottom:18}},"Key Observations"),
+          ...[
+            "Activity identified across multiple states",
+            "Filings spanning multiple years",
+            "Tenant reports submitted nationwide",
+            "Source material linked throughout",
+          ].map((item,i)=>React.createElement("div",{key:i,style:{display:"flex",gap:12,alignItems:"center",marginBottom:i<3?12:0}},
+            React.createElement("div",{style:{width:6,height:6,borderRadius:"50%",background:T.accent,flexShrink:0}}),
+            React.createElement("p",{style:{fontFamily:T.fontBody,fontSize:16,color:T.text,lineHeight:1.6}},item)
+          ))
+        ),
+        CitationBlock({children:"Public records indicate multi-state court activity over multiple years involving Hudson Homes Management LLC and affiliated entities."})
+      ]}),
 
       /* === 3. WHAT THIS ARCHIVE CONTAINS === */
       Wrap({children:[
@@ -355,7 +388,8 @@ function App(){
         ),
         React.createElement("div",{style:{marginTop:24,textAlign:"center"}},
           React.createElement("button",{onClick:()=>setActive("cases"),style:{background:"none",border:`1px solid ${T.accent}`,color:T.accent,borderRadius:T.radius,padding:"12px 28px",fontSize:15,fontFamily:T.fontBody,fontWeight:600,cursor:"pointer"}},"View All "+CASES.length+" Cases →")
-        )
+        ),
+        CitationBlock({children:"According to public records, court filings involving Hudson Homes Management LLC and affiliated trust entities have been documented across multiple U.S. jurisdictions."})
       ]}),
 
       /* === 5. HOW TO USE THIS SITE === */
@@ -568,10 +602,113 @@ function App(){
     ),
 
     /* ═══════════════════════════════════════════════
-       FOOTER + DISCLAIMER
+       8. PRESS
+       ═══════════════════════════════════════════════ */
+    active==="press"&&React.createElement(React.Fragment,null,
+      Wrap({children:[
+        Heading({children:"Media & Research Overview",sub:"For journalists, researchers, and policy analysts."}),
+
+        React.createElement("h3",{style:{fontFamily:T.fontHead,fontSize:20,color:T.textDark,fontWeight:600,marginBottom:14,paddingBottom:12,borderBottom:`1px solid ${T.border}`}},"Summary"),
+        React.createElement("p",{style:{fontFamily:T.fontBody,fontSize:16,color:T.text,lineHeight:1.8,marginBottom:32}},"This site compiles publicly available court records, regulatory actions, and tenant-submitted reports related to Hudson Homes Management LLC across multiple states."),
+
+        React.createElement("h3",{style:{fontFamily:T.fontHead,fontSize:20,color:T.textDark,fontWeight:600,marginBottom:14,paddingBottom:12,borderBottom:`1px solid ${T.border}`}},"Key Observations"),
+        React.createElement("div",{style:{background:T.card,border:`1px solid ${T.border}`,borderRadius:T.radius,padding:"24px 28px",marginBottom:32}},
+          ...[
+            "Public records indicate activity across multiple jurisdictions",
+            "Court filings span multiple years",
+            "Tenant reports have been submitted from multiple regions",
+            "Organizational structure involves multiple entities",
+          ].map((item,i)=>React.createElement("div",{key:i,style:{display:"flex",gap:12,alignItems:"center",marginBottom:i<3?12:0}},
+            React.createElement("div",{style:{width:6,height:6,borderRadius:"50%",background:T.accent,flexShrink:0}}),
+            React.createElement("p",{style:{fontFamily:T.fontBody,fontSize:16,color:T.text}},item)
+          ))
+        ),
+
+        React.createElement("h3",{style:{fontFamily:T.fontHead,fontSize:20,color:T.textDark,fontWeight:600,marginBottom:14,paddingBottom:12,borderBottom:`1px solid ${T.border}`}},"Data Sources"),
+        React.createElement("div",{style:{display:"grid",gridTemplateColumns:mob?"1fr":"1fr 1fr",gap:12,marginBottom:32}},
+          ...[
+            {t:"Public Court Databases",d:"UniCourt, Justia, Trellis, DocketAlarm, county court systems"},
+            {t:"Government Agencies",d:"SEC, CFPB, FinCEN, BBB, state attorney general offices"},
+            {t:"Public Filings",d:"Corporate websites, SEC EDGAR, NMLS records, Wikipedia"},
+            {t:"Tenant-Submitted Reports",d:"Direct submissions, clearly separated from verified records"},
+          ].map(s=>React.createElement("div",{key:s.t,style:{background:T.card,border:`1px solid ${T.border}`,borderRadius:T.radius,padding:"20px 24px"}},
+            React.createElement("h4",{style:{fontFamily:T.fontHead,fontSize:16,color:T.textDark,fontWeight:600,marginBottom:6}},s.t),
+            React.createElement("p",{style:{fontFamily:T.fontBody,fontSize:14,color:T.textLight}},s.d)
+          ))
+        ),
+
+        React.createElement("h3",{style:{fontFamily:T.fontHead,fontSize:20,color:T.textDark,fontWeight:600,marginBottom:14,paddingBottom:12,borderBottom:`1px solid ${T.border}`}},"How to Use This Data"),
+        React.createElement("p",{style:{fontFamily:T.fontBody,fontSize:16,color:T.text,lineHeight:1.8,marginBottom:32}},"This archive is designed to allow independent review of source material. Users are encouraged to verify all information through linked public records."),
+
+        CitationBlock({children:"Public records indicate multi-state court activity over multiple years involving Hudson Homes Management LLC, its parent companies, and affiliated trust entities."}),
+
+        React.createElement("h3",{style:{fontFamily:T.fontHead,fontSize:20,color:T.textDark,fontWeight:600,marginBottom:14,paddingBottom:12,borderBottom:`1px solid ${T.border}`}},"Media Contact"),
+        React.createElement("div",{style:{background:T.card,border:`1px solid ${T.border}`,borderRadius:T.radius,padding:"24px 28px",marginBottom:32}},
+          React.createElement("p",{style:{fontFamily:T.fontBody,fontSize:16,color:T.text,marginBottom:8}},"For press inquiries, additional documentation, or research requests:"),
+          React.createElement("p",{style:{fontFamily:T.fontBody,fontSize:17,fontWeight:600}},React.createElement("a",{href:"mailto:media@hudsonhomesexposed.com",style:{color:T.accent}},"media@hudsonhomesexposed.com")),
+          React.createElement("p",{style:{fontFamily:T.fontBody,fontSize:14,color:T.textLight,marginTop:8}},"General inquiries: ",React.createElement("a",{href:"mailto:info@hudsonhomesexposed.com",style:{color:T.accent}},"info@hudsonhomesexposed.com"))
+        ),
+
+        React.createElement("div",{style:{background:"#f5f0eb",border:`1px solid ${T.border}`,borderRadius:T.radius,padding:"24px 28px"}},
+          React.createElement("p",{style:{fontFamily:T.fontBody,fontSize:15,color:T.textLight,lineHeight:1.75,fontStyle:"italic"}},"This site organizes publicly available records and user-submitted reports. All summaries reflect source material and do not constitute legal conclusions.")
+        )
+      ]})
+    ),
+
+    /* ═══════════════════════════════════════════════
+       SEO PAGES
+       ═══════════════════════════════════════════════ */
+    ...["lawsuits","complaints","evictions","reviews"].map(function(seoType){
+      var conf={
+        lawsuits:{title:"Hudson Homes Management LLC — Documented Court Activity",sub:"A structured overview of publicly documented court filings involving Hudson Homes Management LLC and affiliated entities.",intro:"Public court databases reflect civil filings, eviction cases, and regulatory proceedings involving Hudson Homes Management LLC across multiple U.S. jurisdictions. The filings span multiple years and involve various court levels from county housing courts to federal administrative proceedings.",citation:"According to public dockets, court activity involving Hudson Homes Management LLC has been documented across multiple states over a multi-year period."},
+        complaints:{title:"Hudson Homes Management LLC — Consumer Complaints",sub:"A summary of publicly documented consumer complaints filed against Hudson Homes Management LLC and affiliated entities.",intro:"Public complaint databases, including the Better Business Bureau and the Consumer Financial Protection Bureau, reflect consumer complaints concerning property management practices attributed to Hudson Homes Management LLC and its affiliated loan servicer, Caliber Home Loans (now Newrez LLC).",citation:"Public agency databases reflect consumer complaint activity involving Hudson Homes Management LLC across multiple platforms over a multi-year period."},
+        evictions:{title:"Hudson Homes Management LLC — Documented Eviction Filings",sub:"A structured review of eviction-related court filings involving Hudson Homes Management LLC.",intro:"Public court dockets reflect eviction filings by Hudson Homes Management LLC across multiple states. These filings frequently identify HHM as acting on behalf of U.S. Bank Trust, N.A. as Trustee for LSF Master Participation Trust entities — Delaware Statutory Trusts within the Lone Star Funds network. In at least one documented case, a court dismissed the filing after HHM could not demonstrate its agency authority.",citation:"Court dockets reflect eviction filings by Hudson Homes Management LLC on behalf of trust entities across multiple jurisdictions."},
+        reviews:{title:"Hudson Homes Management LLC — Public Reviews & Reports",sub:"A summary of tenant-reported experiences documented across public review platforms.",intro:"Public review platforms including the Better Business Bureau, Yelp, ComplaintsBoard, RevDex, and TikTok contain consumer reviews and reports concerning Hudson Homes Management LLC. Common themes identified across these platforms include reported issues with maintenance response times, fee structures, communication, and move-out procedures. User-submitted reports on this site are displayed separately from verified public records.",citation:"Consumer review platforms reflect tenant-reported experiences with Hudson Homes Management LLC across multiple U.S. markets."},
+      }[seoType];
+      return active===("seo-"+seoType)&&React.createElement(React.Fragment,{key:seoType},
+        Wrap({children:[
+          Heading({children:conf.title,sub:conf.sub}),
+          React.createElement("p",{style:{fontFamily:T.fontBody,fontSize:16,color:T.text,lineHeight:1.8,marginBottom:24}},conf.intro),
+          CitationBlock({children:conf.citation}),
+          Heading({children:"Related Documented Cases"}),
+          React.createElement("div",{style:{display:"flex",flexDirection:"column",gap:16,marginBottom:28}},
+            ...CASES.filter(function(c){
+              if(seoType==="lawsuits") return true;
+              if(seoType==="complaints") return c.type.includes("Regulatory")||c.badge==="agency";
+              if(seoType==="evictions") return c.type.includes("Eviction");
+              return c.badge==="user"||c.type.includes("Tenant");
+            }).slice(0,5).map(function(c){return React.createElement("div",{key:c.id},CaseCard({c,compact:true}))})
+          ),
+          React.createElement("div",{style:{display:"flex",gap:12,flexWrap:"wrap"}},
+            React.createElement("button",{onClick:function(){setActive("cases")},style:{background:T.accent,color:"#fff",border:"none",borderRadius:T.radius,padding:"12px 24px",fontSize:15,fontFamily:T.fontBody,fontWeight:600,cursor:"pointer"}},"View All Cases"),
+            React.createElement("button",{onClick:function(){setActive("evidence")},style:{background:"none",border:"1px solid "+T.accent,color:T.accent,borderRadius:T.radius,padding:"12px 24px",fontSize:15,fontFamily:T.fontBody,fontWeight:600,cursor:"pointer"}},"View Source Library")
+          ),
+          React.createElement("div",{style:{marginTop:32,padding:"20px 24px",background:"#f5f0eb",border:"1px solid "+T.border,borderRadius:T.radius}},
+            React.createElement("p",{style:{fontFamily:T.fontBody,fontSize:14,color:T.textLight,lineHeight:1.75,fontStyle:"italic"}},"All information on this page is sourced from publicly available records. Summaries reflect source material and do not constitute legal conclusions. See our ",React.createElement("a",{href:"#",onClick:function(e){e.preventDefault();setActive("methodology")},style:{color:T.accent}},"Methodology")," for editorial standards.")
+          )
+        ]})
+      );
+    }),
+
+    /* ═══════════════════════════════════════════════
+       FOOTER + TRUST SIGNALS + DISCLAIMER
        ═══════════════════════════════════════════════ */
     React.createElement("footer",{style:{background:"#1c1917",padding:mob?"44px 20px":"60px 24px",borderTop:"1px solid #33302c"},role:"contentinfo"},
       React.createElement("div",{style:{maxWidth:T.maxW,margin:"0 auto"}},
+
+        /* Trust Signals Strip */
+        React.createElement("div",{style:{display:"flex",gap:mob?16:32,flexWrap:"wrap",marginBottom:32,paddingBottom:24,borderBottom:"1px solid #33302c"}},
+          ...[
+            "Public records archive",
+            "Source-linked documentation",
+            "Structured case database",
+            "Verified badge system",
+          ].map(function(sig,i){return React.createElement("div",{key:i,style:{display:"flex",alignItems:"center",gap:8}},
+            React.createElement("span",{style:{color:"#166534",fontSize:13}},"✓"),
+            React.createElement("span",{style:{fontFamily:T.fontBody,fontSize:13,color:"#8a847c"}},sig)
+          )})
+        ),
+
         React.createElement("div",{style:{display:"flex",alignItems:"center",gap:10,marginBottom:24}},
           React.createElement("img",{src:"assets/favicon-32.png",alt:"",style:{width:20,height:20,opacity:0.6}}),
           React.createElement("span",{style:{fontFamily:T.fontHead,fontSize:15,color:"#8a847c"}},"The Holdover Project · Est. 2026")
@@ -581,9 +718,15 @@ function App(){
           React.createElement("p",{style:{marginBottom:14}},"This site is not affiliated with, endorsed by, or operated by any government agency, law firm, or the companies discussed herein. User-submitted reports are clearly separated from verified public records. Consult a qualified attorney for guidance on your specific situation."),
           React.createElement("p",null,"This archive does not accept payment to remove or alter documented public records. Correction requests may be submitted to ",React.createElement("a",{href:"mailto:info@hudsonhomesexposed.com",style:{color:T.accent}},"info@hudsonhomesexposed.com")," with supporting documentation.")
         ),
+        React.createElement("div",{style:{display:"flex",gap:16,flexWrap:"wrap",marginBottom:20}},
+          ...["seo-lawsuits","seo-complaints","seo-evictions","seo-reviews"].map(function(id){
+            var label=id.replace("seo-","HHM ").replace(/^h/,function(c){return c.toUpperCase()});
+            return React.createElement("a",{key:id,href:"#",onClick:function(e){e.preventDefault();setActive(id)},style:{fontFamily:T.fontBody,fontSize:12,color:"#6b6560",textDecoration:"none",borderBottom:"1px solid #33302c"}},label)
+          })
+        ),
         React.createElement("div",{style:{borderTop:"1px solid #33302c",paddingTop:20,display:"flex",justifyContent:"space-between",flexWrap:"wrap",gap:12}},
           React.createElement("span",{style:{fontFamily:T.fontBody,fontSize:12,color:"#555"}},"© 2026 The Holdover Project"),
-          React.createElement("span",{style:{fontFamily:T.fontBody,fontSize:12,color:"#555"}},"info@hudsonhomesexposed.com")
+          React.createElement("span",{style:{fontFamily:T.fontBody,fontSize:12,color:"#555"}},"info@hudsonhomesexposed.com · media@hudsonhomesexposed.com")
         )
       )
     )
