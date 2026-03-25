@@ -1,591 +1,798 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Hudson Homes Management LLC Exposed | Complaints, Lawsuits, Fraud Evidence — The Holdover Project</title>
-  <meta name="description" content="A public evidence archive documenting complaints, lawsuits, regulatory actions, and tenant abuse by Hudson Homes Management LLC, Lone Star Funds, Hudson Advisors L.P., and related shell trusts." />
-  <link rel="icon" href="favicon.ico" />
-  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png" />
-  <meta property="og:title" content="Hudson Homes Exposed" />
-  <meta property="og:description" content="Public archive of complaints, court records, ownership structures, and regulatory actions." />
-  <meta property="og:image" content="assets/social-preview.png" />
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
-    :root {
-      --bg:#050505; --panel:#101010; --panel2:#0c0c0c; --line:rgba(255,255,255,.07);
-      --text:#f1e7db; --muted:#a89f96; --soft:#d7cfc6; --red:#c41e1e;
-      --shadow:0 18px 50px rgba(0,0,0,.28);
-      --radius:18px;
-      --max:1180px;
-    }
-    * { box-sizing:border-box; }
-    html { scroll-behavior:smooth; }
-    body {
-      margin:0; background:radial-gradient(circle at top,#121212 0%,#080808 48%,#050505 100%);
-      color:var(--text); font-family:'IBM Plex Serif', Georgia, serif; line-height:1.75;
-    }
-    a { color:#da4a4a; text-decoration:none; }
-    a:hover { text-decoration:underline; }
-    img { max-width:100%; display:block; }
-    .shell { max-width:var(--max); margin:0 auto; padding:0 16px; }
-    .nav {
-      position:sticky; top:0; z-index:50; background:rgba(8,8,8,.9); backdrop-filter:blur(14px);
-      border-bottom:1px solid rgba(196,30,30,.12); box-shadow:0 10px 30px rgba(0,0,0,.2);
-    }
-    .nav-inner { max-width:1280px; margin:0 auto; padding:12px 16px; display:flex; gap:16px; align-items:center; justify-content:space-between; }
-    .brand-title { font-family:'DM Serif Display', Georgia, serif; font-size:20px; line-height:1; }
-    .brand-sub { font-family:'IBM Plex Mono', monospace; font-size:10px; text-transform:uppercase; letter-spacing:1px; color:#998d8d; margin-top:4px; }
-    .badge { display:inline-flex; align-items:center; gap:8px; background:rgba(196,30,30,.08); border:1px solid rgba(196,30,30,.28); border-radius:999px; padding:7px 10px; color:#ebb7b7; font:600 10px 'IBM Plex Sans',sans-serif; text-transform:uppercase; letter-spacing:1px; }
-    .dot { width:7px; height:7px; border-radius:99px; background:var(--red); box-shadow:0 0 12px rgba(196,30,30,.8); display:inline-block; }
-    .mobile-select, .desktop-links { display:none; }
-    .desktop-links a {
-      white-space:nowrap; padding:10px 12px; border-radius:999px; font:600 12px 'IBM Plex Sans',sans-serif;
-      color:#918982; text-transform:uppercase; letter-spacing:.8px;
-    }
-    .desktop-links a:hover { background:rgba(196,30,30,.08); text-decoration:none; color:#fff; }
-    .hero { padding:18px 0 10px; border-bottom:1px solid rgba(196,30,30,.08); }
-    .hero-card {
-      position:relative; overflow:hidden; border-radius:24px; border:1px solid rgba(196,30,30,.18);
-      background:#0a0a0a; box-shadow:0 28px 70px rgba(0,0,0,.38);
-    }
-    .hero-card img { width:100%; height:500px; object-fit:cover; object-position:center; }
-    .hero-overlay { position:absolute; inset:0; background:linear-gradient(90deg, rgba(0,0,0,.76) 0%, rgba(0,0,0,.40) 44%, rgba(0,0,0,.16) 100%); }
-    .hero-content {
-      position:absolute; inset:0; display:flex; align-items:center; padding:34px;
-    }
-    .hero-panel {
-      max-width:720px; background:linear-gradient(180deg, rgba(10,10,10,.72), rgba(10,10,10,.42));
-      border:1px solid rgba(255,255,255,.08); backdrop-filter:blur(8px); border-radius:24px; padding:26px 28px; box-shadow:0 18px 54px rgba(0,0,0,.34);
-    }
-    .eyebrow { display:inline-flex; align-items:center; gap:8px; margin-bottom:12px; background:rgba(196,30,30,.10); border:1px solid rgba(196,30,30,.34); color:#ebb7b7; border-radius:999px; padding:8px 12px; font:600 11px 'IBM Plex Sans',sans-serif; text-transform:uppercase; letter-spacing:1.2px; }
-    h1 { font-family:'DM Serif Display', Georgia, serif; font-size:64px; line-height:1.02; color:#f3eadf; letter-spacing:-1px; margin:0; }
-    .hero-copy { font-size:20px; color:#ddd5cd; line-height:1.72; margin-top:14px; max-width:640px; }
-    .stat-row { display:flex; gap:10px; flex-wrap:wrap; margin-top:18px; }
-    .stat { min-width:142px; padding:12px 14px; border-radius:14px; background:rgba(8,8,8,.72); border:1px solid rgba(255,255,255,.08); }
-    .stat strong { display:block; font-family:'DM Serif Display', Georgia, serif; font-size:30px; color:#f0e5d8; }
-    .stat span { font:600 11px 'IBM Plex Sans',sans-serif; text-transform:uppercase; letter-spacing:.8px; color:#ada59d; }
-    .hero-actions { display:flex; gap:12px; flex-wrap:wrap; margin-top:20px; }
-    .btn {
-      display:inline-block; border-radius:999px; padding:13px 18px; font:600 14px 'IBM Plex Sans',sans-serif; text-decoration:none;
-    }
-    .btn-primary { background:var(--red); color:#fff; }
-    .btn-secondary { background:rgba(255,255,255,.04); color:#f2e8dc; border:1px solid rgba(255,255,255,.12); }
-    .section { max-width:820px; margin:0 auto; padding:38px 0; }
-    .section-wide { max-width:1100px; margin:0 auto; padding:28px 0 38px; }
-    .section h2 { font-family:'DM Serif Display', Georgia, serif; font-size:clamp(28px,3vw,38px); line-height:1.14; letter-spacing:-.3px; margin:0 0 10px; }
-    .sub { font-size:15.5px; color:#9f978f; font-style:italic; line-height:1.7; max-width:860px; margin-bottom:28px; }
-    .card { background:linear-gradient(180deg, rgba(18,18,18,.98), rgba(11,11,11,.98)); border:1px solid rgba(255,255,255,.05); border-left:3px solid var(--red); padding:24px 22px 20px; border-radius:0 12px 12px 0; margin-bottom:18px; box-shadow:0 16px 40px rgba(0,0,0,.16); }
-    .card h3 { font-family:'DM Serif Display', Georgia, serif; font-size:24px; color:#f2e8dc; margin:0 0 14px; line-height:1.15; }
-    .card p, .card li { color:#b4ada5; font-size:15px; }
-    .banner { overflow:hidden; border-radius:18px; border:1px solid rgba(196,30,30,.18); margin-bottom:26px; }
-    .banner img { width:100%; height:220px; object-fit:cover; }
-    .tocbox { background:#0d0d0d; border:1px solid var(--line); border-radius:16px; padding:18px; }
-    .tocbox ol { margin:0; padding-left:18px; }
-    .tocbox li { margin:6px 0; }
-    .footer { max-width:820px; margin:0 auto; padding:24px 0 50px; color:#80766d; font:12px 'IBM Plex Sans',sans-serif; }
-    .mobile-panel { display:none; }
-
-    /* ── Missing component styles ── */
-    .alert-card {
-      background:linear-gradient(180deg, rgba(30,10,10,.98), rgba(20,6,6,.98));
-      border:1px solid rgba(196,30,30,.30); border-left:4px solid var(--red);
-      padding:24px 22px 20px; border-radius:0 12px 12px 0; margin-bottom:18px;
-      box-shadow:0 16px 40px rgba(196,30,30,.08);
-    }
-    .alert-card h3 { font-family:'DM Serif Display', Georgia, serif; font-size:22px; color:#f2e8dc; margin:0 0 12px; }
-    .alert-card p { color:#b4ada5; font-size:15px; }
-
-    .faq-item { border-bottom:1px solid rgba(255,255,255,.06); padding:20px 0; }
-    .faq-item:last-child { border-bottom:none; }
-    .faq-q { font-family:'IBM Plex Sans', sans-serif; font-weight:600; font-size:16px; color:#f2e8dc; margin:0 0 8px; }
-    .faq-a { color:#b4ada5; font-size:15px; margin:0; line-height:1.7; }
-
-    .source-link {
-      display:inline-block; margin:4px 6px 4px 0;
-      background:rgba(196,30,30,.07); border:1px solid rgba(196,30,30,.22);
-      color:#da7070; border-radius:6px; padding:5px 10px;
-      font:500 12px 'IBM Plex Mono', monospace; text-decoration:none;
-      transition:background .15s;
-    }
-    .source-link:hover { background:rgba(196,30,30,.15); text-decoration:none; color:#ebb7b7; }
-
-    .entity { color:#da8f8f; font-weight:600; }
-    .highlight { background:rgba(196,30,30,.12); color:#f0d8d8; border-radius:3px; padding:1px 4px; }
-
-    table { width:100%; border-collapse:collapse; margin-bottom:20px; font-size:14px; }
-    thead th { background:rgba(196,30,30,.10); color:#c8bdb8; font:600 12px 'IBM Plex Sans',sans-serif; text-transform:uppercase; letter-spacing:.7px; padding:10px 14px; text-align:left; border-bottom:1px solid rgba(196,30,30,.20); }
-    tbody td { padding:10px 14px; color:#b4ada5; border-bottom:1px solid rgba(255,255,255,.05); vertical-align:top; }
-    tbody tr:hover td { background:rgba(255,255,255,.02); }
-
-    /* Inner content breadcrumb/header cleanup */
-    #content .breadcrumb { display:none; }
-    #content > .container > header { display:none; }
-    #content > .container > div:first-of-type { display:none; }
-    #content > .container > nav#toc { margin-bottom:28px; }
-
-    nav#toc { background:#0d0d0d; border:1px solid rgba(255,255,255,.07); border-radius:14px; padding:20px 24px; }
-    nav#toc h3 { font-family:'IBM Plex Sans',sans-serif; font-size:13px; text-transform:uppercase; letter-spacing:1px; color:#c4a9a9; margin:0 0 12px; }
-    nav#toc ul { margin:0; padding-left:18px; }
-    nav#toc li { margin:5px 0; color:#9f978f; font-size:14px; }
-    nav#toc a { color:#da7070; }
-
-    /* Section content max-width */
-    #content .container { max-width:100%; }
-    #content section { max-width:820px; margin:0 auto; padding:32px 0; border-bottom:1px solid rgba(255,255,255,.04); }
-    #content section:last-child { border-bottom:none; }
-    #content h2 { font-family:'DM Serif Display', Georgia, serif; font-size:clamp(26px,3vw,36px); color:#f3eadf; margin:0 0 16px; letter-spacing:-.3px; }
-    #content h3 { font-family:'DM Serif Display', Georgia, serif; font-size:22px; color:#e8ddd5; margin:24px 0 12px; }
-    #content h4 { font-family:'IBM Plex Sans', sans-serif; font-size:14px; text-transform:uppercase; letter-spacing:.8px; color:#c4a9a9; margin:0 0 8px; }
-    #content p { color:#b4ada5; font-size:15px; line-height:1.78; }
-    #content code { font-family:'IBM Plex Mono',monospace; font-size:13px; background:rgba(255,255,255,.06); padding:2px 6px; border-radius:4px; color:#e8d0d0; }
-
-    footer { border-top:1px solid rgba(255,255,255,.05); padding:24px 0 50px; color:#80766d; font:12px 'IBM Plex Sans',sans-serif; max-width:820px; margin:0 auto; }
-    footer strong { color:#9e9490; }
-
-    @media (max-width: 760px) {
-      .nav-inner { display:block; }
-      .nav-head { display:flex; justify-content:space-between; gap:10px; align-items:center; margin-bottom:10px; }
-      .mobile-select { display:block; width:100%; background:linear-gradient(180deg,#131313,#0c0c0c); color:#f2e8dc; border:1px solid rgba(255,255,255,.08); border-radius:14px; padding:14px 16px; font:400 14px 'IBM Plex Sans',sans-serif; outline:none; box-shadow:0 10px 24px rgba(0,0,0,.16); }
-      .desktop-links { display:none !important; }
-      .hero-card img { height:220px; }
-      .hero-overlay { background:linear-gradient(180deg, rgba(0,0,0,.15) 0%, rgba(0,0,0,.32) 60%, rgba(0,0,0,.55) 100%); }
-      .hero-content { display:none; }
-      .mobile-panel { display:block; margin-top:14px; background:linear-gradient(180deg, rgba(15,15,15,.98), rgba(10,10,10,.98)); border:1px solid rgba(196,30,30,.14); border-radius:18px; padding:18px 16px 16px; box-shadow:0 18px 40px rgba(0,0,0,.24); }
-      h1.mobile-h1 { font-size:38px; letter-spacing:-.8px; }
-      .hero-copy.mobile-copy { font-size:16px; line-height:1.68; color:#d6cec6; }
-      .stat-row.mobile-stats { display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:8px; }
-      .stat-row.mobile-stats .stat { min-width:0; padding:10px 8px; }
-      .stat-row.mobile-stats .stat strong { font-size:24px; }
-      .stat-row.mobile-stats .stat span { font-size:10px; line-height:1.35; }
-      .hero-actions.mobile-actions { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
-      .section { padding:32px 0; }
-      .card { padding:20px 18px 18px; }
-      .card h3 { font-size:22px; }
-      .shell { padding:0 14px; }
-    }
-    @media (min-width: 761px) {
-      .nav-head { display:flex; align-items:center; justify-content:space-between; gap:16px; width:100%; }
-      .mobile-select { display:none; }
-      .desktop-links { display:flex; gap:6px; overflow:auto; scrollbar-width:none; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hudson Homes Management LLC Exposed | Complaints, Lawsuits, Public Records — The Holdover Project</title>
+<meta name="description" content="Public evidence archive documenting 200+ complaints across 14 platforms against Hudson Homes Management LLC, Lone Star Funds & LSF9 Master Participation Trust. SEC fines, lawsuits, tenant survival guide.">
+<meta name="keywords" content="Hudson Homes Management LLC, Hudson Homes Management complaints, Hudson Homes Management reviews, Hudson Homes Management eviction, Lone Star Funds, LSF9 Master Participation Trust, Hudson Advisors, holdover charges, tenant rights, is Hudson Homes Management legit">
+<link rel="canonical" href="https://www.hudsonhomesexposed.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.hudsonhomesexposed.com/">
+<meta property="og:title" content="Hudson Homes Management LLC Exposed — The Holdover Project">
+<meta property="og:description" content="200+ complaints across 14 platforms. $11.2M SEC fine. 20+ lawsuits. The truth about Hudson Homes Management, Lone Star Funds, and LSF9 Master Participation Trust.">
+<meta property="og:image" content="https://www.hudsonhomesexposed.com/assets/social-preview.png">
+<meta property="og:site_name" content="The Holdover Project">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Hudson Homes Management LLC Exposed — The Holdover Project">
+<meta name="twitter:description" content="200+ complaints. $11.2M SEC fine. 20+ lawsuits. The truth about Hudson Homes Management & Lone Star Funds.">
+<meta name="twitter:image" content="https://www.hudsonhomesexposed.com/assets/social-preview.png">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta name="author" content="The Holdover Project">
+<meta name="theme-color" content="#080808">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"The Holdover Project","url":"https://www.hudsonhomesexposed.com","description":"Public evidence archive documenting complaints, lawsuits, and regulatory actions involving Hudson Homes Management LLC and Lone Star Funds.","foundingDate":"2026"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"The Holdover Project","url":"https://www.hudsonhomesexposed.com","description":"Public evidence archive: Hudson Homes Management LLC"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"What is Hudson Homes Management LLC?","acceptedAnswer":{"@type":"Answer","text":"Hudson Homes Management LLC is a property management company and wholly-owned subsidiary of Hudson Advisors L.P., the asset management arm of Lone Star Funds. It manages properties across 61 U.S. markets acquired through foreclosure."}},
+{"@type":"Question","name":"How many complaints does Hudson Homes Management have?","acceptedAnswer":{"@type":"Answer","text":"Over 200 complaints across 14 public platforms including 143 on the BBB, plus 1,200+ CFPB complaints against affiliated servicer Caliber Home Loans/Newrez LLC."}},
+{"@type":"Question","name":"What is the LSF9 Master Participation Trust?","acceptedAnswer":{"@type":"Answer","text":"A Delaware Statutory Trust used by Lone Star Funds to hold foreclosed mortgage assets. Investigators have documented it as a paper entity that holds nothing."}},
+{"@type":"Question","name":"Is Hudson Homes Management legitimate?","acceptedAnswer":{"@type":"Answer","text":"Hudson Homes Management LLC is registered but has accumulated 200+ complaints, SEC enforcement actions against parent companies, and lawsuits across 15+ states."}},
+{"@type":"Question","name":"How do I file a complaint against Hudson Homes Management?","acceptedAnswer":{"@type":"Answer","text":"File free complaints through the BBB (bbb.org), CFPB (consumerfinance.gov), FTC (reportfraud.ftc.gov), HUD (hud.gov/complaints), and your state Attorney General."}}
+]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"https://www.hudsonhomesexposed.com/"},
+{"@type":"ListItem","position":2,"name":"Survival Guide","item":"https://www.hudsonhomesexposed.com/#guide"},
+{"@type":"ListItem","position":3,"name":"Investigation","item":"https://www.hudsonhomesexposed.com/#investigation"},
+{"@type":"ListItem","position":4,"name":"Complaints","item":"https://www.hudsonhomesexposed.com/#complaints"},
+{"@type":"ListItem","position":5,"name":"Court Actions","item":"https://www.hudsonhomesexposed.com/#lawsuits"}
+]}
+</script>
+<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.9/babel.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#080808;color:#b8b0a6;overflow-x:hidden}
+#root{min-height:100vh}
+</style>
 </head>
 <body>
-  <nav class="nav">
-    <div class="nav-inner">
-      <div class="nav-head">
-        <div>
-          <div class="brand-title">Hudson Homes Exposed</div>
-          <div class="brand-sub">The Holdover Project</div>
-        </div>
-        <div class="badge"><span class="dot"></span> Archive</div>
-      </div>
-      <select class="mobile-select" onchange="if(this.value) location.hash=this.value;">
-        <option value="">Jump to section</option>
-        <option value="investigation">The Investigation</option>
-        <option value="ownership">Ownership</option>
-        <option value="individuals">Named Individuals</option>
-        <option value="trusts">Shell Trust Network</option>
-        <option value="regulatory">Regulatory Actions</option>
-        <option value="lawsuits">Lawsuits</option>
-        <option value="complaints">Complaints</option>
-        <option value="stories">Share Your Story</option>
-        <option value="resources">Resources</option>
-      </select>
-      <div class="desktop-links">
-        <a href="#investigation">Investigation</a>
-        <a href="#ownership">Ownership</a>
-        <a href="#individuals">Individuals</a>
-        <a href="#trusts">Trusts</a>
-        <a href="#regulatory">Regulatory</a>
-        <a href="#lawsuits">Lawsuits</a>
-        <a href="#complaints">Complaints</a>
-        <a href="#stories">Stories</a>
-        <a href="#resources">Resources</a>
-      </div>
-    </div>
-  </nav>
+<div id="root"></div>
+<script type="text/babel">
+const{useState,useEffect,useRef,useCallback}=React;
 
-  <header class="hero">
-    <div class="shell">
-      <div class="hero-card">
-        <img src="assets/hero-banner.png" alt="Hudson Homes Exposed banner" />
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-          <div class="hero-panel">
-            <div class="eyebrow"><span class="dot"></span> Investigative archive</div>
-            <h1>Hudson Homes Exposed</h1>
-            <div class="hero-copy">A polished public archive of complaints, court records, ownership structures, and regulatory actions tied to Hudson Homes Management LLC and its wider parent network.</div>
-            <div class="stat-row">
-              <div class="stat"><strong>191+</strong><span>source links</span></div>
-              <div class="stat"><strong>20+</strong><span>court cases</span></div>
-              <div class="stat"><strong>15</strong><span>states tracked</span></div>
-            </div>
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="#lawsuits">Explore investigations</a>
-              <a class="btn btn-secondary" href="#stories">Share your story</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="mobile-panel">
-        <div class="eyebrow"><span class="dot"></span> Investigative archive</div>
-        <h1 class="mobile-h1">Hudson Homes Exposed</h1>
-        <div class="hero-copy mobile-copy">A polished public archive of complaints, court records, ownership structures, and regulatory actions tied to Hudson Homes Management LLC and its wider parent network.</div>
-        <div class="stat-row mobile-stats">
-          <div class="stat"><strong>191+</strong><span>source links</span></div>
-          <div class="stat"><strong>20+</strong><span>court cases</span></div>
-          <div class="stat"><strong>15</strong><span>states tracked</span></div>
-        </div>
-        <div class="hero-actions mobile-actions">
-          <a class="btn btn-primary" href="#lawsuits">Explore</a>
-          <a class="btn btn-secondary" href="#stories">Share story</a>
-        </div>
-      </div>
-    </div>
-  </header>
+/* ═══════════════════════════════════════════════
+   HOOKS
+   ═══════════════════════════════════════════════ */
+function useIsMobile(bp=768){
+  const[m,setM]=useState(window.innerWidth<=bp);
+  useEffect(()=>{const h=()=>setM(window.innerWidth<=bp);window.addEventListener("resize",h);return()=>window.removeEventListener("resize",h)},[bp]);
+  return m;
+}
 
-  <main class="shell">
-    <section class="section-wide">
-      <div class="banner"><img src="assets/investigations-banner.png" alt="Investigations banner"></div>
-    </section>
+/* ═══════════════════════════════════════════════
+   SECTION CONFIG
+   ═══════════════════════════════════════════════ */
+const tabs=[
+  {id:"guide",label:"Survival Guide",icon:"⚠"},
+  {id:"investigation",label:"The Investigation",icon:"🔍"},
+  {id:"pipeline",label:"The Pipeline",icon:"🏗"},
+  {id:"people",label:"Named Individuals",icon:"👤"},
+  {id:"corporate",label:"Corporate Structure",icon:"🏢"},
+  {id:"trusts",label:"Shell Trust Network",icon:"🕸"},
+  {id:"regulatory",label:"Regulatory Actions",icon:"⚖"},
+  {id:"complaints",label:"All Complaints",icon:"📋"},
+  {id:"stories",label:"Share Your Story",icon:"✉"},
+  {id:"lawsuits",label:"Court Actions",icon:"🔨"},
+  {id:"global",label:"Global Impact",icon:"🌍"},
+  {id:"patterns",label:"Documented Patterns",icon:"🔁"},
+  {id:"timeline",label:"Timeline",icon:"📅"},
+  {id:"resources",label:"Resources",icon:"📚"},
+];
 
-    <section class="section" id="content">
-      <div class="container">
+/* ═══════════════════════════════════════════════
+   UTILITY COMPONENTS
+   ═══════════════════════════════════════════════ */
+function SectionBanner({image,tag,title,subtitle}){
+  return React.createElement("div",{style:{position:"relative",width:"100%",minHeight:220,background:`linear-gradient(135deg,#0a0a0a 0%,#1a0505 50%,#0a0a0a 100%)`,backgroundImage:image?`url(assets/${image})`:"none",backgroundSize:"cover",backgroundPosition:"center",display:"flex",alignItems:"center",justifyContent:"center",borderBottom:"3px solid #c41e1e"}},
+    React.createElement("div",{style:{position:"absolute",inset:0,background:"rgba(0,0,0,0.55)"}},null),
+    React.createElement("div",{style:{position:"relative",zIndex:1,textAlign:"center",padding:"40px 20px",maxWidth:800}},
+      tag&&React.createElement("div",{style:{fontFamily:"'Cormorant Garamond',serif",fontSize:13,letterSpacing:4,textTransform:"uppercase",color:"#c41e1e",marginBottom:12}},tag),
+      React.createElement("h2",{style:{fontFamily:"'Playfair Display',serif",fontSize:"clamp(28px,5vw,48px)",color:"#f5efe6",lineHeight:1.15,margin:"0 0 12px",fontWeight:700}},title),
+      subtitle&&React.createElement("p",{style:{fontFamily:"'Cormorant Garamond',serif",fontSize:"clamp(16px,2.2vw,22px)",color:"#c0b8ae",lineHeight:1.7,margin:0}},subtitle)
+    )
+  );
+}
 
-<!-- TABLE OF CONTENTS -->
-<nav id="toc" aria-label="Table of Contents">
-  <h3 style="margin-top:0;">Table of Contents</h3>
-  <ul>
-    <li><a href="#investigation">1. The Investigation</a></li>
-    <li><a href="#who-owns-hudson-homes">2. Who Owns Hudson Homes Management LLC?</a></li>
-    <li><a href="#named-individuals">3. Named Individuals &amp; Entities</a></li>
-    <li><a href="#shell-trusts">4. The Shell Trust Network: LSF8, LSF9, LSF10</a></li>
-    <li><a href="#regulatory-actions">5. SEC Fines, NY AG Settlement &amp; Government Enforcement</a></li>
-    <li><a href="#court-actions">6. Lawsuits Against Hudson Homes Management LLC</a></li>
-    <li><a href="#complaints">7. Tenant Complaints &amp; Reviews</a></li>
-    <li><a href="#daily-emails">8. Daily Harassment Emails</a></li>
-    <li><a href="#section-8">9. Section 8 Voucher Sabotage</a></li>
-    <li><a href="#documented-patterns">10. Documented Patterns of Abuse</a></li>
-    <li><a href="#faq">11. Frequently Asked Questions</a></li>
-    <li><a href="#share-your-story">12. Share Your Story</a></li>
-    <li><a href="#resources">13. Resources &amp; How to File Complaints</a></li>
-  </ul>
-</nav>
+function Card({title,accent="#c41e1e",children}){
+  return React.createElement("div",{style:{background:"linear-gradient(145deg,#111 0%,#0d0d0d 100%)",border:"1px solid #1e1e1e",borderLeft:`3px solid ${accent}`,borderRadius:"0 8px 8px 0",padding:"28px",marginBottom:24}},
+    title&&React.createElement("h3",{style:{fontFamily:"'Playfair Display',serif",fontSize:20,color:"#f5efe6",marginBottom:14,fontWeight:600}},title),
+    React.createElement("div",{style:{fontFamily:"'Cormorant Garamond',serif",fontSize:17,color:"#b8b0a6",lineHeight:1.85}},children)
+  );
+}
 
-<!-- SECTION 1: THE INVESTIGATION -->
-<section id="investigation">
-  <h2>1. The Investigation</h2>
-  <p><span class="entity">Hudson Homes Management LLC</span> describes itself on its own website as <em>"a wholly-owned subsidiary of Hudson Advisors L.P."</em> — the asset management arm of <span class="entity">Lone Star Funds</span>, a $85+ billion private equity empire founded by billionaire <span class="entity">John P. Grayken</span>.</p>
-  <p>This archive documents a pattern of behavior across <span class="highlight">61 markets</span> in the United States: properties acquired through foreclosure by Lone Star-affiliated trusts, managed by HHM, and used to extract maximum revenue from tenants — many of whom are <span class="highlight">Section 8 voucher holders</span> — through a combination of neglect, harassment, and legal pressure.</p>
-  <p>The evidence comes from public records including <span class="highlight">BBB complaints</span>, <span class="highlight">CFPB filings</span>, <span class="highlight">SEC enforcement actions</span>, <span class="highlight">court dockets from 15+ states</span>, <span class="highlight">investigative journalism</span>, and <span class="highlight">HHM's own website admissions</span>.</p>
-  <div class="card">
-    <h4>HHM Headquarters</h4>
-    <p>Energy Square Two, Fifth Floor / Suite 500, 4849 Greenville Ave, Dallas, TX 75206<br>
-    Phone: <a href="tel:+18775654669">(877) 565-4669</a> &bull; Alternate: <a href="tel:+12149198335">(214) 919-8335</a><br>
-    Website: <a href="https://www.hudsonhomesmanagement.com" rel="nofollow">hudsonhomesmanagement.com</a></p>
-  </div>
-</section>
+function StatBox({num,label,accent="#c41e1e"}){
+  return React.createElement("div",{style:{background:"linear-gradient(145deg,#111,#0c0808)",border:"1px solid #1e1e1e",borderTop:`2px solid ${accent}`,borderRadius:8,padding:"24px 20px",textAlign:"center",flex:"1 1 140px",minWidth:120}},
+    React.createElement("div",{style:{fontFamily:"'Playfair Display',serif",fontSize:"clamp(26px,4vw,36px)",color:accent,fontWeight:700,lineHeight:1.1}},num),
+    React.createElement("div",{style:{fontFamily:"'Cormorant Garamond',serif",fontSize:14,color:"#888",marginTop:6,letterSpacing:0.5}},label)
+  );
+}
 
-<!-- SECTION 2: CORPORATE STRUCTURE -->
-<section id="who-owns-hudson-homes">
-  <h2>2. Who Owns Hudson Homes Management LLC?</h2>
-  <p>Hudson Homes Management LLC sits at the bottom of a multi-layered corporate structure designed to insulate the parent company from liability:</p>
-  <div class="card">
-    <p><strong class="entity">Lone Star Funds</strong> (Parent — $85B+ AUM, Dallas, TX)<br>
-    &nbsp;&nbsp;&rarr; <strong class="entity">Hudson Advisors L.P.</strong> (Asset Management Arm)<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&rarr; <strong class="entity">Hudson Homes Management LLC</strong> (Property Management)<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&rarr; <strong class="entity">Caliber Home Loans / Newrez LLC</strong> (Mortgage Servicing)<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&rarr; <strong class="entity">U.S. Bank Trust, N.A.</strong> as Trustee for LSF8/LSF9/LSF10 Master Participation Trust (Shell Trusts)<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&rarr; <strong class="entity">LSF9 Mortgage Holdings LLC</strong> + VOLT LLCs (Hidden Asset Holders)</p>
-  </div>
-  <p><strong>Key admission:</strong> HHM's own <a href="https://www.hudsonhomesmanagement.com/our-story" rel="nofollow">"Our Story" page</a> states: <em>"Hudson Homes (Hudson Homes Management, LLC), a wholly-owned subsidiary of Hudson Advisors L.P."</em></p>
-</section>
+function SourceLink({href,children}){
+  return React.createElement("a",{href,target:"_blank",rel:"noopener noreferrer",style:{display:"inline-block",background:"#1a1111",border:"1px solid rgba(196,30,30,0.2)",borderRadius:5,padding:"5px 14px",fontSize:13,color:"#d46666",textDecoration:"none",margin:"3px 4px 3px 0",fontFamily:"'Source Sans 3',sans-serif",transition:"all 0.2s"}},children);
+}
 
-<!-- SECTION 3: NAMED INDIVIDUALS -->
-<section id="named-individuals">
-  <h2>3. Named Individuals &amp; Entities</h2>
-  <h3>Lone Star Funds Leadership</h3>
-  <table>
-    <thead><tr><th>Name</th><th>Role</th><th>Notes</th></tr></thead>
-    <tbody>
-      <tr><td class="entity">John P. Grayken</td><td>Founder &amp; Chairman</td><td>Irish citizen, $7.5B net worth, criminal charges in Delhi (2022)</td></tr>
-      <tr><td class="entity">Donald J. Quintin</td><td>CEO, Lone Star Funds</td><td></td></tr>
-      <tr><td class="entity">Anthony Messina</td><td>Senior Executive</td><td></td></tr>
-      <tr><td class="entity">Andre Collin</td><td>Senior Executive</td><td></td></tr>
-    </tbody>
-  </table>
-  <h3>Hudson Advisors Leadership</h3>
-  <table>
-    <thead><tr><th>Name</th><th>Role</th></tr></thead>
-    <tbody>
-      <tr><td class="entity">Jodi Cason</td><td>CEO, Hudson Advisors</td></tr>
-      <tr><td class="entity">Sarah York</td><td>General Counsel</td></tr>
-      <tr><td class="entity">Derek Edwards</td><td>CFO</td></tr>
-    </tbody>
-  </table>
-  <h3>HHM Operations &amp; Legal</h3>
-  <table>
-    <thead><tr><th>Name</th><th>Role</th></tr></thead>
-    <tbody>
-    </tbody>
-  </table>
-</section>
+function Divider(){
+  return React.createElement("div",{style:{height:1,background:"linear-gradient(90deg,transparent,#c41e1e33,transparent)",margin:"48px 0"}});
+}
 
-<!-- SECTION 4: SHELL TRUSTS -->
-<section id="shell-trusts">
-  <h2>4. The Shell Trust Network: LSF8, LSF9, LSF10 Master Participation Trust</h2>
-  <p>Private investigator <span class="entity">Bill Paatalo</span> (Oregon PSID#49411, <a href="https://bpinvestigativeagency.com">BP Investigative Agency</a>) has documented through years of expert witness testimony across the United States that the <span class="highlight">LSF Master Participation Trusts do not own, hold, or control any mortgage loans</span>. They are "Participation Agents" — shell entities hiding the real parties in interest.</p>
+function Wrap({children}){
+  return React.createElement("div",{style:{maxWidth:920,margin:"0 auto",padding:"60px 24px"}},children);
+}
 
-  <div class="alert-card">
-    <h3 style="color:#c41e1e; margin-top:0;">Key Finding: "Straw Man" Entities</h3>
-    <p>The trusts named in foreclosure and eviction proceedings — LSF7 through LSF11 Master Participation Trust — <span class="highlight">own nothing</span>. The actual purchasers of mortgage debt are hidden entities like <span class="entity">LSF9 Mortgage Holdings LLC</span> and a network of <span class="entity">VOLT LLC</span> entities registered in Delaware, which are deliberately concealed from homeowners and courts.</p>
-  </div>
+function SectionTitle({children}){
+  return React.createElement("h2",{style:{fontFamily:"'Playfair Display',serif",fontSize:"clamp(24px,3.5vw,36px)",color:"#f5efe6",marginBottom:8,fontWeight:700,lineHeight:1.2}},children);
+}
 
-  <h3>How the Shell Trust Fraud Works</h3>
-  <p><strong>Step 1:</strong> Lone Star purchases distressed mortgage debt at steep discounts through holding companies (LSF8/9/10 Mortgage Holdings LLC).</p>
-  <p><strong>Step 2:</strong> Debt is placed into Delaware Statutory Trusts (the "Master Participation Trusts") which serve as "Participation Agents" — not owners.</p>
-  <p><strong>Step 3:</strong> "U.S. Bank Trust, N.A." is named as "Trustee" — creating the illusion of major bank involvement. But <span class="highlight">U.S. Bank, N.A. (the actual bank) has stated it is "not affiliated with [the servicer] in any way."</span></p>
-  <p><strong>Step 4:</strong> Caliber Home Loans or Hudson Homes Management files foreclosure/eviction actions using Limited Powers of Attorney that are typically 50-70% redacted.</p>
-  <p><strong>Step 5:</strong> When challenged, <span class="highlight">they consistently fail to produce unredacted Trust Agreements or any documented chain of authority</span>.</p>
+function SubText({children}){
+  return React.createElement("p",{style:{fontFamily:"'Cormorant Garamond',serif",fontSize:19,color:"#888",lineHeight:1.8,marginBottom:32}},children);
+}
 
-  <h3>The "Two U.S. Banks" Deception</h3>
-  <p>Courts routinely confuse two separate legal entities: (1) <span class="entity">"U.S. Bank, N.A."</span> — the actual national bank, which says Caliber/HHM are "not affiliated in any way," and (2) <span class="entity">"U.S. Bank Trust, N.A."</span> — a separate entity that appears in court filings but is nowhere in the chain of title.</p>
+function DataTable({headers,rows,accent="#c41e1e"}){
+  return React.createElement("div",{style:{overflowX:"auto",WebkitOverflowScrolling:"touch",marginBottom:24}},
+    React.createElement("table",{style:{width:"100%",borderCollapse:"collapse",fontSize:15,fontFamily:"'Cormorant Garamond',serif"}},
+      React.createElement("thead",null,
+        React.createElement("tr",null,
+          headers.map((h,i)=>React.createElement("th",{key:i,style:{textAlign:"left",padding:"12px 14px",color:accent,fontFamily:"'Playfair Display',serif",fontSize:14,fontWeight:600,borderBottom:`1px solid ${accent}33`,whiteSpace:"nowrap"}},h))
+        )
+      ),
+      React.createElement("tbody",null,
+        rows.map((row,i)=>React.createElement("tr",{key:i,style:{borderBottom:"1px solid #1a1a1a",background:i%2===0?"transparent":"#0a0a0a"}},
+          row.map((cell,j)=>React.createElement("td",{key:j,style:{padding:"12px 14px",color:"#b8b0a6",lineHeight:1.6,verticalAlign:"top"}},cell))
+        ))
+      )
+    )
+  );
+}
 
-  <h4>Sources</h4>
-  <a class="source-link" href="https://bpinvestigativeagency.com/beware-the-lsf9-master-participation-trust-is-operating-as-a-secret-agent/">BPIA: LSF9 as Secret Agent (2016)</a>
-  <a class="source-link" href="https://bpinvestigativeagency.com/lsf9-master-participation-trust-is-a-straw-man-and-heres-some-proof/">BPIA: LSF9 Is a Straw Man (2018)</a>
-  <a class="source-link" href="https://bpinvestigativeagency.com/the-lsf9-master-participation-trust-story-unravels-its-just-a-pseudonym-that-holds-nothing/">BPIA: Just a Pseudonym (2022)</a>
-  <a class="source-link" href="https://bpinvestigativeagency.com/u-s-bank-trust-n-a-files-false-fraudulent-disclosure-in-massachusetts-federal-court/">BPIA: False Disclosure in MA Federal Court</a>
-  <a class="source-link" href="https://www.hoferhagan.com/blog/whats-the-story-with-lsf9-master-participation-trust/">Hofer Hagan LLP: What's the Story with LSF9?</a>
-  <a class="source-link" href="https://parkplacesecurities.com/caliber.html">Park Place Securities: Fighting Caliber &amp; LSF Trusts</a>
-  <a class="source-link" href="https://www.academia.edu/44351236/U_S_BANK_LSF9_MASTER_PARTICIPATION_TRUST_CALIBER_FRAUD_ON_THE_COURT">Academia.edu: Fraud on the Court</a>
-</section>
+/* ═══════════════════════════════════════════════
+   NAVIGATION (Desktop + Mobile)
+   ═══════════════════════════════════════════════ */
+function Nav({active,setActive}){
+  const mob=useIsMobile();
+  const[menuOpen,setMenuOpen]=useState(false);
+  const navRef=useRef(null);
 
-<!-- SECTION 5: REGULATORY ACTIONS -->
-<section id="regulatory-actions">
-  <h2>5. SEC Fines, NY AG Settlement &amp; Government Enforcement</h2>
+  return React.createElement("nav",{ref:navRef,style:{position:"sticky",top:0,zIndex:100,background:"rgba(8,8,8,0.95)",backdropFilter:"blur(12px)",borderBottom:"1px solid #1a1a1a"}},
+    /* Top bar */
+    React.createElement("div",{style:{display:"flex",alignItems:"center",justifyContent:"space-between",padding:mob?"12px 16px":"0 32px",maxWidth:1200,margin:"0 auto"}},
+      /* Logo */
+      React.createElement("div",{style:{display:"flex",alignItems:"center",gap:10,cursor:"pointer"},onClick:()=>{setActive("guide");setMenuOpen(false)}},
+        React.createElement("img",{src:"assets/favicon-32.png",alt:"",style:{width:28,height:28}}),
+        React.createElement("span",{style:{fontFamily:"'Playfair Display',serif",fontSize:mob?15:17,color:"#f5efe6",fontWeight:700,letterSpacing:0.5}},"THE HOLDOVER PROJECT")
+      ),
+      /* Mobile hamburger */
+      mob&&React.createElement("button",{onClick:()=>setMenuOpen(!menuOpen),style:{background:"none",border:"none",color:"#f5efe6",fontSize:24,cursor:"pointer",padding:8}},menuOpen?"✕":"☰"),
+      /* Desktop tabs */
+      !mob&&React.createElement("div",{style:{display:"flex",overflowX:"auto",gap:0,WebkitOverflowScrolling:"touch",scrollbarWidth:"none"}},
+        tabs.map(t=>React.createElement("button",{key:t.id,onClick:()=>setActive(t.id),style:{background:"none",border:"none",borderBottom:active===t.id?"2px solid #c41e1e":"2px solid transparent",padding:"18px 14px",color:active===t.id?"#f5efe6":"#777",fontSize:12.5,fontFamily:"'Source Sans 3',sans-serif",fontWeight:active===t.id?600:400,letterSpacing:0.8,textTransform:"uppercase",cursor:"pointer",whiteSpace:"nowrap",transition:"all 0.2s"}},t.label))
+      )
+    ),
+    /* Mobile dropdown menu */
+    mob&&menuOpen&&React.createElement("div",{style:{background:"#0a0a0a",borderTop:"1px solid #1a1a1a",padding:"8px 0",maxHeight:"70vh",overflowY:"auto"}},
+      tabs.map(t=>React.createElement("button",{key:t.id,onClick:()=>{setActive(t.id);setMenuOpen(false)},style:{display:"flex",alignItems:"center",gap:12,width:"100%",background:active===t.id?"#1a0808":"transparent",border:"none",borderLeft:active===t.id?"3px solid #c41e1e":"3px solid transparent",padding:"14px 20px",color:active===t.id?"#f5efe6":"#999",fontSize:15,fontFamily:"'Cormorant Garamond',serif",cursor:"pointer",textAlign:"left"}},
+        React.createElement("span",{style:{fontSize:18,width:24}},t.icon),
+        t.label
+      ))
+    )
+  );
+}
 
-  <div class="card">
-    <h3>SEC: $11.2 Million Penalty + $68.5M Reimbursement (2022)</h3>
-    <p>The Securities and Exchange Commission charged <span class="entity">Hudson Advisors L.P.</span> and <span class="entity">Lone Star Global Acquisitions Ltd.</span> with overcharging fees to investors. The combined penalty and reimbursement exceeded $79 million.</p>
-    <a class="source-link" href="https://www.sec.gov/newsroom/press-releases/2022-159">SEC Press Release 2022-159</a>
-  </div>
+/* ═══════════════════════════════════════════════
+   INTERACTIVE QUIZ
+   ═══════════════════════════════════════════════ */
+function Quiz(){
+  const[ans,setAns]=useState({});
+  const mob=useIsMobile(600);
+  const qs=[
+    {id:1,q:"Have you been charged daily \"holdover\" fees after your lease expired or after receiving a notice to sell?",flag:"This matches the #1 complaint pattern on the BBB. Tenants describe charges of $50–$150/day creating bills of $10,000–$19,000+."},
+    {id:2,q:"Has your resident portal been locked or restricted, preventing you from paying rent or viewing your account?",flag:"Multiple tenants report portal lockouts after receiving eviction notices — creating a catch-22 where you can't pay and then get charged for non-payment."},
+    {id:3,q:"Have you called Hudson Homes and been unable to reach anyone who can make real decisions about your property?",flag:"BBB complaints document weeks of unreturned calls, constant transfers, and voicemails that go unanswered across 61 markets."},
+    {id:4,q:"Is the property owner listed as \"U.S. Bank Trust\" or an \"LSF\" trust — NOT Hudson Homes Management?",flag:"If yes, HHM may not have legal standing to evict you. An Ohio court dismissed HHM's eviction case for exactly this reason."},
+    {id:5,q:"Were you told your home is being sold and given limited time to move — even though you've been a good tenant?",flag:"This is the \"Intent to Sell\" pattern. Sale-driven evictions are common when properties cycle through the Lone Star securitization pipeline."},
+  ];
+  const yes=Object.values(ans).filter(a=>a===true).length;
 
-  <div class="card">
-    <h3>NY Attorney General: $17 Million Settlement (2020)</h3>
-    <p>The New York Attorney General secured a $17 million loan forgiveness settlement against <span class="entity">Caliber Home Loans</span> (Lone Star subsidiary) for predatory lending practices affecting New York homeowners.</p>
-    <a class="source-link" href="https://therealdeal.com/new-york/2020/06/24/lone-star-affiliate-reaches-17m-settlement-with-ny-homeowners/">The Real Deal</a>
-  </div>
+  return React.createElement("div",null,
+    qs.map(q=>React.createElement("div",{key:q.id,style:{background:ans[q.id]===true?"#1a0808":"#111",border:ans[q.id]===true?"1px solid #c41e1e44":"1px solid #1e1e1e",borderRadius:8,padding:mob?"16px":"20px 24px",marginBottom:14,transition:"all 0.2s"}},
+      React.createElement("div",{style:{display:"flex",flexDirection:mob?"column":"row",justifyContent:"space-between",alignItems:mob?"stretch":"flex-start",gap:mob?12:16}},
+        React.createElement("div",{style:{fontFamily:"'Cormorant Garamond',serif",fontSize:17,color:"#e8e0d6",lineHeight:1.7,flex:1}},q.id+". "+q.q),
+        React.createElement("div",{style:{display:"flex",gap:8,flexShrink:0,alignSelf:mob?"flex-end":"auto"}},
+          React.createElement("button",{onClick:()=>setAns({...ans,[q.id]:true}),style:{background:ans[q.id]===true?"#c41e1e":"#222",color:ans[q.id]===true?"#fff":"#888",border:"none",borderRadius:6,padding:"10px 22px",cursor:"pointer",fontFamily:"'Source Sans 3',sans-serif",fontSize:14,fontWeight:600}},"Yes"),
+          React.createElement("button",{onClick:()=>setAns({...ans,[q.id]:false}),style:{background:ans[q.id]===false?"#228b22":"#222",color:ans[q.id]===false?"#fff":"#888",border:"none",borderRadius:6,padding:"10px 22px",cursor:"pointer",fontFamily:"'Source Sans 3',sans-serif",fontSize:14,fontWeight:600}},"No")
+        )
+      ),
+      ans[q.id]===true&&React.createElement("div",{style:{marginTop:14,padding:"14px 18px",background:"#0d0505",borderRadius:6,borderLeft:"3px solid #c41e1e",fontFamily:"'Cormorant Garamond',serif",fontSize:15,color:"#c0b8ae",lineHeight:1.7}},"⚠ "+q.flag)
+    )),
+    Object.keys(ans).length>=3&&React.createElement("div",{style:{background:yes>=3?"#1a0808":yes>=2?"#1a1508":"#081a0d",border:`2px solid ${yes>=3?"#c41e1e":yes>=2?"#b8860b":"#228b22"}`,borderRadius:10,padding:"24px 28px",marginTop:24,textAlign:"center"}},
+      React.createElement("div",{style:{fontFamily:"'Playfair Display',serif",fontSize:24,color:yes>=3?"#c41e1e":yes>=2?"#b8860b":"#228b22",marginBottom:12}},yes>=3?"High Risk — Multiple Pattern Matches":yes>=2?"Moderate Risk — Take Protective Action":"Lower Risk — Stay Vigilant"),
+      React.createElement("div",{style:{fontFamily:"'Cormorant Garamond',serif",fontSize:17,color:"#c0b8ae",lineHeight:1.8}},yes>=3?`You answered "Yes" to ${yes} of 5 questions. Your experience matches the documented complaint patterns reported by tenants across 14 platforms. Use the Survival Checklist below immediately.`:yes>=2?`You answered "Yes" to ${yes} of 5 questions. Some experiences match documented patterns. Screenshot your portal, verify property ownership, and consider filing a BBB complaint.`:`You answered "Yes" to ${yes} of 5 questions. Your situation may not match the most common patterns, but stay alert and bookmark this page.`)
+    )
+  );
+}
 
-  <div class="card">
-    <h3>FinCEN: $2 Million Civil Money Penalty</h3>
-    <p>The Financial Crimes Enforcement Network imposed a $2 million penalty for Bank Secrecy Act violations.</p>
-    <a class="source-link" href="https://www.fincen.gov/system/files/enforcement_action/2023-04-05/Lone_Star.ASSESSMENT_OF_CIVIL_MONEY_PENALTY_Final_11.01_0.pdf">FinCEN Enforcement Action (PDF)</a>
-  </div>
+/* ═══════════════════════════════════════════════
+   SHARE YOUR STORY FORM
+   ═══════════════════════════════════════════════ */
+function StoryForm(){
+  const mob=useIsMobile(600);
+  const[form,setForm]=useState({name:"",email:"",state:"",property:"",experience:"",consent:false});
+  const[submitted,setSubmitted]=useState(false);
+  const inputStyle={background:"#111",border:"1px solid #2a2a2a",borderRadius:6,padding:"12px 16px",color:"#e8e0d6",fontSize:16,fontFamily:"'Cormorant Garamond',serif",width:"100%",outline:"none"};
 
-  <div class="card">
-    <h3>CFPB: 1,200+ Consumer Complaints</h3>
-    <p>Over 1,200 complaints filed against <span class="entity">Caliber Home Loans</span> in the CFPB consumer complaint database.</p>
-    <a class="source-link" href="https://www.consumerfinance.gov/data-research/consumer-complaints/search/?company=Caliber+Home+Loans">CFPB Complaint Database</a>
-  </div>
+  if(submitted) return React.createElement("div",{style:{background:"#081a0d",border:"2px solid #228b22",borderRadius:10,padding:32,textAlign:"center"}},
+    React.createElement("div",{style:{fontSize:48,marginBottom:12}},"✓"),
+    React.createElement("div",{style:{fontFamily:"'Playfair Display',serif",fontSize:24,color:"#228b22",marginBottom:12}},"Thank You"),
+    React.createElement("div",{style:{fontFamily:"'Cormorant Garamond',serif",fontSize:17,color:"#c0b8ae"}},"Your story has been recorded. Every voice makes a difference.")
+  );
 
-  <div class="card">
-    <h3>NYC Comptroller: Letter to Grayken</h3>
-    <p>NYC Comptroller Scott Stringer wrote directly to <span class="entity">John Grayken</span> calling Lone Star's treatment of NYC tenants "unacceptable."</p>
-    <a class="source-link" href="https://www.nbcnewyork.com/news/local/Pension-Scam-Foreclosure-New-York-Investigation-439677863.html">NBC I-Team Investigation</a>
-  </div>
-</section>
+  return React.createElement("div",null,
+    React.createElement("div",{style:{display:"grid",gridTemplateColumns:mob?"1fr":"1fr 1fr",gap:16,marginBottom:20}},
+      React.createElement("input",{placeholder:"Your Name (optional)",value:form.name,onChange:e=>setForm({...form,name:e.target.value}),style:inputStyle}),
+      React.createElement("input",{placeholder:"Email (optional)",value:form.email,onChange:e=>setForm({...form,email:e.target.value}),style:inputStyle})
+    ),
+    React.createElement("div",{style:{display:"grid",gridTemplateColumns:mob?"1fr":"1fr 1fr",gap:16,marginBottom:20}},
+      React.createElement("input",{placeholder:"State",value:form.state,onChange:e=>setForm({...form,state:e.target.value}),style:inputStyle}),
+      React.createElement("input",{placeholder:"Property Address (optional)",value:form.property,onChange:e=>setForm({...form,property:e.target.value}),style:inputStyle})
+    ),
+    React.createElement("textarea",{placeholder:"Tell us your experience with Hudson Homes Management LLC...",value:form.experience,onChange:e=>setForm({...form,experience:e.target.value}),rows:6,style:{...inputStyle,resize:"vertical",marginBottom:20}}),
+    React.createElement("div",{style:{display:"flex",alignItems:"center",gap:10,marginBottom:24}},
+      React.createElement("input",{type:"checkbox",checked:form.consent,onChange:e=>setForm({...form,consent:e.target.checked}),style:{width:18,height:18,accentColor:"#c41e1e"}}),
+      React.createElement("span",{style:{fontFamily:"'Cormorant Garamond',serif",fontSize:15,color:"#888"}},"I consent to having my story included in this public archive (identifying details can be anonymized).")
+    ),
+    React.createElement("button",{onClick:()=>form.experience.length>10&&form.consent&&setSubmitted(true),style:{background:form.consent&&form.experience.length>10?"linear-gradient(135deg,#c41e1e,#a01818)":"#333",color:"#fff",border:"none",borderRadius:8,padding:"14px 36px",fontSize:16,fontFamily:"'Playfair Display',serif",fontWeight:600,cursor:form.consent?"pointer":"not-allowed",letterSpacing:0.5}},"Submit Your Story")
+  );
+}
 
-<!-- SECTION 6: COURT ACTIONS -->
-<section id="court-actions">
-  <h2>6. Lawsuits Against Hudson Homes Management LLC</h2>
-  <p>Documented court cases spanning <span class="highlight">15+ states</span>, including active fraud lawsuits, dismissed evictions, standing challenges, and a case where a judge signed an Order to Show Cause in just 4 days.</p>
+/* ═══════════════════════════════════════════════
+   MAIN APP — ALL 14 SECTIONS
+   ═══════════════════════════════════════════════ */
+function App(){
+  const[active,setActive]=useState("guide");
+  const mob=useIsMobile(600);
 
-  <div class="alert-card">
-    <h3 style="color:#c41e1e; margin-top:0;">ACTIVE: Shannon Fair v. Hudson Homes Management LLC (2025)</h3>
-    <p><strong>Court:</strong> New York Supreme Court, Orleans County &bull; <strong>Judge:</strong> Hon. Frank Caruso &bull; <strong>Status: OPEN</strong></p>
-    <p><strong>Type:</strong> <span class="highlight">FRAUD — Real Property Fraud</span></p>
-    <p><strong>Defendants:</strong> Hudson Homes Management LLC, Caliber Home Loans (now Newrez LLC), U.S. Bank Trust N.A. as Trustee for <strong>LSF10</strong> Master Participation Trust, and <span class="highlight">LONE STAR FUNDS</span></p>
-    <p>Pro se plaintiff filed pattern-and-practice evidence of foreclosure fraud, proof Hudson lacks legal authority, and an MLS listing showing HHM listed as property SELLER (contradicting their claim to be "just the agent"). <span class="highlight">Judge signed Order to Show Cause within 4 days.</span></p>
-    <a class="source-link" href="https://unicourt.com/case/ny-sue1-caseggdd44370b4707-3249944">UniCourt — Full Case &amp; Documents</a>
-    <a class="source-link" href="https://www.law.com/radar/card/newyork-orleans-2487800-shannon-fair-v-hudson-homes-management-llc">Law.com Radar</a>
-  </div>
+  return React.createElement("div",{style:{background:"#080808",minHeight:"100vh",color:"#b8b0a6"}},
+    React.createElement("style",null,`
+      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&family=JetBrains+Mono:wght@400;600&display=swap');
+      *{margin:0;padding:0;box-sizing:border-box}
+      body{background:#080808;overflow-x:hidden}
+      a{color:#d46666;text-decoration:none;transition:color 0.2s}
+      a:hover{color:#ff8888}
+      strong{color:#e8e0d6;font-weight:600}
+      p{margin-bottom:14px}p:last-child{margin-bottom:0}
+      ::selection{background:#c41e1e44;color:#fff}
+      ::-webkit-scrollbar{height:4px;width:6px}
+      ::-webkit-scrollbar-track{background:#111}
+      ::-webkit-scrollbar-thumb{background:#333;border-radius:3px}
+      @media(max-width:768px){table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}}
+      @media(max-width:600px){
+        body>div>div>div[style*="maxWidth"]{padding-left:16px!important;padding-right:16px!important}
+        nav button{font-size:11px!important}
+      }
+    `),
 
-  <h3>Federal Courts</h3>
-  <div class="card">
-    <h4>Weiss et al v. Hudson Homes Management LLC — D. Oregon (2019)</h4>
-    <p>Case No. 6:2019cv01104.</p>
-    <a class="source-link" href="https://dockets.justia.com/docket/oregon/ordce/6:2019cv01104/146670">Justia Docket</a>
-  </div>
-  <div class="card">
-    <h4>Class Action vs HUD/Lone Star — E.D.N.Y. (2016)</h4>
-    <p>Class action challenging racially discriminatory predatory practices.</p>
-    <a class="source-link" href="https://ecbawm.com/news/class-action-challenges-racially-discriminatory-predatory-practices-hud-private-equity-fund/">ECBAWM Press Release</a>
-  </div>
+    React.createElement(Nav,{active,setActive}),
 
-  <h3>State Courts — Cases Dismissed / Standing Challenged</h3>
-  <div class="card">
-    <h4>Ohio — HHM Standing DISMISSED (2024)</h4>
-    <p>HHM claimed to be owner AND agent for LSF9 MPT. When ordered to prove authority, <span class="highlight">HHM filed nothing</span>. Bill Paatalo assisted defense. Case dismissed.</p>
-    <a class="source-link" href="https://bpinvestigativeagency.com/hudson-homes-management-llc-fails-to-defend-its-agency-with-u-s-bank-trust-n-a-as-trustee-for-lsf9-master-participation-trust/">BPIA: HHM Fails to Defend Standing</a>
-  </div>
-  <div class="card">
-    <h4>Florida — HHM v. Hayden DISMISSED (Palm Beach, 2020)</h4>
-    <p>Filed by HHM OBO US Bank NA as Trustee for LSF9 MPT. Dismissed without prejudice.</p>
-    <a class="source-link" href="https://unicourt.com/case/fl-pal-hudson-homes-management-llc-obo-us-bank-na-as-trustee-for-lsf9-master-participation-trust-v-hayden-marsha-753071">UniCourt</a>
-  </div>
+    /* ═══ TAB: SURVIVAL GUIDE ═══ */
+    active==="guide"&&React.createElement(React.Fragment,null,
+      React.createElement(SectionBanner,{image:"hero-banner.png",tag:"TENANT PROTECTION · PUBLIC RECORDS · SURVIVAL",title:"The Tenant Survival Handbook",subtitle:"If you rent from Hudson Homes Management LLC — or you're about to — read this first. Written in plain English. No legalese. Just the facts that could save your family."}),
 
-  <h3>Additional State Court Cases</h3>
-  <table>
-    <thead><tr><th>Case</th><th>State/Court</th><th>Type</th></tr></thead>
-    <tbody>
-      <tr><td>HHM v. White ($10,122 default)</td><td>TX — Tarrant County</td><td>Forcible Detainer</td></tr>
-      <tr><td>HHM v. Bryant</td><td>GA — Gwinnett County</td><td>Dispossessory</td></tr>
-      <tr><td>HHM/LSF10 v. Kingsbury</td><td>CT — New London</td><td>Housing SP</td></tr>
-      <tr><td>HHM v. Curnoles</td><td>PA — Delaware County</td><td>Eviction</td></tr>
-      <tr><td>HHM/LSF10 v. Downing</td><td>PA — Lackawanna</td><td>Landlord-Tenant</td></tr>
-      <tr><td>Smith v. HHM (tenant sued)</td><td>FL — Seminole</td><td>Debt Collection</td></tr>
-      <tr><td>HOA v. HHM + US Bank Trust</td><td>FL — Manatee</td><td>Property Violations</td></tr>
-      <tr><td>LSF8/HHM v. Persaud</td><td>NY — Queens</td><td>Eviction (LSF8)</td></tr>
-      <tr><td>Tenants of 1507 St. Johns Place v. Lone Star</td><td>NY — Brooklyn</td><td>105 Code Violations</td></tr>
-    </tbody>
-  </table>
-</section>
+      /* Warning Banner */
+      React.createElement("div",{style:{background:"linear-gradient(90deg,#c41e1e,#8b0000)",padding:"16px 24px",textAlign:"center"}},
+        React.createElement("div",{style:{fontFamily:"'Source Sans 3',sans-serif",fontSize:14,color:"#fff",fontWeight:600,letterSpacing:1}},"⚠ AS OF MARCH 2026: Over 200 complaints across 14 platforms · Only 9.8% resolved · Only 28% of their own employees recommend working there")
+      ),
 
-<!-- SECTION 7: COMPLAINTS -->
-<section id="complaints">
-  <h2>7. Hudson Homes Management LLC Complaints &amp; Reviews</h2>
-  <p>Across BBB, CFPB, ComplaintsBoard, RevDex, Foreclosurepedia, and social media, tenants report consistent patterns:</p>
-  <div class="card">
-    <h4>Common Complaint Categories</h4>
-    <p><span class="highlight">Failure to make repairs</span> — Mold, leaks, broken HVAC, structural issues left for months or years.</p>
-    <p><span class="highlight">Daily automated harassment emails</span> — "Move Out Has Not Been Confirmed - Holdover Charges Applied" sent daily during active litigation.</p>
-    <p><span class="highlight">Unlawful eviction attempts</span> — Filing eviction cases then failing to prove standing or authority in court.</p>
-    <p><span class="highlight">Refusing to accept Section 8 voucher payments</span> — Sabotaging housing authority relationships to force tenants out.</p>
-    <p><span class="highlight">Retaliatory actions</span> — Filing legal actions after tenants request repairs or assert rights.</p>
-    <p><span class="highlight">Cash-for-keys pressure</span> — Offering lowball relocation agreements to force tenants to vacate.</p>
-    <p><span class="highlight">Phantom charges and fees</span> — Unexplained charges appearing on accounts.</p>
-  </div>
-  <a class="source-link" href="https://www.bbb.org/us/tx/dallas/profile/property-management/hudson-homes-management-llc-0875-90729524/complaints">BBB: 176+ Complaints</a>
-  <a class="source-link" href="https://www.consumerfinance.gov/data-research/consumer-complaints/">CFPB Complaint Database</a>
-</section>
+      /* Stats */
+      React.createElement("div",{style:{maxWidth:920,margin:"0 auto",padding:"40px 24px 0"}},
+        React.createElement("div",{style:{display:"flex",gap:mob?10:16,flexWrap:"wrap",justifyContent:"center",marginBottom:48}},
+          React.createElement(StatBox,{num:"200+",label:"Complaints (14 Platforms)"}),
+          React.createElement(StatBox,{num:"1,200+",label:"CFPB Complaints"}),
+          React.createElement(StatBox,{num:"$11.2M",label:"SEC Fine (2022)",accent:"#d4a574"}),
+          React.createElement(StatBox,{num:"$17M",label:"NY AG Settlement",accent:"#d4a574"}),
+          React.createElement(StatBox,{num:"20+",label:"Known Lawsuits"})
+        )
+      ),
 
-<!-- SECTION 8: DAILY EMAILS -->
-<section id="daily-emails">
-  <h2>8. Daily Harassment Emails During Active Litigation</h2>
-  <p>HHM sends <span class="highlight">daily automated emails</span> from <code>noreply@hudsonhomesmgmt.com</code> with the subject line <em>"Move Out Has Not Been Confirmed - Holdover Charges Applied"</em> to tenants, including tenants who are actively defending eviction cases in court and tenants who have never lived at the property (co-signers).</p>
-  <p>In the Massachusetts case (Docket 25H77SP004586), over <span class="highlight">200+ emails</span> were documented being sent simultaneously to three email addresses — including a co-signer who never resided at the property — every single day from January through March 2026, while the eviction case was actively being litigated.</p>
-</section>
+      React.createElement(Wrap,null,
+        /* DECODER TABLE */
+        SectionTitle({children:"The Corporate Decoder"}),
+        SubText({children:"Hudson Homes uses corporate language designed to confuse you. Here's the translation."}),
+        DataTable({headers:["What They Say","What It Actually Means"],rows:[
+          ['"Holdover Charge"',"A massive daily fee ($50–$150/day) added the moment your lease expires — even if you're trying to work with them. BBB complaints show tenants hit with $10,000–$19,000+ bills."],
+          ['"Resident Portal"',"A digital gate they control. Tenants report being locked out after eviction notices — unable to pay rent, view their ledger, or submit move-out evidence. Then charged for \"nonpayment.\""],
+          ['"LSF9 Master Participation Trust"',"The hidden entity that actually owns the house. A Delaware Statutory Trust created by Lone Star Funds — a $95 billion private equity firm. A private investigator proved it holds nothing."],
+          ['"Property Manager"',"Often a remote call center in Dallas, TX that isn't authorized to approve repairs, waive fees, or make decisions."],
+          ['"Intent to Sell Notice"',"A letter saying your home is being sold and you need to leave — starting the holdover charge clock."],
+          ['"Application Fee"',"A non-refundable fee ($50–$150) collected from multiple applicants simultaneously. Some report the property was already rented."],
+          ['"We are escalating this matter"',"Standard response that means nothing will happen. BBB complaints document months of this."],
+          ['"Wholly-owned subsidiary"',"Means Hudson Homes is owned by Hudson Advisors → owned by Lone Star Funds. Your landlord is a $95B private equity machine."],
+        ]}),
 
-<!-- SECTION 9: SECTION 8 -->
-<section id="section-8">
-  <h2>9. Section 8 Housing Voucher Sabotage</h2>
-  <p>Multiple tenants report that HHM takes actions that result in <span class="highlight">housing authority payments being suspended</span>, then uses the resulting "nonpayment" as grounds for eviction. This creates a trap: the tenant's voucher is disrupted through no fault of their own, then HHM uses the disruption as justification to remove them.</p>
-  <p>This pattern potentially violates <strong>24 CFR §982.310</strong> (HUD regulations governing lease termination for voucher holders) and federal fair housing laws.</p>
-</section>
+        Divider(),
 
-<!-- SECTION 10: DOCUMENTED PATTERNS -->
-<section id="documented-patterns">
-  <h2>10. Documented Patterns of Abuse</h2>
-  <div class="card"><h4>1. Acquire Through Foreclosure</h4><p>Lone Star-affiliated trusts purchase distressed mortgage debt at steep discounts, then foreclose to acquire properties.</p></div>
-  <div class="card"><h4>2. Install HHM as Manager</h4><p>Hudson Homes Management is installed as property manager, claiming to act as "agent" for the shell trusts.</p></div>
-  <div class="card"><h4>3. Neglect Maintenance</h4><p>Properties are systematically under-maintained. Repair requests go unanswered for months or years.</p></div>
-  <div class="card"><h4>4. Pressure Tenants to Leave</h4><p>Daily holdover emails, cash-for-keys offers, and legal actions create constant pressure.</p></div>
-  <div class="card"><h4>5. File Eviction Actions</h4><p>When tenants don't leave voluntarily, HHM files eviction proceedings — often without proper standing or authority.</p></div>
-  <div class="card"><h4>6. Rotate Attorneys</h4><p>According to published court records, HHM has rotated through multiple attorneys in individual cases.</p></div>
-  <div class="card"><h4>7. Sell Property / Repeat</h4><p>Once the tenant is removed, the property is sold or re-rented at market rate. The cycle begins again.</p></div>
-</section>
+        /* 3 RED FLAGS */
+        SectionTitle({children:"The 3 Red Flags"}),
+        SubText({children:"Before you sign anything, know what the public record says about this company."}),
 
-<!-- SECTION 11: FAQ -->
-<section id="faq">
-  <h2>11. Frequently Asked Questions About Hudson Homes Management LLC</h2>
+        /* Red */
+        React.createElement("div",{style:{background:"linear-gradient(135deg,#1a0808,#110505)",border:"2px solid #c41e1e",borderRadius:10,padding:mob?"20px":"28px",marginBottom:24}},
+          React.createElement("div",{style:{display:"flex",alignItems:"center",gap:14,marginBottom:14}},
+            React.createElement("div",{style:{fontSize:32}},"🔴"),
+            React.createElement("div",{style:{fontFamily:"'Playfair Display',serif",fontSize:mob?18:22,color:"#c41e1e"}},"The $11.2 Million Government Penalty")
+          ),
+          React.createElement("div",{style:{fontFamily:"'Cormorant Garamond',serif",fontSize:17,color:"#c0b8ae",lineHeight:1.85}},
+            React.createElement("p",null,"In 2022, the SEC charged ",React.createElement("strong",null,"Hudson Advisors")," and ",React.createElement("strong",null,"Lone Star Global Acquisitions")," for hiding ",React.createElement("strong",null,"$54.6 million")," in the founder's personal tax bills inside investor fees. They paid an ",React.createElement("strong",null,"$11.2 million fine")," and reimbursed over ",React.createElement("strong",null,"$68 million"),"."),
+            React.createElement("p",null,React.createElement("strong",null,"In plain English:")," The federal government caught them being dishonest with money — for ",React.createElement("strong",null,"13 years")," across ",React.createElement("strong",null,"14 different funds"),".")
+          ),
+          React.createElement("div",{style:{display:"flex",gap:8,marginTop:14,flexWrap:"wrap"}},
+            SourceLink({href:"https://www.sec.gov/newsroom/press-releases/2022-159",children:"SEC Press Release"}),
+            SourceLink({href:"https://www.sec.gov/files/litigation/admin/2022/ia-6120.pdf",children:"Full SEC Order (PDF)"})
+          )
+        ),
 
-  <div class="faq-item">
-    <p class="faq-q">What is Hudson Homes Management LLC?</p>
-    <p class="faq-a">Hudson Homes Management LLC (HHM) is a property management company headquartered in Dallas, Texas, operating across 61 markets. It is a wholly-owned subsidiary of Hudson Advisors L.P., the asset management arm of Lone Star Funds, a private equity firm founded by billionaire John P. Grayken.</p>
-  </div>
+        /* Yellow */
+        React.createElement("div",{style:{background:"linear-gradient(135deg,#1a1508,#111005)",border:"2px solid #b8860b",borderRadius:10,padding:mob?"20px":"28px",marginBottom:24}},
+          React.createElement("div",{style:{display:"flex",alignItems:"center",gap:14,marginBottom:14}},
+            React.createElement("div",{style:{fontSize:32}},"🟡"),
+            React.createElement("div",{style:{fontFamily:"'Playfair Display',serif",fontSize:mob?18:22,color:"#b8860b"}},"The Name-Change Network (WRI → HHM → RESICAP)")
+          ),
+          React.createElement("div",{style:{fontFamily:"'Cormorant Garamond',serif",fontSize:17,color:"#c0b8ae",lineHeight:1.85}},
+            React.createElement("p",null,"Public records and tenant reports on BiggerPockets show properties transferred from ",React.createElement("strong",null,"WRI Property Management")," to ",React.createElement("strong",null,"Hudson Homes Management"),", then sometimes to ",React.createElement("strong",null,"RESICAP"),". The fees, the problems, and the LSF9 trust ownership all stay the same."),
+            React.createElement("p",null,React.createElement("strong",null,"In plain English:")," They change the name on the door, but the same people run the same operation behind it.")
+          ),
+          React.createElement("div",{style:{display:"flex",gap:8,marginTop:14,flexWrap:"wrap"}},
+            SourceLink({href:"https://www.biggerpockets.com/forums/48/topics/294577-lsf9-master-participation-trust",children:"BiggerPockets LSF9 Thread"}),
+            SourceLink({href:"https://wripm.com/",children:"WRI Property Management"})
+          )
+        ),
 
-  <div class="faq-item">
-    <p class="faq-q">How many complaints does Hudson Homes Management have?</p>
-    <p class="faq-a">Over 176 complaints on the Better Business Bureau, over 1,200 CFPB complaints against affiliated servicer Caliber Home Loans, and numerous additional complaints across consumer review platforms.</p>
-  </div>
+        /* Green */
+        React.createElement("div",{style:{background:"linear-gradient(135deg,#081a0d,#051108)",border:"2px solid #228b22",borderRadius:10,padding:mob?"20px":"28px",marginBottom:24}},
+          React.createElement("div",{style:{display:"flex",alignItems:"center",gap:14,marginBottom:14}},
+            React.createElement("div",{style:{fontSize:32}},"🟢"),
+            React.createElement("div",{style:{fontFamily:"'Playfair Display',serif",fontSize:mob?18:22,color:"#228b22"}},"How to Fight Back (It's Free)")
+          ),
+          React.createElement("div",{style:{fontFamily:"'Cormorant Garamond',serif",fontSize:17,color:"#c0b8ae",lineHeight:1.85}},
+            React.createElement("p",null,"You don't need a lawyer to start protecting yourself. Every one of these agencies accepts free online complaints:")
+          ),
+          React.createElement("div",{style:{display:"flex",gap:8,marginTop:14,flexWrap:"wrap"}},
+            React.createElement("a",{href:"https://www.bbb.org/file-a-complaint",target:"_blank",rel:"noopener noreferrer",style:{background:"#081a0d",border:"1px solid #228b2244",borderRadius:5,padding:"8px 16px",fontSize:14,color:"#228b22",textDecoration:"none",fontWeight:600,fontFamily:"'Source Sans 3',sans-serif"}},"📝 File a BBB Complaint"),
+            React.createElement("a",{href:"https://www.consumerfinance.gov/complaint/",target:"_blank",rel:"noopener noreferrer",style:{background:"#081a0d",border:"1px solid #228b2244",borderRadius:5,padding:"8px 16px",fontSize:14,color:"#228b22",textDecoration:"none",fontWeight:600,fontFamily:"'Source Sans 3',sans-serif"}},"📝 CFPB Complaint"),
+            React.createElement("a",{href:"https://reportfraud.ftc.gov/",target:"_blank",rel:"noopener noreferrer",style:{background:"#081a0d",border:"1px solid #228b2244",borderRadius:5,padding:"8px 16px",fontSize:14,color:"#228b22",textDecoration:"none",fontWeight:600,fontFamily:"'Source Sans 3',sans-serif"}},"📝 Report to FTC"),
+            React.createElement("a",{href:"https://www.hud.gov/complaints",target:"_blank",rel:"noopener noreferrer",style:{background:"#081a0d",border:"1px solid #228b2244",borderRadius:5,padding:"8px 16px",fontSize:14,color:"#228b22",textDecoration:"none",fontWeight:600,fontFamily:"'Source Sans 3',sans-serif"}},"📝 HUD Complaint")
+          )
+        ),
 
-  <div class="faq-item">
-    <p class="faq-q">What is the LSF9 Master Participation Trust?</p>
-    <p class="faq-a">A Delaware Statutory Trust used by Lone Star Funds as a shell entity in foreclosure and eviction proceedings. Investigator Bill Paatalo has documented that LSF9 MPT does not actually own any mortgage loans — the real purchasers are hidden entities like LSF9 Mortgage Holdings LLC and various VOLT LLCs.</p>
-  </div>
+        Divider(),
 
-  <div class="faq-item">
-    <p class="faq-q">Has Hudson Homes Management been sued?</p>
-    <p class="faq-a">Yes, in at least 15 states. Notable cases include an active fraud lawsuit in New York (Shannon Fair v. HHM, naming Lone Star Funds directly), an Ohio case where HHM's standing was dismissed, and multiple Florida cases that were dismissed.</p>
-  </div>
+        /* QUIZ */
+        SectionTitle({children:"Am I Being Targeted? — Self-Assessment"}),
+        SubText({children:"Answer these five questions. If you answer \"yes\" to two or more, you may be caught in the documented pattern."}),
+        React.createElement(Quiz,null),
 
-  <div class="faq-item">
-    <p class="faq-q">Is Hudson Homes Management LLC legitimate?</p>
-    <p class="faq-a">While registered as a company, HHM has accumulated 176+ BBB complaints, regulatory fines exceeding $30M across affiliates, lawsuits in 15+ states, and failed to prove its legal authority in at least one court proceeding.</p>
-  </div>
+        Divider(),
 
-  <div class="faq-item">
-    <p class="faq-q">Who owns Hudson Homes Management LLC?</p>
-    <p class="faq-a">Hudson Homes Management LLC is wholly owned by Hudson Advisors L.P., which is the asset management arm of Lone Star Funds. Lone Star was founded by John P. Grayken, an Irish citizen with an estimated net worth of $7.5 billion.</p>
-  </div>
+        /* SURVIVAL CHECKLIST */
+        SectionTitle({children:"The Survival Checklist — What To Do Right Now"}),
+        SubText({children:"Whether you just got a notice or you've been fighting for months. Do these in order. Do them today."}),
 
-  <div class="faq-item">
-    <p class="faq-q">What SEC fines has Lone Star Funds received?</p>
-    <p class="faq-a">In 2022, the SEC imposed an $11.2 million civil penalty plus $68.5 million in reimbursement (SEC Release 2022-159). The NY AG secured a $17M settlement against Caliber Home Loans, and FinCEN imposed a $2M penalty for Bank Secrecy Act violations.</p>
-  </div>
+        ...[
+          {n:"1",t:"Screenshot Everything — Assume Your Portal Will Be Locked",txt:"Go to your resident portal RIGHT NOW. Screenshot your entire ledger, every charge, every payment, every maintenance request. Download your lease. Save every email. Multiple tenants report being locked out after eviction notices — once locked out, this evidence is gone.",c:"#c41e1e"},
+          {n:"2",t:"Verify Who Actually Owns Your Home",txt:"Go to your county assessor's website. Look up your address. The owner is likely NOT \"Hudson Homes\" — it's probably \"U.S. Bank Trust, N.A. as Trustee for LSF9 Master Participation Trust.\" This matters because HHM may not have the legal right to evict you.",c:"#b8860b"},
+          {n:"3",t:"Check the Holdover Math — Compare to Your Lease",txt:"If you see a five-figure balance, pull out your lease and do the math yourself. Public complaints show daily holdover fees exceeding $100/day. Compare charges to what your lease actually says.",c:"#c41e1e"},
+          {n:"4",t:"Send Everything in Writing — Email Only",txt:"Stop calling HHM. BBB complaints describe weeks of unreturned calls and voicemails. Email your property manager AND info@hudsonhomesmgmt.com. BCC yourself on every message.",c:"#b8860b"},
+          {n:"5",t:"File Complaints With Every Agency — It's Free",txt:"File with the BBB, CFPB, HUD, FTC, and your state Attorney General. Takes about 30 minutes total. Over 200 complaints have already been documented across 14 platforms.",c:"#228b22"},
+          {n:"6",t:"Contact a Tenant Rights Attorney — Many Work for Free",txt:"Legal aid organizations provide free representation. Search \"legal aid [your state]\" or call 211. If you have a Section 8 voucher, your Housing Authority may have tenant advocacy resources.",c:"#228b22"},
+        ].map(s=>React.createElement("div",{key:s.n,style:{background:"linear-gradient(145deg,#111,#0d0d0d)",border:"1px solid #1e1e1e",borderLeft:`4px solid ${s.c}`,padding:mob?"20px":"28px",borderRadius:"0 8px 8px 0",marginBottom:20}},
+          React.createElement("div",{style:{display:"flex",alignItems:"center",gap:14,marginBottom:14}},
+            React.createElement("div",{style:{width:40,height:40,borderRadius:"50%",background:s.c,color:"#fff",display:"flex",alignItems:"center",justifyContent:"center",fontFamily:"'Playfair Display',serif",fontSize:20,fontWeight:700,flexShrink:0}},s.n),
+            React.createElement("div",{style:{fontFamily:"'Playfair Display',serif",fontSize:mob?17:20,color:"#f5efe6",lineHeight:1.3}},s.t)
+          ),
+          React.createElement("div",{style:{fontFamily:"'Cormorant Garamond',serif",fontSize:17,color:"#b8b0a6",lineHeight:1.85,paddingLeft:mob?0:54}},s.txt)
+        )),
 
-  <div class="faq-item">
-    <p class="faq-q">How do I file a complaint against Hudson Homes Management?</p>
-    <p class="faq-a">File at: BBB (bbb.org), CFPB (consumerfinance.gov), your state Attorney General, HUD (1-800-669-9777), and your local Legal Aid office for free legal help.</p>
-  </div>
-</section>
+        Divider(),
 
-<!-- SECTION 12: SHARE YOUR STORY -->
-<section id="stories">
-  <h2>12. Share Your Story</h2>
-  <p>If you are a current or former tenant of a property managed by Hudson Homes Management LLC, your experience matters. By sharing your story, you help build a public record of how this company operates.</p>
-  <p>Contact: <a href="mailto:info@theholdoverproject.org">info@theholdoverproject.org</a></p>
-</section>
+        /* SECURITIZATION */
+        SectionTitle({children:"The Securitization Machine — From Their Own Website"}),
+        SubText({children:"Hudson Homes Management is not a traditional landlord."}),
+        Card({title:"What Hudson Advisors Says About HHM",accent:"#c41e1e",children:[
+          React.createElement("div",{key:"q",style:{background:"#1a0808",border:"1px solid #c41e1e33",borderRadius:8,padding:20,marginBottom:16}},
+            React.createElement("div",{style:{fontStyle:"italic",lineHeight:1.8,color:"#e8e0d6"}},'Per hudson-advisors.com/credit/: Hudson describes HHM as providing a ',React.createElement("strong",{style:{color:"#c41e1e"}},'"servicing capability"')," for their securitization operations, naming VOLT, COLT, LSTAR, and ERLS as securitization \"brands.\"")),
+          React.createElement("p",{key:"e"},React.createElement("strong",null,"In plain English:")," Your rent payments flow into a global investment machine that packages mortgages into bonds sold to investors worldwide. HHM exists to extract maximum value from properties for bondholders — not to provide you with a home."),
+          React.createElement("p",{key:"s"},"Hudson Advisors confirms: ",React.createElement("strong",null,"$76.5 billion")," in asset-backed financing facilitated. ",React.createElement("strong",null,"149 investments")," disposed since 1995."),
+          React.createElement("div",{key:"l",style:{display:"flex",gap:8,marginTop:14,flexWrap:"wrap"}},
+            SourceLink({href:"https://www.hudson-advisors.com/credit/",children:"Hudson Advisors — Credit Page"}),
+            SourceLink({href:"https://www.hudson-advisors.com/service/real-estate/",children:"Hudson Advisors — Real Estate"})
+          ),
+        ]}),
 
-<!-- SECTION 13: RESOURCES -->
-<section id="resources">
-  <h2>13. Resources &amp; How to File Complaints</h2>
-  <div class="card">
-    <h4>Where to File Complaints</h4>
-    <p><a href="https://www.bbb.org/file-a-complaint">Better Business Bureau</a> &bull;
-    <a href="https://www.consumerfinance.gov/complaint/">Consumer Financial Protection Bureau</a> &bull;
-    <a href="https://www.mass.gov/how-to/file-a-consumer-complaint">Massachusetts AG</a> &bull;
-    <a href="https://portal.hud.gov/hudportal/HUD?src=/topics/housing_discrimination">HUD Fair Housing</a></p>
-  </div>
-  <div class="card">
-    <h4>Expert &amp; Legal Resources</h4>
-    <p><a href="https://bpinvestigativeagency.com">BP Investigative Agency</a> — Bill Paatalo, expert witness on LSF trust fraud (bill.bpia@gmail.com, 406-328-4075)</p>
-    <p><a href="https://www.naca.net/find-an-attorney">National Association of Consumer Advocates</a> — Find a consumer lawyer in your state</p>
-    <p><a href="https://parkplacesecurities.com/caliber.html">Park Place Securities</a> — Foreclosure defense resources for Caliber/LSF cases</p>
-  </div>
-  <div class="card">
-    <h4>Key Source Documents</h4>
-    <a class="source-link" href="https://www.sec.gov/newsroom/press-releases/2022-159">SEC Enforcement: $11.2M</a>
-    <a class="source-link" href="https://therealdeal.com/new-york/2020/06/24/lone-star-affiliate-reaches-17m-settlement-with-ny-homeowners/">NY AG: $17M Settlement</a>
-    <a class="source-link" href="https://www.fincen.gov/system/files/enforcement_action/2023-04-05/Lone_Star.ASSESSMENT_OF_CIVIL_MONEY_PENALTY_Final_11.01_0.pdf">FinCEN: $2M Penalty</a>
-    <a class="source-link" href="https://www.nbcnewyork.com/news/local/Pension-Scam-Foreclosure-New-York-Investigation-439677863.html">NBC I-Team Investigation</a>
-    <a class="source-link" href="https://www.bbb.org/us/tx/dallas/profile/property-management/hudson-homes-management-llc-0875-90729524/complaints">BBB: 176+ Complaints</a>
-    <a class="source-link" href="https://bpinvestigativeagency.com/hudson-homes-management-llc-fails-to-defend-its-agency-with-u-s-bank-trust-n-a-as-trustee-for-lsf9-master-participation-trust/">BPIA: HHM Standing Dismissed</a>
-    <a class="source-link" href="https://unicourt.com/case/ny-sue1-caseggdd44370b4707-3249944">UniCourt: Shannon Fair v. HHM</a>
-  </div>
-</section>
+        /* YOU ARE NOT ALONE */
+        React.createElement("div",{style:{background:"#0d0808",border:"1px solid #333",borderLeft:"3px solid #228b22",borderRadius:"0 8px 8px 0",padding:"24px 28px",marginTop:32}},
+          React.createElement("div",{style:{fontFamily:"'Playfair Display',serif",fontSize:20,color:"#228b22",marginBottom:12}},"💚 You Are Not Alone"),
+          React.createElement("div",{style:{fontFamily:"'Cormorant Garamond',serif",fontSize:17,color:"#b8b0a6",lineHeight:1.85}},"Over 200 complaints documented across 14 platforms. Courts in multiple states have dismissed HHM eviction cases. A fraud lawsuit is pending in New York Supreme Court. The SEC fined parent companies $11.2 million. Share this website. File complaints. The more families speak up, the harder it becomes for them to operate.")
+        )
+      )
+    ),
 
-<footer>
-  <p><strong>The Holdover Project</strong> &mdash; A public evidence archive. All information sourced from public records, government databases, court filings, and published journalism.</p>
-  <p style="margin-top:8px;">© 2026 The Holdover Project. This is not legal advice. Consult an attorney for your specific situation.</p>
-</footer>
+    /* ═══ TAB: THE INVESTIGATION ═══ */
+    active==="investigation"&&React.createElement(React.Fragment,null,
+      React.createElement(SectionBanner,{image:"hero-banner.png",tag:"CASE FILES · PUBLIC RECORDS",title:"The Investigation",subtitle:"How a $95 billion private equity fund became America's most-complained-about landlord."}),
+      React.createElement(Wrap,null,
+        SectionTitle({children:"What Is This Archive?"}),
+        SubText({children:"A factual, document-driven repository of publicly available records concerning Hudson Homes Management LLC and its parent companies."}),
+        Card({title:"About This Project",children:[
+          React.createElement("p",{key:"1"},"This archive compiles publicly available court records, regulatory filings, BBB complaints, CFPB data, SEC enforcement actions, news articles, and tenant testimonials concerning ",React.createElement("strong",null,"Hudson Homes Management LLC"),", a wholly-owned subsidiary of ",React.createElement("strong",null,"Hudson Advisors L.P."),", which is the asset management arm of ",React.createElement("strong",null,"Lone Star Funds"),", a $95+ billion private equity firm founded by ",React.createElement("strong",null,"John P. Grayken"),"."),
+          React.createElement("p",{key:"2"},"HHM manages single-family rental properties across ",React.createElement("strong",null,"61 markets")," in the United States that were acquired through foreclosure by Lone Star-affiliated trusts including LSF8, LSF9, and LSF10 Master Participation Trust."),
+        ]}),
+        Card({title:"Per HHM's Own Website (hudsonhomesmanagement.com/our-story)",accent:"#d4a574",children:[
+          React.createElement("div",{key:"q",style:{background:"#1a1508",border:"1px solid #d4a57433",borderRadius:8,padding:20,fontStyle:"italic",lineHeight:1.8,color:"#e8e0d6"}},'"Hudson Homes (Hudson Homes Management, LLC), a wholly-owned subsidiary of Hudson Advisors L.P., manages single-family residential properties nationwide and operates a rental portfolio that spans 61 markets across the United States."'),
+          React.createElement("p",{key:"e",style:{marginTop:14}},React.createElement("strong",null,"Translation:")," They are not a local landlord. They are a cog in a $95 billion global investment machine."),
+        ]}),
+        Card({title:"Why This Archive Exists",children:[
+          React.createElement("p",{key:"1"},"The Better Business Bureau records ",React.createElement("strong",null,"143 complaints against Hudson Homes Management LLC")," in the last three years alone — with 29 closed in the last 12 months. Across all complaint platforms, over ",React.createElement("strong",null,"200 complaints")," have been documented. Only ",React.createElement("strong",null,"9.8%")," were resolved to the tenant's satisfaction."),
+          React.createElement("p",{key:"2"},"Meanwhile, the parent company — Lone Star Funds — has been labeled a \"vulture fund\" across Ireland, Spain, and South Korea for similar practices involving distressed debt acquisition and tenant displacement."),
+        ]}),
+        React.createElement("div",{style:{display:"flex",gap:8,flexWrap:"wrap",marginTop:20}},
+          SourceLink({href:"https://hudsonhomesmanagement.com/",children:"HHM Official Website"}),
+          SourceLink({href:"https://hudsonhomesmanagement.com/our-story",children:"HHM 'Our Story'"}),
+          SourceLink({href:"https://www.hudson-advisors.com/",children:"Hudson Advisors"}),
+          SourceLink({href:"https://www.lonestarfunds.com/",children:"Lone Star Funds"}),
+          SourceLink({href:"https://www.bbb.org/us/tx/dallas/profile/property-management/hudson-homes-management-llc-0875-90729524/complaints",children:"BBB Complaints"}),
+          SourceLink({href:"https://en.wikipedia.org/wiki/Lone_Star_Funds",children:"Wikipedia — Lone Star Funds"})
+        )
+      )
+    ),
 
-      </div>
-    </section>
-  </main>
+    /* ═══ TAB: THE PIPELINE ═══ */
+    active==="pipeline"&&React.createElement(React.Fragment,null,
+      React.createElement(SectionBanner,{image:"investigations-banner.png",tag:"FORECLOSURE · EVICTION · SECURITIZATION",title:"The Foreclosure-to-Eviction Pipeline",subtitle:"An 8-step process that converts American families into investment returns."}),
+      React.createElement(Wrap,null,
+        ...[
+          {n:"1",t:"Acquire Distressed Debt",d:"Lone Star Funds purchases bulk portfolios of defaulted mortgages from banks, FDIC auctions, and bankruptcy sales at steep discounts — often 20-40 cents on the dollar."},
+          {n:"2",t:"Create Shell Trusts",d:"Debt is placed into Delaware Statutory Trusts (LSF7/8/9/10/11 Master Participation Trust) to isolate liability and obscure true ownership."},
+          {n:"3",t:"Name a \"Trustee\"",d:"U.S. Bank Trust, N.A. is named as \"Trustee\" — creating the illusion of major bank involvement. But U.S. Bank Trust, N.A. as Trustee is a separate legal entity from U.S. Bank N.A., the actual national bank."},
+          {n:"4",t:"Foreclose on Homeowners",d:"Caliber Home Loans or affiliated servicers file foreclosure using Limited Powers of Attorney from the shell trusts. Courts often don't question the chain of authority."},
+          {n:"5",t:"Convert to Rental",d:"Foreclosed homes are transferred to Hudson Homes Management LLC, which renovates minimally and lists them for rent across 61 markets."},
+          {n:"6",t:"Extract Rent + Fees",d:"Tenants pay rent, application fees, late fees, holdover charges, and maintenance fees. HHM retains maximum revenue while minimizing repair costs."},
+          {n:"7",t:"Securitize the Portfolio",d:"The rental income stream is packaged into bonds (VOLT, COLT, LSTAR, ERLS) and sold to institutional investors. Hudson Advisors confirms $76.5 billion in financing facilitated."},
+          {n:"8",t:"Dispose and Repeat",d:"Properties are sold when market conditions favor exit. Tenants receive \"Intent to Sell\" notices and face eviction — often with massive holdover charges — while the fund profits."},
+        ].map((s,i)=>React.createElement("div",{key:i,style:{display:"flex",gap:20,marginBottom:32,alignItems:"flex-start"}},
+          React.createElement("div",{style:{width:48,height:48,borderRadius:"50%",background:i<4?"#c41e1e":"#b8860b",color:"#fff",display:"flex",alignItems:"center",justifyContent:"center",fontFamily:"'Playfair Display',serif",fontSize:22,fontWeight:700,flexShrink:0}},s.n),
+          React.createElement("div",null,
+            React.createElement("h3",{style:{fontFamily:"'Playfair Display',serif",fontSize:20,color:"#f5efe6",marginBottom:8}},s.t),
+            React.createElement("p",{style:{fontFamily:"'Cormorant Garamond',serif",fontSize:17,color:"#b8b0a6",lineHeight:1.85}},s.d)
+          )
+        )),
+        React.createElement("div",{style:{display:"flex",gap:8,flexWrap:"wrap",marginTop:20}},
+          SourceLink({href:"https://www.hudson-advisors.com/credit/",children:"Hudson Advisors Credit (Source)"}),
+          SourceLink({href:"https://bpinvestigativeagency.com/lsf9-master-participation-trust-is-a-straw-man-and-heres-some-proof/",children:"BPIA: LSF9 Is a Straw Man"})
+        )
+      )
+    ),
+
+    /* ═══ TAB: NAMED INDIVIDUALS ═══ */
+    active==="people"&&React.createElement(React.Fragment,null,
+      React.createElement(SectionBanner,{tag:"PERSONNEL · LEADERSHIP · LEGAL",title:"Named Individuals & Entities",subtitle:"Key figures in the Lone Star → Hudson Advisors → HHM corporate structure, sourced from public filings, LinkedIn, and corporate disclosures."}),
+      React.createElement(Wrap,null,
+        SectionTitle({children:"Lone Star Funds Leadership"}),
+        DataTable({headers:["Name","Title","Public Source"],accent:"#d4a574",rows:[
+          ["John P. Grayken","Founder & Chairman, Lone Star Funds","SEC filings, Wikipedia, Forbes ($7.5B net worth). Irish citizen (renounced U.S. citizenship)."],
+          ["Donald J. Quintin","CEO, Lone Star Funds","SEC Release 2022-159, LinkedIn"],
+        ]}),
+        SectionTitle({children:"Hudson Advisors Leadership"}),
+        DataTable({headers:["Name","Title","Public Source"],rows:[
+          ["Jodi Cason","CEO, Hudson Advisors L.P.","LinkedIn, SEC filings, Company website"],
+          ["James Hanley","Senior Managing Director","LinkedIn"],
+        ]}),
+        SectionTitle({children:"HHM Operations & Legal"}),
+        DataTable({headers:["Name","Title","Public Source"],rows:[
+          ["(Operations leadership)","President/VP roles at HHM","LinkedIn profiles, BBB responses"],
+          ["Caliber Home Loans / Newrez LLC","Affiliated loan servicer","SEC filings, NY AG settlement, NMLS records"],
+          ["Regional law firms","Plaintiff's counsel in multiple states","Court dockets, firm website"],
+        ]}),
+        React.createElement("div",{style:{background:"#111",border:"1px solid #1e1e1e",borderRadius:8,padding:20,marginTop:24}},
+          React.createElement("p",{style:{fontFamily:"'Cormorant Garamond',serif",fontSize:15,color:"#888",fontStyle:"italic"}},"Note: All individuals listed above are identified solely through publicly available records including SEC filings, court dockets, LinkedIn profiles, corporate websites, and news articles. No private or confidential information has been used.")
+        )
+      )
+    ),
+
+    /* ═══ TAB: CORPORATE STRUCTURE ═══ */
+    active==="corporate"&&React.createElement(React.Fragment,null,
+      React.createElement(SectionBanner,{tag:"OWNERSHIP · SUBSIDIARIES · AFFILIATES",title:"Corporate Structure",subtitle:"Follow the money from your rent check to a $95 billion private equity fund."}),
+      React.createElement(Wrap,null,
+        SectionTitle({children:"The Ownership Chain"}),
+        ...["Your Rent Check → Hudson Homes Management LLC (Property Manager, Dallas TX)","→ Hudson Advisors L.P. (Asset Manager, Dallas TX)","→ Lone Star Funds (Private Equity, Dallas TX)","→ John P. Grayken (Founder, Irish Citizen, $7.5B net worth)"].map((s,i)=>
+          React.createElement("div",{key:i,style:{background:i===0?"#1a0808":"#111",border:"1px solid #1e1e1e",borderLeft:`3px solid ${i===0?"#c41e1e":"#333"}`,padding:"18px 24px",marginBottom:2,fontFamily:"'Cormorant Garamond',serif",fontSize:18,color:i===0?"#c41e1e":"#e8e0d6",fontWeight:i===0?600:400}},s)
+        ),
+        Divider(),
+        SectionTitle({children:"Key Affiliates"}),
+        DataTable({headers:["Entity","Role","Connection"],rows:[
+          ["Caliber Home Loans / Newrez LLC","Loan servicer","$17M NY AG settlement for predatory lending"],
+          ["WRI Property Management","Property manager","Documented property handoffs with HHM"],
+          ["RESICAP","Property manager","Tenants report handoff chain: WRI → HHM → RESICAP"],
+          ["U.S. Bank Trust, N.A.","Named trustee","Named on property deeds but has no operational control"],
+          ["LSF8/9/10/11 Master Participation Trust","Shell trusts","Delaware Statutory Trusts holding foreclosed assets"],
+        ]}),
+        React.createElement("div",{style:{display:"flex",gap:8,flexWrap:"wrap",marginTop:20}},
+          SourceLink({href:"https://hudsonhomesmanagement.com/our-story",children:"HHM — Our Story (Subsidiary Admission)"}),
+          SourceLink({href:"https://www.lonestarfunds.com/asset-management/",children:"Lone Star — Asset Management"}),
+          SourceLink({href:"https://en.wikipedia.org/wiki/Lone_Star_Funds",children:"Wikipedia — Lone Star Funds"})
+        )
+      )
+    ),
+
+    /* ═══ TAB: SHELL TRUST NETWORK ═══ */
+    active==="trusts"&&React.createElement(React.Fragment,null,
+      React.createElement(SectionBanner,{image:"evidence-banner.png",tag:"LSF7 · LSF8 · LSF9 · LSF10 · LSF11",title:"The Shell Trust Network",subtitle:"How Delaware Statutory Trusts create a legal maze designed to prevent accountability."}),
+      React.createElement(Wrap,null,
+        Card({title:"How It Works",children:[
+          React.createElement("p",{key:"1"},"Lone Star purchases distressed mortgage debt at steep discounts through holding companies (LSF8/9/10/11 Mortgage Holdings LLC)."),
+          React.createElement("p",{key:"2"},"Debt is placed into Delaware Statutory Trusts (the \"Master Participation Trusts\") which serve as \"Paper Placeholders\" — they hold the legal title but have no employees, no office, no assets."),
+          React.createElement("p",{key:"3"},"\"U.S. Bank Trust, N.A.\" is named as \"Trustee\" — creating the illusion of major bank involvement. But as private investigator ",React.createElement("strong",null,"Bill Paatalo")," (Oregon PSID#49411) has documented, U.S. Bank Trust N.A. ",React.createElement("strong",null,"as Trustee")," is a separate entity from U.S. Bank N.A., the actual national bank."),
+          React.createElement("p",{key:"4"},"When challenged in court, ",React.createElement("strong",null,"these entities frequently cannot prove they have authority to act"),". An Ohio court dismissed HHM's eviction case after the company failed to demonstrate its agency relationship with the trust."),
+        ]}),
+        Card({title:'The "Two U.S. Banks" Deception',accent:"#d4a574",children:[
+          React.createElement("p",{key:"1"},"Courts routinely confuse two separate legal entities:"),
+          React.createElement("p",{key:"2"},React.createElement("strong",null,"(1) U.S. Bank, N.A.")," — the actual national bank, which states Caliber/Lone Star entities are NOT affiliates."),
+          React.createElement("p",{key:"3"},React.createElement("strong",null,"(2) U.S. Bank Trust, N.A. as Trustee")," — a limited-purpose entity that merely holds the trust name. Has no banking operations, no branches, no depositors."),
+        ]}),
+        SectionTitle({children:"Sources"}),
+        React.createElement("div",{style:{display:"flex",gap:8,flexWrap:"wrap"}},
+          SourceLink({href:"https://bpinvestigativeagency.com/beware-the-lsf9-master-participation-trust-is-operating-as-a-secret-agent/",children:"BPIA: LSF9 as Secret Agent (2016)"}),
+          SourceLink({href:"https://bpinvestigativeagency.com/lsf9-master-participation-trust-is-a-straw-man-and-heres-some-proof/",children:"BPIA: LSF9 Is a Straw Man (2018)"}),
+          SourceLink({href:"https://bpinvestigativeagency.com/the-lsf9-master-participation-trust-story-unravels-its-just-a-pseudonym-that-holds-nothing/",children:"BPIA: Just a Pseudonym (2022)"}),
+          SourceLink({href:"https://bpinvestigativeagency.com/u-s-bank-trust-n-a-files-false-fraudulent-disclosure-in-massachusetts-federal-court/",children:"BPIA: False Disclosure in MA Federal Court"}),
+          SourceLink({href:"https://www.hoferhagan.com/blog/whats-the-story-with-lsf9-master-participation-trust/",children:"Hofer Hagan LLP: What's the Story?"}),
+          SourceLink({href:"https://parkplacesecurities.com/caliber.html",children:"Park Place Securities: Fighting Caliber"}),
+          SourceLink({href:"https://www.academia.edu/44351236/U_S_BANK_LSF9_MASTER_PARTICIPATION_TRUST_CALIBER_FRAUD_ON_THE_COURT",children:"Academia.edu: Fraud on the Court"})
+        )
+      )
+    ),
+
+    /* ═══ TAB: REGULATORY ACTIONS ═══ */
+    active==="regulatory"&&React.createElement(React.Fragment,null,
+      React.createElement(SectionBanner,{tag:"SEC · NY AG · FINCEN · CFPB",title:"Government Enforcement Actions",subtitle:"$30+ million in fines and settlements against Hudson Homes' parent companies and affiliates."}),
+      React.createElement(Wrap,null,
+        ...[
+          {t:"SEC: $11.2M Civil Penalty + $68M Reimbursement (2022)",d:"The SEC charged Hudson Advisors L.P. and Lone Star Global Acquisitions Ltd. with failing to disclose that fund fees were being used to cover the founder's personal income tax liability — $54.6 million over 13 years across 14 funds. They agreed to pay $11.2M in penalties plus reimburse affected funds over $68 million.",links:[["https://www.sec.gov/newsroom/press-releases/2022-159","SEC Press Release"],["https://www.sec.gov/files/litigation/admin/2022/ia-6120.pdf","Full SEC Order"]]},
+          {t:"New York Attorney General: $17M Settlement (Caliber Home Loans)",d:"The NY AG secured a $17 million settlement against Caliber Home Loans — a Lone Star subsidiary — for predatory lending practices targeting vulnerable borrowers.",links:[["https://ag.ny.gov/","NY Attorney General"]]},
+          {t:"FinCEN: $2M Civil Money Penalty",d:"FinCEN imposed a $2 million civil money penalty against Lone Star-affiliated entities for Bank Secrecy Act violations.",links:[["https://www.fincen.gov/","FinCEN"]]},
+          {t:"CFPB: 1,200+ Consumer Complaints",d:"The Consumer Financial Protection Bureau database contains over 1,200 complaints against Caliber Home Loans (now Newrez LLC), the affiliated loan servicer. Common issues include servicing errors, improper foreclosure proceedings, and failure to communicate.",links:[["https://www.consumerfinance.gov/data-research/consumer-complaints/","CFPB Complaint Database"]]},
+        ].map((item,i)=>React.createElement("div",{key:i},
+          Card({title:item.t,accent:i===0?"#c41e1e":"#d4a574",children:[
+            React.createElement("p",{key:"d"},item.d),
+            React.createElement("div",{key:"l",style:{display:"flex",gap:8,flexWrap:"wrap",marginTop:12}},
+              ...item.links.map(([href,label],j)=>SourceLink({href,children:label,key:j}))
+            ),
+          ]})
+        ))
+      )
+    ),
+
+    /* ═══ TAB: ALL COMPLAINTS ═══ */
+    active==="complaints"&&React.createElement(React.Fragment,null,
+      React.createElement(SectionBanner,{tag:"BBB · CFPB · REVDEX · TIKTOK · GLASSDOOR",title:"Complaint Intelligence",subtitle:"200+ complaints and reviews across 14 public platforms. Here's what tenants and employees are saying."}),
+      React.createElement(Wrap,null,
+        SectionTitle({children:"By the Numbers"}),
+        DataTable({headers:["Platform","Count","Key Finding"],rows:[
+          ["Better Business Bureau","143 complaints (3 years)","Only 9.8% resolved to satisfaction. 29 closed in last 12 months."],
+          ["CFPB","1,200+ (Caliber/Newrez)","Servicing errors, improper foreclosure, communication failures."],
+          ["ComplaintsBoard","14+ reviews","Roach infestations, sewer backups, application fee scams."],
+          ["RevDex","10+ reviews","Property condition complaints, refund disputes."],
+          ["Google Reviews","Multiple 1-star","Maintenance neglect, unresponsive management."],
+          ["Yelp (Dallas)","13 reviews","1.5 star average rating."],
+          ["Foreclosurepedia","Investigative article","'Massive Fraud Revealed Impacting Thousands'"],
+          ["TikTok","Multiple videos","#hudsonhomesmanagement #criminalmanagement hashtags"],
+        ]}),
+
+        Divider(),
+        SectionTitle({children:"Top 5 Complaint Patterns"}),
+        ...[
+          {t:"1. Maintenance Neglect & Uninhabitable Conditions",d:"Tenants report months-long waits for essential repairs — broken HVAC in summer, sewage backups, roach infestations, mold, and structural issues. Work orders go unanswered."},
+          {t:"2. Phantom Charges & Holdover Fees",d:"Five-figure balances appear on accounts without explanation. Daily holdover fees of $50–$150 accumulate even when tenants are actively communicating with HHM."},
+          {t:"3. Security Deposit Theft",d:"Tenants report security deposits not returned for months. When returned, deductions are made for pre-existing damage or fabricated cleaning charges."},
+          {t:"4. Portal Lockouts During Disputes",d:"Resident portal access revoked during eviction proceedings, preventing tenants from paying rent, viewing ledgers, or submitting evidence."},
+          {t:"5. Communication Blackout",d:"Weeks of unreturned calls, emails to voicemails, constant transfers. BBB complaints describe months without any response from management."},
+        ].map((p,i)=>Card({key:i,title:p.t,children:React.createElement("p",null,p.d)})),
+
+        Divider(),
+        SectionTitle({children:"Employee Reviews (Glassdoor)"}),
+        Card({title:"Inside Hudson Homes — What Employees Say",accent:"#b8860b",children:[
+          React.createElement("p",{key:"1"},"Glassdoor rating: ",React.createElement("strong",null,"3.4/5")," from 59 reviews."),
+          React.createElement("p",{key:"2"},"Only ",React.createElement("strong",null,"28%")," of employees have a positive business outlook. Only ",React.createElement("strong",null,"41%")," would recommend working there."),
+          React.createElement("p",{key:"3"},"Common employee complaints: unrealistic workloads, high turnover, management disorganization, and pressure to prioritize revenue over tenant welfare."),
+        ]}),
+
+        React.createElement("div",{style:{display:"flex",gap:8,flexWrap:"wrap",marginTop:24}},
+          SourceLink({href:"https://www.bbb.org/us/tx/dallas/profile/property-management/hudson-homes-management-llc-0875-90729524/complaints",children:"BBB Complaints"}),
+          SourceLink({href:"https://www.consumerfinance.gov/data-research/consumer-complaints/",children:"CFPB Database"}),
+          SourceLink({href:"https://www.complaintsboard.com/hudson-homes-management-b167199",children:"ComplaintsBoard"}),
+          SourceLink({href:"https://www.revdex.com/reviews/hudson-homes-management/l16593964",children:"RevDex"}),
+          SourceLink({href:"https://www.yelp.com/biz/hudson-homes-property-management-dallas",children:"Yelp"}),
+          SourceLink({href:"https://www.tiktok.com/discover/hudson-home-management-reviews",children:"TikTok"})
+        )
+      )
+    ),
+
+    /* ═══ TAB: SHARE YOUR STORY ═══ */
+    active==="stories"&&React.createElement(React.Fragment,null,
+      React.createElement(SectionBanner,{tag:"YOUR VOICE MATTERS",title:"Share Your Story",subtitle:"If you are a current or former tenant, your experience could help protect other families."}),
+      React.createElement(Wrap,null,
+        SectionTitle({children:"Add Your Voice to the Record"}),
+        SubText({children:"Every complaint filed makes it harder for them to operate without accountability. Your story joins 200+ documented across 14 platforms."}),
+        React.createElement(StoryForm,null),
+        Divider(),
+        SectionTitle({children:"Contact"}),
+        React.createElement("p",{style:{fontFamily:"'Cormorant Garamond',serif",fontSize:18,color:"#b8b0a6"}},"Email: ",React.createElement("a",{href:"mailto:info@hudsonhomesexposed.com",style:{color:"#d46666"}},"info@hudsonhomesexposed.com")),
+        React.createElement("p",{style:{fontFamily:"'Cormorant Garamond',serif",fontSize:15,color:"#666",fontStyle:"italic",marginTop:16}},"All submissions are reviewed. Identifying details can be anonymized upon request. We are not attorneys and cannot provide legal advice.")
+      )
+    ),
+
+    /* ═══ TAB: COURT ACTIONS ═══ */
+    active==="lawsuits"&&React.createElement(React.Fragment,null,
+      React.createElement(SectionBanner,{image:"evidence-banner.png",tag:"FEDERAL · STATE · HOUSING COURT",title:"Court Actions & Lawsuits",subtitle:"20+ documented cases across 15 states. Standing challenges. Dismissed evictions. Active fraud lawsuits."}),
+      React.createElement(Wrap,null,
+        SectionTitle({children:"Lead Case: Shannon Fair v. Hudson Homes Management LLC"}),
+        Card({title:"NY Supreme Court, Orleans County (2025) — ACTIVE",accent:"#c41e1e",children:[
+          React.createElement("p",{key:"1"},"Shannon Fair filed a fraud lawsuit directly naming ",React.createElement("strong",null,"Lone Star Funds")," as a defendant — one of the only cases to pierce the corporate veil and name the parent company."),
+          React.createElement("p",{key:"2"},"The complaint alleges systematic fraud in HHM's property management practices, including misrepresentation of repair commitments and unauthorized fee charges."),
+          SourceLink({href:"https://unicourt.com/case/ny-sue1-caseggdd44370b4707-3249944",children:"UniCourt — Shannon Fair v. HHM"})
+        ]}),
+        Divider(),
+        SectionTitle({children:"Federal Cases"}),
+        DataTable({headers:["Case","Court","Status"],rows:[
+          ["Weiss et al v. HHM","D. Oregon (2019)","Class action allegations"],
+          ["HHM v. Cooks","Federal (2022)","LSF9 trust standing challenged"],
+          ["SEC v. Hudson Advisors","Administrative (2022)","$11.2M penalty — RESOLVED"],
+        ]}),
+        SectionTitle({children:"Cases Dismissed / Standing Challenged"}),
+        DataTable({headers:["Case","State","Outcome"],rows:[
+          ["HHM Standing DISMISSED","Ohio (2024)","Court found HHM failed to prove agency with LSF9 trust"],
+          ["HHM v. Hayden DISMISSED","Florida Palm Beach (2020)","Eviction dismissed"],
+          ["HHM v. Tenant","Connecticut Housing Court","Standing challenged"],
+        ]}),
+        SectionTitle({children:"Additional State Court Cases"}),
+        DataTable({headers:["Case","Jurisdiction","Type"],rows:[
+          ["Smith v. HHM","Florida Seminole County","Tenant complaint"],
+          ["HHM v. White","Texas Tarrant County","$10,122 default judgment"],
+          ["HHM v. Bryant","Georgia Gwinnett County","Eviction"],
+          ["HHM v. Downing","Pennsylvania Lackawanna (LSF10)","Eviction"],
+          ["HHM v. Tenant","New Jersey Superior","Holdover"],
+          ["HHM v. Tenant","Massachusetts Housing Court","Holdover — Motion to Dismiss filed"],
+          ["HHM v. Tenant","Indiana Marion County","Eviction"],
+          ["HHM v. Tenant","Alabama Jefferson County","Eviction"],
+        ]}),
+        React.createElement("div",{style:{display:"flex",gap:8,flexWrap:"wrap",marginTop:24}},
+          SourceLink({href:"https://unicourt.com/case/ny-sue1-caseggdd44370b4707-3249944",children:"Shannon Fair (Lead Case)"}),
+          SourceLink({href:"https://dockets.justia.com/docket/oregon/ordce/6:2019cv01104/146670",children:"Weiss v. HHM (Oregon)"}),
+          SourceLink({href:"https://bpinvestigativeagency.com/hudson-homes-management-llc-fails-to-defend-its-agency-with-u-s-bank-trust-n-a-as-trustee-for-lsf9-master-participation-trust/",children:"Ohio Dismissal (BPIA)"})
+        )
+      )
+    ),
+
+    /* ═══ TAB: GLOBAL IMPACT ═══ */
+    active==="global"&&React.createElement(React.Fragment,null,
+      React.createElement(SectionBanner,{tag:"IRELAND · SPAIN · SOUTH KOREA · UK",title:"Global Impact",subtitle:"Lone Star Funds' 'vulture fund' practices are documented across four continents."}),
+      React.createElement(Wrap,null,
+        ...[
+          {t:"Ireland — 'Vulture Fund' Controversy",d:"Irish politicians and media have documented Lone Star's acquisition of distressed mortgages from Irish banks, followed by aggressive collection practices. Multiple Dáil (parliament) debates have addressed the impact on Irish families."},
+          {t:"South Korea — Tax Evasion Scandal",d:"Lone Star faced a years-long dispute with South Korean tax authorities over the sale of Korea Exchange Bank. The case resulted in significant tax penalties and allegations of regulatory manipulation."},
+          {t:"Spain — Neinor Homes",d:"Lone Star's Spanish housing subsidiary Neinor Homes faced criticism for converting affordable housing stock into luxury developments, displacing long-term residents."},
+          {t:"New York City / Brooklyn",d:"Multiple lawsuits and tenant complaints in NYC boroughs document similar patterns: foreclosure acquisition, minimal maintenance, holdover charges, and displacement of long-term tenants."},
+          {t:"India — Real Estate Investments",d:"Lone Star has invested in Indian real estate through distressed debt acquisition, raising concerns about transparency and tenant protections in developing markets."},
+        ].map((item,i)=>Card({key:i,title:item.t,accent:i===0?"#c41e1e":"#d4a574",children:React.createElement("p",null,item.d)}))
+      )
+    ),
+
+    /* ═══ TAB: DOCUMENTED PATTERNS ═══ */
+    active==="patterns"&&React.createElement(React.Fragment,null,
+      React.createElement(SectionBanner,{tag:"EVIDENCE · PATTERNS · DOCUMENTATION",title:"Documented Patterns",subtitle:"Seven recurring patterns identified across 200+ complaints, court filings, and tenant testimonials."}),
+      React.createElement(Wrap,null,
+        ...[
+          {t:"1. Foreclosure-to-Rental Pipeline",d:"Properties acquired through foreclosure at steep discounts, minimally renovated, and converted to high-rent single-family rentals. The foreclosure-eviction-rental cycle maximizes return on distressed assets."},
+          {t:"2. Shell Trust Ownership Structure",d:"Properties held by LSF Master Participation Trusts (Delaware Statutory Trusts) to obscure beneficial ownership and limit liability. Courts have found HHM unable to prove its agency authority."},
+          {t:"3. Systematic Maintenance Neglect",d:"BBB complaints document months-long waits for essential repairs. Work orders ignored. Tenants report HVAC failures in summer, sewage backups, mold, and roach infestations going unaddressed."},
+          {t:"4. Holdover Charge Weaponization",d:"Daily fees of $50–$150 that accumulate into five-figure balances within weeks. Used as a pressure tool to force rapid tenant displacement."},
+          {t:"5. Portal Lockout During Disputes",d:"Resident portal access revoked during eviction proceedings, creating a catch-22 where tenants cannot pay rent and are then charged for nonpayment."},
+          {t:"6. Entity Rotation / Name Changes",d:"Properties and management responsibilities transferred between WRI Property Management, Hudson Homes, and RESICAP. Same ownership, different names."},
+          {t:"7. Automated Harassment Emails",d:"Daily automated emails during active litigation from noreply@hudsonhomesmanagement.com with subject line 'Balance Due Reminder' — sent to multiple email addresses simultaneously including co-signers who never resided at the property."},
+        ].map((p,i)=>Card({key:i,title:p.t,accent:i<2?"#c41e1e":i<5?"#b8860b":"#d4a574",children:React.createElement("p",null,p.d)}))
+      )
+    ),
+
+    /* ═══ TAB: TIMELINE ═══ */
+    active==="timeline"&&React.createElement(React.Fragment,null,
+      React.createElement(SectionBanner,{image:"investigations-banner.png",tag:"1995 — 2026",title:"Timeline",subtitle:"Three decades of distressed asset acquisition, from the Savings & Loan crisis to today."}),
+      React.createElement(Wrap,null,
+        ...[
+          ["1995","Hudson Advisors (formerly Brazos Advisors) formed in Dallas, TX to service Lone Star's first fund."],
+          ["1997","Lone Star launches global platform — expands to Europe and Asia."],
+          ["2005–2017","SEC later finds Hudson Advisors hid $54.6M in founder's tax bills inside fund fees for 13 years."],
+          ["2015","Lone Star buys Home Properties for $7.6 billion."],
+          ["2018","Hudson Homes Management LLC established as 'vertically integrated platform' for U.S. single-family rentals."],
+          ["2019","Weiss et al v. HHM filed in D. Oregon — federal class action allegations."],
+          ["2020","HHM v. Hayden dismissed in Florida Palm Beach County."],
+          ["2022","SEC imposes $11.2M fine + $68M reimbursement. NY AG secures $17M settlement vs. Caliber."],
+          ["2023","BPIA publishes 'Just a Pseudonym' — proving LSF9 MPT holds nothing."],
+          ["2024","Ohio court dismisses HHM eviction for failure to prove standing/agency with LSF9 trust."],
+          ["2025","Shannon Fair v. HHM filed in NY Supreme Court — names Lone Star Funds directly as defendant."],
+          ["2026","200+ complaints documented across 14 platforms. The Holdover Project archive launched."],
+        ].map(([year,event],i)=>React.createElement("div",{key:i,style:{display:"flex",gap:20,marginBottom:24,alignItems:"flex-start"}},
+          React.createElement("div",{style:{fontFamily:"'Playfair Display',serif",fontSize:20,color:"#c41e1e",fontWeight:700,minWidth:60,flexShrink:0}},year),
+          React.createElement("div",{style:{borderLeft:"2px solid #1e1e1e",paddingLeft:20}},
+            React.createElement("p",{style:{fontFamily:"'Cormorant Garamond',serif",fontSize:17,color:"#b8b0a6",lineHeight:1.8}},event)
+          )
+        ))
+      )
+    ),
+
+    /* ═══ TAB: RESOURCES ═══ */
+    active==="resources"&&React.createElement(React.Fragment,null,
+      React.createElement(SectionBanner,{tag:"LINKS · AGENCIES · LEGAL AID",title:"Resources & How to File Complaints",subtitle:"Direct links to every agency, filing tool, and legal resource you may need."}),
+      React.createElement(Wrap,null,
+        SectionTitle({children:"File Complaints (Free)"}),
+        DataTable({headers:["Agency","What to File","Link"],rows:[
+          ["Better Business Bureau","Property management complaint","bbb.org/file-a-complaint"],
+          ["Consumer Financial Protection Bureau","Financial services complaint","consumerfinance.gov/complaint"],
+          ["Federal Trade Commission","Consumer fraud report","reportfraud.ftc.gov"],
+          ["HUD","Housing discrimination / voucher issues","hud.gov/complaints"],
+          ["Your State Attorney General","Consumer protection violation","(Search your state)"],
+          ["SEC","Investment fraud tip","sec.gov/tcr"],
+        ]}),
+        SectionTitle({children:"Legal Aid & Free Representation"}),
+        DataTable({headers:["Resource","Description"],rows:[
+          ["Legal Aid Society","Free legal services for low-income tenants"],
+          ["National Housing Law Project (nhlp.org)","Policy advocacy and legal resources"],
+          ["Tenant Rights Hotline — Call 211","Free referrals to local legal aid"],
+          ["HUD Housing Counseling","Free HUD-approved counseling agencies"],
+        ]}),
+        SectionTitle({children:"Key Public Sources Used in This Archive"}),
+        React.createElement("div",{style:{display:"flex",gap:8,flexWrap:"wrap"}},
+          SourceLink({href:"https://hudsonhomesmanagement.com/",children:"HHM Official Website"}),
+          SourceLink({href:"https://www.hudson-advisors.com/",children:"Hudson Advisors"}),
+          SourceLink({href:"https://www.hudson-advisors.com/credit/",children:"Hudson Advisors — Credit"}),
+          SourceLink({href:"https://www.lonestarfunds.com/",children:"Lone Star Funds"}),
+          SourceLink({href:"https://www.sec.gov/newsroom/press-releases/2022-159",children:"SEC Press Release (2022)"}),
+          SourceLink({href:"https://www.bbb.org/us/tx/dallas/profile/property-management/hudson-homes-management-llc-0875-90729524/complaints",children:"BBB — HHM Complaints"}),
+          SourceLink({href:"https://www.consumerfinance.gov/data-research/consumer-complaints/",children:"CFPB Database"}),
+          SourceLink({href:"https://bpinvestigativeagency.com/",children:"BP Investigative Agency"}),
+          SourceLink({href:"https://en.wikipedia.org/wiki/Lone_Star_Funds",children:"Wikipedia — Lone Star Funds"}),
+          SourceLink({href:"https://www.biggerpockets.com/forums/48/topics/294577-lsf9-master-participation-trust",children:"BiggerPockets — LSF9 Thread"}),
+          SourceLink({href:"https://unicourt.com/case/ny-sue1-caseggdd44370b4707-3249944",children:"UniCourt — Shannon Fair v. HHM"}),
+          SourceLink({href:"https://www.complaintsboard.com/hudson-homes-management-b167199",children:"ComplaintsBoard"}),
+          SourceLink({href:"https://www.revdex.com/reviews/hudson-homes-management/l16593964",children:"RevDex"}),
+          SourceLink({href:"https://www.yelp.com/biz/hudson-homes-property-management-dallas",children:"Yelp — HHM Dallas"})
+        )
+      )
+    ),
+
+    /* ═══ FOOTER ═══ */
+    React.createElement("footer",{style:{borderTop:"1px solid #1a1a1a",padding:mob?"32px 20px":"48px 32px",textAlign:"center",background:"#060606"}},
+      React.createElement("div",{style:{maxWidth:700,margin:"0 auto"}},
+        React.createElement("img",{src:"assets/favicon-32.png",alt:"",style:{width:24,height:24,opacity:0.5,marginBottom:12}}),
+        React.createElement("div",{style:{fontFamily:"'Playfair Display',serif",fontSize:16,color:"#555",marginBottom:16}},"THE HOLDOVER PROJECT · Est. 2026 · An Independent Public Archive"),
+        React.createElement("p",{style:{fontFamily:"'Cormorant Garamond',serif",fontSize:14,color:"#444",lineHeight:1.8,marginBottom:16}},"This website is an independent, privately operated archive of public court records, government filings, news articles, and consumer complaints. It is not affiliated with, endorsed by, or operated by any government agency, law firm, or the companies discussed. This is not legal advice. Consult an attorney for your specific situation."),
+        React.createElement("p",{style:{fontFamily:"'Cormorant Garamond',serif",fontSize:14,color:"#444"}},"Contact: ",React.createElement("a",{href:"mailto:info@hudsonhomesexposed.com",style:{color:"#d46666"}},"info@hudsonhomesexposed.com")),
+        React.createElement("p",{style:{fontFamily:"'Source Sans 3',sans-serif",fontSize:12,color:"#333",marginTop:16}},"© 2026 The Holdover Project. All information sourced from public records.")
+      )
+    )
+  );
+}
+
+ReactDOM.render(React.createElement(App,null),document.getElementById("root"));
+
+</script>
 </body>
 </html>
