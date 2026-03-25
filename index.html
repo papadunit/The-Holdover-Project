@@ -596,24 +596,65 @@ function App(){
     active==="people"&&React.createElement(React.Fragment,null,
       React.createElement(SectionBanner,{tag:"PERSONNEL · LEADERSHIP · LEGAL",title:"Named Individuals & Entities",subtitle:"Key figures in the Lone Star → Hudson Advisors → HHM corporate structure, sourced from public filings, LinkedIn, and corporate disclosures."}),
       React.createElement(Wrap,null,
-        SectionTitle({children:"Lone Star Funds Leadership"}),
-        DataTable({headers:["Name","Title","Public Source"],accent:"#d4a574",rows:[
-          ["John P. Grayken","Founder & Chairman, Lone Star Funds","SEC filings, Wikipedia, Forbes ($7.5B net worth). Irish citizen (renounced U.S. citizenship)."],
-          ["Donald J. Quintin","CEO, Lone Star Funds","SEC Release 2022-159, LinkedIn"],
+
+        /* GRAYKEN DOSSIER */
+        SectionTitle({children:"The Founder: John P. Grayken"}),
+        Card({title:"Public Profile — Per Wikipedia, Forbes, SEC Filings, and Court Records",accent:"#c41e1e",children:[
+          React.createElement("p",{key:"1"},React.createElement("strong",null,"Born:")," Cohasset, Massachusetts (suburb of Boston). ",React.createElement("strong",null,"Education:")," BA Economics, University of Pennsylvania. MBA, Harvard Business School (1982)."),
+          React.createElement("p",{key:"2"},React.createElement("strong",null,"Net Worth:")," $7.5 billion (Forbes 2025). Ranked among the 500 wealthiest people on Earth."),
+          React.createElement("p",{key:"3"},React.createElement("strong",null,"Citizenship:")," In 1999, Grayken renounced his American citizenship and became an Irish citizen — per Wikipedia and Forbes, this was done ",React.createElement("strong",{style:{color:"#c41e1e"}},'"for tax purposes."')," Under U.S. tax law, citizens are taxed on worldwide income regardless of residence. By renouncing, Grayken eliminated this obligation."),
+          React.createElement("p",{key:"4"},React.createElement("strong",null,"Residence:")," Lives in a ",React.createElement("strong",null,"$70 million home in Chelsea, London"),", purchased through a ",React.createElement("strong",null,"company registered in Bermuda")," — the same type of offshore shell structure used throughout the Lone Star entity network. Also owns ",React.createElement("strong",null,"Pyrford Court in Surrey")," (the mansion from the 1976 film ",React.createElement("em",null,"The Omen"),") and ",React.createElement("strong",null,"an entire island off the coast of Cohasset, MA"),"."),
+          React.createElement("p",{key:"5"},React.createElement("strong",null,"U.S. Restriction:")," Cannot spend more than 120 days per year in the United States without triggering U.S. tax obligations. His company collects rent from American families in 61 markets — but he cannot live in the country."),
         ]}),
+
+        Card({title:"Criminal Charges — Delhi, India (2022)",accent:"#c41e1e",children:[
+          React.createElement("p",{key:"1"},"In 2022, Delhi police accused John Grayken personally of ",React.createElement("strong",null,"criminal breach of trust, cheating, and criminal conspiracy")," related to the ownership of RattanIndia Finance."),
+          React.createElement("p",{key:"2"},"The allegation: Grayken told other shareholders that ",React.createElement("strong",null,"Lone Star Funds")," would become the beneficial owner of RattanIndia Finance, but instead made ",React.createElement("strong",null,"himself the personal beneficial owner")," — without required approvals from the Reserve Bank of India."),
+          React.createElement("p",{key:"3"},React.createElement("strong",null,"In plain English:")," The founder was accused of personally deceiving shareholders about who would own the company — the same pattern of obscured ownership seen in the LSF trust structure that owns your home."),
+          React.createElement("div",{key:"l",style:{display:"flex",gap:8,flexWrap:"wrap",marginTop:12}},
+            SourceLink({href:"https://en.wikipedia.org/wiki/John_Grayken",children:"Wikipedia — John Grayken"}),
+            SourceLink({href:"https://www.goodreturns.in/john-grayken-net-worth-and-biography-blnr354.html",children:"GoodReturns — Grayken Biography"})
+          ),
+        ]}),
+
+        Card({title:"Why This Matters to Tenants",accent:"#b8860b",children:[
+          React.createElement("p",{key:"1"},"The man who ultimately profits from your rent payments:"),
+          React.createElement("p",{key:"2"},"• Renounced his American citizenship to avoid contributing to the U.S. tax base"),
+          React.createElement("p",{key:"3"},"• Shelters his personal wealth through Bermuda shell companies"),
+          React.createElement("p",{key:"4"},"• Faces criminal charges in India for deceptive ownership practices"),
+          React.createElement("p",{key:"5"},"• Led a company convicted of stock manipulation in South Korea"),
+          React.createElement("p",{key:"6"},"• Was fined $11.2 million by the SEC for hiding personal tax bills in fund fees"),
+          React.createElement("p",{key:"7"},"• Owns a $70 million London mansion while tenants report months-long waits for basic repairs"),
+        ]}),
+
+        Divider(),
+
+        SectionTitle({children:"Lone Star Funds Leadership"}),
+        DataTable({headers:["Name","Title","Key Public Facts"],accent:"#d4a574",rows:[
+          ["John P. Grayken","Founder & Chairman","Irish citizen (renounced U.S. 1999). $7.5B net worth. Criminal charges in India (2022). Lives in $70M London home via Bermuda shell co."],
+          ["Donald J. Quintin","CEO (first ever, appointed 2024)","Poached from Merrill Lynch after negotiating Lone Star's purchase of $31 billion in mortgage-backed securities for 22 cents on the dollar."],
+        ]}),
+        Card({title:"About CEO Donald Quintin — The Real Deal (April 2024)",accent:"#d4a574",children:[
+          React.createElement("p",{key:"1"},"Quintin joined Lone Star in 2010 after negotiating the deal that defined the company's current business model: purchasing ",React.createElement("strong",null,"$31 billion of Merrill Lynch's mortgage-backed securities for 22 cents on the dollar"),"."),
+          React.createElement("p",{key:"2"},React.createElement("strong",null,"In plain English:")," The CEO's signature achievement was buying American families' mortgages for pennies on the dollar during the financial crisis. That's the playbook: buy distressed debt cheap, foreclose, convert to rental, extract maximum value, securitize, repeat."),
+          SourceLink({href:"https://therealdeal.com/texas/dallas/2024/04/14/meet-lone-star-funds-incoming-ceo-donald-quintin/",children:"The Real Deal — Meet Lone Star's First CEO"})
+        ]}),
+
+        Divider(),
+
         SectionTitle({children:"Hudson Advisors Leadership"}),
         DataTable({headers:["Name","Title","Public Source"],rows:[
           ["Jodi Cason","CEO, Hudson Advisors L.P.","LinkedIn, SEC filings, Company website"],
           ["James Hanley","Senior Managing Director","LinkedIn"],
         ]}),
-        SectionTitle({children:"HHM Operations & Legal"}),
-        DataTable({headers:["Name","Title","Public Source"],rows:[
+        SectionTitle({children:"HHM Operations & Affiliated Legal"}),
+        DataTable({headers:["Name","Role","Public Source"],rows:[
           ["(Operations leadership)","President/VP roles at HHM","LinkedIn profiles, BBB responses"],
-          ["Caliber Home Loans / Newrez LLC","Affiliated loan servicer","SEC filings, NY AG settlement, NMLS records"],
-          ["Regional law firms","Plaintiff's counsel in multiple states","Court dockets, firm website"],
+          ["Caliber Home Loans / Newrez LLC","Affiliated loan servicer","SEC filings, NY AG $17M settlement, NMLS records"],
+          ["Regional law firms","Plaintiff's counsel in multiple states","Court dockets"],
         ]}),
         React.createElement("div",{style:{background:"#111",border:"1px solid #1e1e1e",borderRadius:8,padding:20,marginTop:24}},
-          React.createElement("p",{style:{fontFamily:"'Cormorant Garamond',serif",fontSize:15,color:"#888",fontStyle:"italic"}},"Note: All individuals listed above are identified solely through publicly available records including SEC filings, court dockets, LinkedIn profiles, corporate websites, and news articles. No private or confidential information has been used.")
+          React.createElement("p",{style:{fontFamily:"'Cormorant Garamond',serif",fontSize:15,color:"#888",fontStyle:"italic"}},"Note: All individuals listed are identified solely through publicly available records including Wikipedia, SEC filings, court dockets, Forbes, LinkedIn profiles, corporate websites, and news articles. No private or confidential information has been used.")
         )
       )
     ),
@@ -673,15 +714,18 @@ function App(){
 
     /* ═══ TAB: REGULATORY ACTIONS ═══ */
     active==="regulatory"&&React.createElement(React.Fragment,null,
-      React.createElement(SectionBanner,{tag:"SEC · NY AG · FINCEN · CFPB",title:"Government Enforcement Actions",subtitle:"$30+ million in fines and settlements against Hudson Homes' parent companies and affiliates."}),
+      React.createElement(SectionBanner,{tag:"SEC · SOUTH KOREA · INDIA · NY AG · FINCEN",title:"Government Enforcement Actions",subtitle:"Criminal convictions, $30+ million in fines, and charges across three continents."}),
       React.createElement(Wrap,null,
         ...[
           {t:"SEC: $11.2M Civil Penalty + $68M Reimbursement (2022)",d:"The SEC charged Hudson Advisors L.P. and Lone Star Global Acquisitions Ltd. with failing to disclose that fund fees were being used to cover the founder's personal income tax liability — $54.6 million over 13 years across 14 funds. They agreed to pay $11.2M in penalties plus reimburse affected funds over $68 million.",links:[["https://www.sec.gov/newsroom/press-releases/2022-159","SEC Press Release"],["https://www.sec.gov/files/litigation/admin/2022/ia-6120.pdf","Full SEC Order"]]},
+          {t:"South Korea: CRIMINAL CONVICTION for Stock Manipulation (2011)",d:"A South Korean court found Lone Star Funds and its executive Paul Yoo GUILTY of stock price manipulation in the 2003 acquisition of Korea Exchange Bank. Lone Star manipulated the share price of KEB's credit card subsidiary by spreading false rumors of a capital reduction. Paul Yoo was sentenced to 3 years in prison. The South Korean Supreme Court upheld the conviction. In 2022, ICSID ordered South Korea to pay Lone Star $216.5M — but in November 2025, that award was COMPLETELY ANNULLED. South Korea won. The tribunal specifically cited Lone Star's 'wilful criminal conduct' as a contributing factor.",links:[["https://en.wikipedia.org/wiki/Korea_Exchange_Bank","Wikipedia — Korea Exchange Bank"],["https://www.kedglobal.com/legal-disputes/newsView/ked202511180007","KED Global — South Korea Wins"],["https://www.law360.com/banking/articles/45913/korean-court-finds-lone-star-funds-exec-guilty","Law360 — Conviction"]]},
+          {t:"India: Criminal Charges Against Founder John Grayken (2022)",d:"Delhi police accused John Grayken personally of criminal breach of trust, cheating, and criminal conspiracy related to the ownership of RattanIndia Finance. The allegation: Grayken told shareholders that Lone Star Funds would become the beneficial owner, but instead made himself the personal owner — without required approvals from the Reserve Bank of India.",links:[["https://en.wikipedia.org/wiki/John_Grayken","Wikipedia — John Grayken"],["https://www.goodreturns.in/john-grayken-net-worth-and-biography-blnr354.html","GoodReturns — Grayken"]]},
           {t:"New York Attorney General: $17M Settlement (Caliber Home Loans)",d:"The NY AG secured a $17 million settlement against Caliber Home Loans — a Lone Star subsidiary — for predatory lending practices targeting vulnerable borrowers.",links:[["https://ag.ny.gov/","NY Attorney General"]]},
           {t:"FinCEN: $2M Civil Money Penalty",d:"FinCEN imposed a $2 million civil money penalty against Lone Star-affiliated entities for Bank Secrecy Act violations.",links:[["https://www.fincen.gov/","FinCEN"]]},
           {t:"CFPB: 1,200+ Consumer Complaints",d:"The Consumer Financial Protection Bureau database contains over 1,200 complaints against Caliber Home Loans (now Newrez LLC), the affiliated loan servicer. Common issues include servicing errors, improper foreclosure proceedings, and failure to communicate.",links:[["https://www.consumerfinance.gov/data-research/consumer-complaints/","CFPB Complaint Database"]]},
+          {t:"U.S. Citizenship Renunciation for Tax Avoidance (1999)",d:"Founder John Grayken renounced his American citizenship in 1999 and became an Irish citizen — per Forbes and Wikipedia, this was done 'for tax purposes.' He lives in a $70 million home in Chelsea, London, purchased through a Bermuda shell company. He cannot spend more than 120 days per year in the U.S. without triggering tax obligations — while his company collects rent from American families in 61 markets.",links:[["https://en.wikipedia.org/wiki/John_Grayken","Wikipedia — John Grayken"],["https://www.thejournal.ie/readme/is-the-situation-really-as-simple-as-cash-for-passports-here-in-ireland-yes-it-is-3305098-Mar2017/","The Journal (Ireland) — Cash for Passports"]]},
         ].map((item,i)=>React.createElement("div",{key:i},
-          Card({title:item.t,accent:i===0?"#c41e1e":"#d4a574",children:[
+          Card({title:item.t,accent:i<=2?"#c41e1e":"#d4a574",children:[
             React.createElement("p",{key:"d"},item.d),
             React.createElement("div",{key:"l",style:{display:"flex",gap:8,flexWrap:"wrap",marginTop:12}},
               ...item.links.map(([href,label],j)=>SourceLink({href,children:label,key:j}))
@@ -794,15 +838,47 @@ function App(){
 
     /* ═══ TAB: GLOBAL IMPACT ═══ */
     active==="global"&&React.createElement(React.Fragment,null,
-      React.createElement(SectionBanner,{tag:"IRELAND · SPAIN · SOUTH KOREA · UK",title:"Global Impact",subtitle:"Lone Star Funds' 'vulture fund' practices are documented across four continents."}),
+      React.createElement(SectionBanner,{tag:"IRELAND · SOUTH KOREA · INDIA · SPAIN · UK",title:"Global Impact",subtitle:"Criminal convictions, 'vulture fund' protests, and regulatory battles across four continents."}),
       React.createElement(Wrap,null,
-        ...[
-          {t:"Ireland — 'Vulture Fund' Controversy",d:"Irish politicians and media have documented Lone Star's acquisition of distressed mortgages from Irish banks, followed by aggressive collection practices. Multiple Dáil (parliament) debates have addressed the impact on Irish families."},
-          {t:"South Korea — Tax Evasion Scandal",d:"Lone Star faced a years-long dispute with South Korean tax authorities over the sale of Korea Exchange Bank. The case resulted in significant tax penalties and allegations of regulatory manipulation."},
-          {t:"Spain — Neinor Homes",d:"Lone Star's Spanish housing subsidiary Neinor Homes faced criticism for converting affordable housing stock into luxury developments, displacing long-term residents."},
-          {t:"New York City / Brooklyn",d:"Multiple lawsuits and tenant complaints in NYC boroughs document similar patterns: foreclosure acquisition, minimal maintenance, holdover charges, and displacement of long-term tenants."},
-          {t:"India — Real Estate Investments",d:"Lone Star has invested in Indian real estate through distressed debt acquisition, raising concerns about transparency and tenant protections in developing markets."},
-        ].map((item,i)=>Card({key:i,title:item.t,accent:i===0?"#c41e1e":"#d4a574",children:React.createElement("p",null,item.d)}))
+        Card({title:"South Korea — Criminal Conviction for Stock Manipulation",accent:"#c41e1e",children:[
+          React.createElement("p",{key:"1"},"In 2003, Lone Star acquired Korea Exchange Bank (KEB) for $1.38 billion. ",React.createElement("strong",null,"A South Korean court found Lone Star and its executive Paul Yoo GUILTY of manipulating the stock price")," of KEB's credit card subsidiary by spreading false rumors of a capital reduction, allowing them to absorb it cheaply."),
+          React.createElement("p",{key:"2"},"Paul Yoo was sentenced to ",React.createElement("strong",null,"3 years in prison"),". South Korea's Supreme Court upheld the conviction in 2011."),
+          React.createElement("p",{key:"3"},"Lone Star then filed a ",React.createElement("strong",null,"$4.68 billion ICSID arbitration claim")," against South Korea. In 2022, ICSID awarded only $216.5 million (4.6% of what they demanded). In November 2025, even that award was ",React.createElement("strong",null,"COMPLETELY ANNULLED")," — South Korea won. The tribunal cited Lone Star's ",React.createElement("strong",{style:{color:"#c41e1e"}},'"wilful criminal conduct"')," as a contributing factor."),
+          React.createElement("div",{key:"l",style:{display:"flex",gap:8,flexWrap:"wrap",marginTop:12}},
+            SourceLink({href:"https://en.wikipedia.org/wiki/Korea_Exchange_Bank",children:"Wikipedia — Korea Exchange Bank"}),
+            SourceLink({href:"https://www.kedglobal.com/legal-disputes/newsView/ked202511180007",children:"KED Global — South Korea Wins (Nov 2025)"}),
+            SourceLink({href:"https://www.bloomberg.com/news/articles/2022-08-31/lone-star-awarded-216-5-million-in-dispute-with-south-korea",children:"Bloomberg — ICSID Award"}),
+            SourceLink({href:"https://www.law360.com/banking/articles/45913/korean-court-finds-lone-star-funds-exec-guilty",children:"Law360 — Guilty Verdict"})
+          ),
+        ]}),
+        Card({title:"India — Criminal Charges Against Founder (2022)",accent:"#c41e1e",children:[
+          React.createElement("p",{key:"1"},"Delhi police accused John Grayken personally of ",React.createElement("strong",null,"criminal breach of trust, cheating, and criminal conspiracy")," related to RattanIndia Finance. He allegedly told shareholders Lone Star Funds would own the entity, but instead became the personal beneficial owner without regulatory approval from the Reserve Bank of India."),
+          React.createElement("div",{key:"l",style:{display:"flex",gap:8,flexWrap:"wrap",marginTop:12}},
+            SourceLink({href:"https://en.wikipedia.org/wiki/John_Grayken",children:"Wikipedia — John Grayken"})
+          ),
+        ]}),
+        Card({title:"Ireland — 'Vulture Fund' and 'Cash for Passports'",accent:"#c41e1e",children:[
+          React.createElement("p",{key:"1"},"Irish media and politicians have labeled Lone Star a ",React.createElement("strong",null,'"vulture fund"')," for buying distressed Irish mortgages and aggressively collecting from families. Multiple Dáil Éireann (parliament) debates have addressed the impact."),
+          React.createElement("p",{key:"2"},"Grayken obtained Irish citizenship in 1999 through what critics call a ",React.createElement("strong",null,'"cash for passports"')," scheme. The Irish press documented that two of Ireland's eight billionaires — including Grayken — are former Americans who took Irish citizenship primarily to reduce their tax obligations."),
+          React.createElement("div",{key:"l",style:{display:"flex",gap:8,flexWrap:"wrap",marginTop:12}},
+            SourceLink({href:"https://www.thejournal.ie/readme/is-the-situation-really-as-simple-as-cash-for-passports-here-in-ireland-yes-it-is-3305098-Mar2017/",children:"The Journal — 'Cash for Passports'"}),
+            SourceLink({href:"https://en.wikipedia.org/wiki/Lone_Star_Funds",children:"Wikipedia — Lone Star Funds"})
+          ),
+        ]}),
+        Card({title:"Spain — Neinor Homes",accent:"#d4a574",children:[
+          React.createElement("p",null,"Lone Star's Spanish housing subsidiary Neinor Homes faced criticism for converting affordable housing stock into luxury developments, displacing long-term residents. Lone Star purchased Neinor in 2015.")
+        ]}),
+        Card({title:"New York City / Brooklyn",accent:"#d4a574",children:[
+          React.createElement("p",null,"Multiple lawsuits and tenant complaints in NYC boroughs document similar patterns: foreclosure acquisition, minimal maintenance, holdover charges, and displacement of long-term tenants. Shannon Fair v. HHM (NY Supreme Court, 2025) is the lead active case.")
+        ]}),
+        Card({title:"The Pattern Across Borders",accent:"#b8860b",children:[
+          React.createElement("p",{key:"1"},"Whether it's Ireland, South Korea, India, Spain, or the United States — the playbook is the same:"),
+          React.createElement("p",{key:"2"},"• Acquire distressed assets at steep discounts during financial crises"),
+          React.createElement("p",{key:"3"},"• Use shell companies and offshore structures to obscure ownership"),
+          React.createElement("p",{key:"4"},"• Extract maximum value through aggressive collection and fee practices"),
+          React.createElement("p",{key:"5"},"• When caught, fight regulators and governments in court for years"),
+          React.createElement("p",{key:"6"},"• When convicted, appeal endlessly while continuing operations"),
+        ]})
       )
     ),
 
@@ -829,16 +905,20 @@ function App(){
         ...[
           ["1995","Hudson Advisors (formerly Brazos Advisors) formed in Dallas, TX to service Lone Star's first fund."],
           ["1997","Lone Star launches global platform — expands to Europe and Asia."],
-          ["2005–2017","SEC later finds Hudson Advisors hid $54.6M in founder's tax bills inside fund fees for 13 years."],
-          ["2015","Lone Star buys Home Properties for $7.6 billion."],
+          ["1999","Founder John Grayken renounces U.S. citizenship, becomes Irish citizen 'for tax purposes' (per Wikipedia/Forbes). Moves to London."],
+          ["2003","Lone Star acquires Korea Exchange Bank (KEB) for $1.38 billion. Subsequently investigated for stock manipulation."],
+          ["2005–17","SEC later finds Hudson Advisors hid $54.6M in founder's tax bills inside fund fees for 13 years across 14 funds."],
+          ["2008","South Korean court finds Lone Star and executive Paul Yoo GUILTY of stock manipulation. Yoo sentenced to 3 years."],
+          ["2011","South Korea Supreme Court UPHOLDS Lone Star criminal conviction for KEB stock manipulation."],
+          ["2015","Lone Star buys Home Properties for $7.6 billion. Acquires Neinor Homes in Spain."],
           ["2018","Hudson Homes Management LLC established as 'vertically integrated platform' for U.S. single-family rentals."],
           ["2019","Weiss et al v. HHM filed in D. Oregon — federal class action allegations."],
           ["2020","HHM v. Hayden dismissed in Florida Palm Beach County."],
-          ["2022","SEC imposes $11.2M fine + $68M reimbursement. NY AG secures $17M settlement vs. Caliber."],
+          ["2022","SEC imposes $11.2M fine + $68M reimbursement. NY AG secures $17M settlement vs. Caliber. Delhi police accuse Grayken of criminal breach of trust regarding RattanIndia Finance. ICSID awards Lone Star $216.5M vs. South Korea."],
           ["2023","BPIA publishes 'Just a Pseudonym' — proving LSF9 MPT holds nothing."],
-          ["2024","Ohio court dismisses HHM eviction for failure to prove standing/agency with LSF9 trust."],
-          ["2025","Shannon Fair v. HHM filed in NY Supreme Court — names Lone Star Funds directly as defendant."],
-          ["2026","200+ complaints documented across 14 platforms. The Holdover Project archive launched."],
+          ["2024","Ohio court dismisses HHM eviction for failure to prove standing/agency with LSF9 trust. Donald Quintin named first-ever CEO of Lone Star Funds."],
+          ["2025","Shannon Fair v. HHM filed in NY Supreme Court — names Lone Star directly. ICSID $216.5M award COMPLETELY ANNULLED — South Korea wins. Tribunal cites Lone Star's 'wilful criminal conduct.'"],
+          ["2026","200+ complaints documented across 14 platforms. The Holdover Project archive launched at hudsonhomesexposed.com."],
         ].map(([year,event],i)=>React.createElement("div",{key:i,style:{display:"flex",gap:20,marginBottom:24,alignItems:"flex-start"}},
           React.createElement("div",{style:{fontFamily:"'Playfair Display',serif",fontSize:20,color:"#c41e1e",fontWeight:700,minWidth:60,flexShrink:0}},year),
           React.createElement("div",{style:{borderLeft:"2px solid #1e1e1e",paddingLeft:20}},
