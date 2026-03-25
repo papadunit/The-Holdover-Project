@@ -76,6 +76,7 @@ function useIsMobile(bp=768){
    ═══════════════════════════════════════════════ */
 const tabs=[
   {id:"guide",label:"Survival Guide",icon:"⚠"},
+  {id:"properties",label:"Property Watchlist",icon:"🏠"},
   {id:"investigation",label:"The Investigation",icon:"🔍"},
   {id:"pipeline",label:"The Pipeline",icon:"🏗"},
   {id:"people",label:"Named Individuals",icon:"👤"},
@@ -422,6 +423,115 @@ function App(){
         React.createElement("div",{style:{background:"#0d0808",border:"1px solid #333",borderLeft:"3px solid #228b22",borderRadius:"0 8px 8px 0",padding:"24px 28px",marginTop:32}},
           React.createElement("div",{style:{fontFamily:"'Playfair Display',serif",fontSize:20,color:"#228b22",marginBottom:12}},"💚 You Are Not Alone"),
           React.createElement("div",{style:{fontFamily:"'Cormorant Garamond',serif",fontSize:17,color:"#b8b0a6",lineHeight:1.85}},"Over 200 complaints documented across 14 platforms. Courts in multiple states have dismissed HHM eviction cases. A fraud lawsuit is pending in New York Supreme Court. The SEC fined parent companies $11.2 million. Share this website. File complaints. The more families speak up, the harder it becomes for them to operate.")
+        )
+      )
+    ),
+
+    /* ═══ TAB: PROPERTY WATCHLIST ═══ */
+    active==="properties"&&React.createElement(React.Fragment,null,
+      React.createElement(SectionBanner,{tag:"ACTIVE LISTINGS · 29 MARKETS · LIVE DATA",title:"Property Watchlist",subtitle:"These are the markets where Hudson Homes Management LLC currently lists properties for rent. Before you sign a lease — read this archive first."}),
+
+      /* Warning strip */
+      React.createElement("div",{style:{background:"linear-gradient(90deg,#c41e1e,#8b0000)",padding:"14px 24px",textAlign:"center"}},
+        React.createElement("div",{style:{fontFamily:"'Source Sans 3',sans-serif",fontSize:14,color:"#fff",fontWeight:600,letterSpacing:0.5}},"⚠ If you see a property listed below in your area — READ THE SURVIVAL GUIDE before applying. Application fees are non-refundable.")
+      ),
+
+      React.createElement(Wrap,null,
+        SectionTitle({children:"Active HHM Rental Markets"}),
+        SubText({children:"Links go directly to Hudson Homes Management's own website. These are their current markets as of March 2026. Every property in these markets is managed by HHM — a subsidiary of Lone Star Funds."}),
+
+        /* Search box */
+        React.createElement("div",{style:{marginBottom:32}},
+          React.createElement("input",{id:"marketSearch",placeholder:"Search by city or state...",style:{width:"100%",background:"#111",border:"1px solid #2a2a2a",borderRadius:8,padding:"14px 20px",color:"#e8e0d6",fontSize:17,fontFamily:"'Cormorant Garamond',serif",outline:"none"},onChange:function(e){
+            var v=e.target.value.toLowerCase();
+            document.querySelectorAll('[data-market]').forEach(function(el){
+              el.style.display=el.getAttribute('data-market').toLowerCase().includes(v)?'':'none';
+            });
+          }})
+        ),
+
+        /* Major Markets */
+        React.createElement("h3",{style:{fontFamily:"'Playfair Display',serif",fontSize:20,color:"#c41e1e",marginBottom:16}},"Major Markets (14)"),
+        React.createElement("div",{style:{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(260px,1fr))",gap:12,marginBottom:36}},
+          ...[
+            ["Atlanta, GA","atlanta-ga"],
+            ["Birmingham, AL","birmingham-al"],
+            ["Charlotte, NC","charlotte-nc"],
+            ["Dallas-Fort Worth, TX","dallas-fort-worth-tx"],
+            ["Houston, TX","houston-tx"],
+            ["Jacksonville, FL","jacksonville-fl"],
+            ["Kansas City, KS","kansas-city-ks"],
+            ["Memphis, TN","memphis-tn"],
+            ["Nashville, TN","nashville-tn"],
+            ["Orlando, FL","orlando-fl"],
+            ["Phoenix, AZ","phoenix-az"],
+            ["Raleigh-Durham, NC","raleigh-durham-nc"],
+            ["San Antonio, TX","san-antonio-tx"],
+            ["Tampa, FL","tampa-fl"],
+          ].map(function(m){return React.createElement("a",{key:m[1],href:"https://hudsonhomesmanagement.com/search?market="+m[1],target:"_blank",rel:"noopener noreferrer","data-market":m[0],style:{display:"flex",alignItems:"center",justifyContent:"space-between",background:"#111",border:"1px solid #1e1e1e",borderLeft:"3px solid #c41e1e",borderRadius:"0 8px 8px 0",padding:"14px 18px",textDecoration:"none",transition:"all 0.2s"}},
+            React.createElement("span",{style:{fontFamily:"'Cormorant Garamond',serif",fontSize:17,color:"#e8e0d6"}},m[0]),
+            React.createElement("span",{style:{fontFamily:"'Source Sans 3',sans-serif",fontSize:12,color:"#c41e1e",background:"#1a0808",padding:"4px 10px",borderRadius:4}},"VIEW LISTINGS →")
+          )})
+        ),
+
+        /* Secondary Texas Markets */
+        React.createElement("h3",{style:{fontFamily:"'Playfair Display',serif",fontSize:20,color:"#b8860b",marginBottom:16}},"Secondary Texas Markets (15)"),
+        React.createElement("div",{style:{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(260px,1fr))",gap:12,marginBottom:36}},
+          ...[
+            ["Abilene, TX","abilene-tx"],
+            ["Amarillo, TX","amarillo-tx"],
+            ["Bonham, TX","bonham-tx"],
+            ["Corsicana, TX","corsicana-tx"],
+            ["Denison-Sherman-Gainesville, TX","denison-sherman-gainesville-tx"],
+            ["Greenville, TX","greenville-tx"],
+            ["Killeen-Temple, TX","killeen-temple-tx"],
+            ["Longview-Kilgore, TX","longview-kilgore-tx"],
+            ["Lubbock, TX","lubbock-tx"],
+            ["Mabank-Gun Barrel City-Athens, TX","mabank-gun-barrel-city-athens-tx"],
+            ["San Angelo, TX","san-angelo-tx"],
+            ["Tyler-Bullard, TX","tyler-bullard-tx"],
+            ["Waco, TX","waco-tx"],
+            ["Wichita Falls, TX","wichita-falls-tx"],
+          ].map(function(m){return React.createElement("a",{key:m[1],href:"https://hudsonhomesmanagement.com/search?market="+m[1],target:"_blank",rel:"noopener noreferrer","data-market":m[0],style:{display:"flex",alignItems:"center",justifyContent:"space-between",background:"#111",border:"1px solid #1e1e1e",borderLeft:"3px solid #b8860b",borderRadius:"0 8px 8px 0",padding:"14px 18px",textDecoration:"none",transition:"all 0.2s"}},
+            React.createElement("span",{style:{fontFamily:"'Cormorant Garamond',serif",fontSize:17,color:"#e8e0d6"}},m[0]),
+            React.createElement("span",{style:{fontFamily:"'Source Sans 3',sans-serif",fontSize:12,color:"#b8860b",background:"#1a1508",padding:"4px 10px",borderRadius:4}},"VIEW LISTINGS →")
+          )})
+        ),
+
+        Divider(),
+
+        /* What to do before renting */
+        SectionTitle({children:"Before You Apply — Read This"}),
+        ...[
+          {n:"1",t:"Search Your Address",d:"Before signing anything, look up the property address in your county assessor's records. Check who actually owns the home. If you see \"U.S. Bank Trust, N.A. as Trustee for LSF9 Master Participation Trust\" — that's a Lone Star Funds property managed by HHM.",c:"#c41e1e"},
+          {n:"2",t:"Check the BBB",d:"Search \"Hudson Homes Management LLC\" on bbb.org. Read the 143 complaints. Look for patterns that match the property you're considering — especially maintenance neglect, security deposit issues, and holdover charges.",c:"#c41e1e"},
+          {n:"3",t:"Read the Lease Carefully",d:"Pay special attention to holdover provisions, daily fee amounts, maintenance responsibilities, and move-out procedures. Multiple complaints describe charges that tenants say weren't in the original lease.",c:"#b8860b"},
+          {n:"4",t:"Document Everything From Day One",d:"Take timestamped photos/video of every room before move-in. Save your lease, all emails, and screenshots of your portal. If there are pre-existing issues, report them in writing immediately.",c:"#b8860b"},
+          {n:"5",t:"Know Your Rights",d:"Every state has tenant protection laws. Research your state's landlord-tenant statutes. If you have a Section 8 voucher, know that HUD regulations at 24 CFR §982.310 require specific procedures for lease termination that many landlords — including HHM — have been documented violating.",c:"#228b22"},
+        ].map(function(s){return React.createElement("div",{key:s.n,style:{background:"linear-gradient(145deg,#111,#0d0d0d)",border:"1px solid #1e1e1e",borderLeft:"4px solid "+s.c,padding:"24px",borderRadius:"0 8px 8px 0",marginBottom:16}},
+          React.createElement("div",{style:{display:"flex",alignItems:"center",gap:14,marginBottom:10}},
+            React.createElement("div",{style:{width:36,height:36,borderRadius:"50%",background:s.c,color:"#fff",display:"flex",alignItems:"center",justifyContent:"center",fontFamily:"'Playfair Display',serif",fontSize:18,fontWeight:700,flexShrink:0}},s.n),
+            React.createElement("div",{style:{fontFamily:"'Playfair Display',serif",fontSize:18,color:"#f5efe6"}},s.t)
+          ),
+          React.createElement("div",{style:{fontFamily:"'Cormorant Garamond',serif",fontSize:17,color:"#b8b0a6",lineHeight:1.85,paddingLeft:50}},s.d)
+        )}),
+
+        Divider(),
+
+        /* Affiliate companies */
+        SectionTitle({children:"Affiliated Companies to Watch For"}),
+        SubText({children:"Public records and tenant reports document properties being managed by or transferred between these related entities:"}),
+        DataTable({headers:["Company","Connection","What to Look For"],rows:[
+          ["WRI Property Management","Property handoffs documented on BiggerPockets","Properties transferred from WRI to HHM — same fees, same problems"],
+          ["RESICAP","Tenant reports of handoff chain","Properties transferred from HHM to RESICAP (Atlanta HQ)"],
+          ["Caliber Home Loans / Newrez LLC","Affiliated loan servicer","$17M NY AG settlement. 1,200+ CFPB complaints."],
+          ["U.S. Bank Trust, N.A. as Trustee","Named on property deeds","NOT the actual bank — a limited-purpose trust entity"],
+          ["LSF8/9/10/11 Master Participation Trust","Shell trust owners","Delaware Statutory Trusts with no employees or assets"],
+        ]}),
+
+        React.createElement("div",{style:{background:"#0d0808",border:"1px solid #333",borderLeft:"3px solid #c41e1e",borderRadius:"0 8px 8px 0",padding:"24px 28px",marginTop:32}},
+          React.createElement("div",{style:{fontFamily:"'Playfair Display',serif",fontSize:18,color:"#c41e1e",marginBottom:10}},"⚠ Important Disclaimer"),
+          React.createElement("div",{style:{fontFamily:"'Cormorant Garamond',serif",fontSize:16,color:"#888",lineHeight:1.8}},"This page links to Hudson Homes Management's own public website. The Holdover Project does not control or maintain these listings. We provide these links solely to help prospective tenants identify HHM-managed properties so they can make informed decisions using the public records documented in this archive. Always verify property ownership through your county assessor's office.")
         )
       )
     ),
