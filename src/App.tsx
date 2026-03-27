@@ -10,6 +10,7 @@ import StoryDetail from './pages/StoryDetail'
 import Submit from './pages/Submit'
 import Methodology from './pages/Methodology'
 import Contact from './pages/Contact'
+import News from './pages/News'
 
 export default function App() {
   const { pathname } = useLocation()
@@ -30,6 +31,7 @@ export default function App() {
           <Route path="/submit"        element={<Submit />} />
           <Route path="/methodology"   element={<Methodology />} />
           <Route path="/contact"       element={<Contact />} />
+          <Route path="/news"          element={<News />} />
           <Route path="*"              element={<NotFound />} />
         </Routes>
       </main>

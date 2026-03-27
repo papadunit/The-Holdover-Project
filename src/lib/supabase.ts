@@ -192,3 +192,26 @@ export async function fetchTags(): Promise<Tag[]> {
   if (error) return []
   return (data as Tag[]) ?? []
 }
+
+// ─── News Mentions ────────────────────────────────────────────
+
+export interface NewsMention {
+  id: string
+  title: string
+  url: string
+  source_name: string | null
+  excerpt: string | null
+  published_at: string | null
+  created_at: string
+}
+
+export async function fetchNewsMentions(limit = 20): Promise<NewsMention[]> {
+  const { data, error } = await supabase
+    .from('news_mentions')
+    .select('*')
+    .eq('published', true)
+    .order('published_at', { ascending: false })
+    .limit(limit)
+  if (error) return []
+  return (data as NewsMention[]) ?? []
+}
