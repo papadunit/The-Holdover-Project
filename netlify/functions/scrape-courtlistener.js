@@ -1,4 +1,4 @@
-const { createClient } = require("@supabase/supabase-js");
+import { createClient } from "@supabase/supabase-js";
 
 const supabase = createClient(
   process.env.VITE_SUPABASE_URL,
@@ -6,7 +6,6 @@ const supabase = createClient(
 );
 
 const COURTLISTENER_BASE = "https://www.courtlistener.com/api/rest/v4";
-
 const SEARCH_QUERIES = [
   "Hudson Homes Management",
   "Hudson Homes Management LLC",
@@ -32,8 +31,7 @@ function inferFilingType(cause, nature) {
 
 async function searchCourtListener(query) {
   const params = new URLSearchParams({ q: query, type: "d", order_by: "score desc", page_size: "20" });
-  const url = `${COURTLISTENER_BASE}/dockets/?${params}`;
-  const res = await fetch(url, {
+  const res = await fetch(`${COURTLISTENER_BASE}/dockets/?${params}`, {
     headers: {
       "User-Agent": "HoldoverProject/1.0 (public interest archive; papadunit@gmail.com)",
       Accept: "application/json",
@@ -45,17 +43,14 @@ async function searchCourtListener(query) {
 }
 
 async function upsertCase(docket, query) {
-  const baseSlug = slugify(docket.case_name || `case-${docket.id}`);
-  const slug = `cl-${docket.id}-${baseSlug}`;
-  const sourceUrl = `https://www.courtlistener.com${docket.absolute_url}`;
-  const courtId = docket.court ?? "";
-  const stateMatch = courtId.match(/^([a-z]{2})/);
+  const slug = `cl-${docket.id}-${slugify(docket.case_name || `case-${docket.id}`)}`;
+  const stateMatch = (docket.court ?? "").match(/^([a-z]{2})/);
   const state = stateMatch ? stateMatch[1].toUpperCase().slice(0, 2) : null;
   const status = docket.date_terminated
     ? `Terminated ${new Date(docket.date_terminated).toLocaleDateString()}`
     : "Active";
 
-  const caseRow = {
+  const { error } = await supabase.from("cases").upsert({
     slug,
     title: docket.case_name || `Case #${docket.docket_number}`,
     jurisdiction: docket.court,
@@ -66,22 +61,19 @@ async function upsertCase(docket, query) {
     summary: [
       docket.cause ? `Cause: ${docket.cause}.` : null,
       docket.nature_of_suit ? `Nature of suit: ${docket.nature_of_suit}.` : null,
-      `Docket number: ${docket.docket_number}.`,
-      `Auto-indexed from CourtListener via search query: "${query}".`,
+      `Docket: ${docket.docket_number}. Auto-indexed from CourtListener: "${query}".`,
     ].filter(Boolean).join(" "),
     source_name: "CourtListener / PACER",
-    source_url: sourceUrl,
+    source_url: `https://www.courtlistener.com${docket.absolute_url}`,
     badge: "public_record",
     published: true,
-  };
+  }, { onConflict: "slug", ignoreDuplicates: false });
 
-  const { error } = await supabase.from("cases").upsert(caseRow, { onConflict: "slug", ignoreDuplicates: false });
-  if (error) console.error(`Supabase error for ${slug}:`, error.message);
-  else console.log(`Upserted: ${caseRow.title}`);
+  if (error) console.error(`Error for ${slug}:`, error.message);
+  else console.log(`Upserted: ${docket.case_name}`);
 }
 
-exports.handler = async function () {
-  console.log("Starting CourtListener scrape...");
+export const handler = async () => {
   const seen = new Set();
   let total = 0;
 
@@ -103,6 +95,5 @@ exports.handler = async function () {
     }
   }
 
-  console.log(`Done. Upserted ${total} cases.`);
   return { statusCode: 200, body: JSON.stringify({ ok: true, upserted: total }) };
 };
