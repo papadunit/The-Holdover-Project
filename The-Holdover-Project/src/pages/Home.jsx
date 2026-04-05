@@ -1,6 +1,8 @@
+import { useEffect, useState } from "react";
+import { supabase } from "../lib/supabase";
 import {
   siteMeta,
-  stats,
+  stats as staticStats,
   keyObservations,
   cases,
   companyContext,
@@ -11,6 +13,28 @@ import {
 import { CaseCard, Callout, SectionHeading, StatCard } from "../components/ArchiveComponents";
 
 export default function Home({ setPage }) {
+  const [stats, setStats] = useState(staticStats);
+
+  useEffect(() => {
+    async function fetchLiveStats() {
+      const [{ count: caseCount }, { count: newsCount }, { count: submissionCount }] = await Promise.all([
+        supabase.from("cases").select("*", { count: "exact", head: true }).eq("published", true),
+        supabase.from("news_mentions").select("*", { count: "exact", head: true }).eq("published", true),
+        supabase.from("submissions").select("*", { count: "exact", head: true }).eq("approved", true),
+      ]);
+
+      if (caseCount > 0) {
+        setStats([
+          { label: "Documented court cases", value: `${caseCount}+` },
+          { label: "News mentions tracked", value: newsCount > 0 ? `${newsCount}+` : "Active" },
+          { label: "Tenant submissions", value: submissionCount > 0 ? `${submissionCount}` : "0" },
+          { label: "Primary evidence tracks", value: "4" },
+        ]);
+      }
+    }
+    fetchLiveStats();
+  }, []);
+
   return (
     <div className="space-y-10">
       <section className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm md:p-12">
