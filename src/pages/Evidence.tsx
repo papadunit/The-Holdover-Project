@@ -2,6 +2,7 @@ import { useEffect, useState, useCallback } from 'react'
 import { fetchCases } from '../lib/supabase'
 import { STATIC_CASES } from '../lib/staticData'
 import type { Case } from '../lib/supabase'
+import { useSEO } from '../useSEO'
 import {
   CaseCard, SectionHeading, DisclaimerBanner,
   EmptyState, LoadingSpinner, Pagination,
@@ -17,6 +18,7 @@ const US_STATES = [
 const PAGE_SIZE = 10
 
 export default function Evidence() {
+  useSEO('/evidence')
   const [cases, setCases] = useState<Case[]>([])
   const [total, setTotal] = useState(0)
   const [loading, setLoading] = useState(true)
