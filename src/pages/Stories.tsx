@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { fetchStories } from '../lib/supabase'
 import type { Story } from '../lib/supabase'
+import { useSEO } from '../useSEO'
 import {
   SectionHeading, EmptyState, LoadingSpinner,
   Pagination, TransparencyCallout,
@@ -77,6 +78,7 @@ const DEMO_STORIES: Story[] = [
 const PAGE_SIZE = 6
 
 export default function Stories() {
+  useSEO('/stories')
   const [stories, setStories] = useState<Story[]>([])
   const [total, setTotal] = useState(0)
   const [loading, setLoading] = useState(true)
