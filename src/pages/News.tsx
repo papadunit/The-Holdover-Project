@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react'
 import { fetchNewsMentions, type NewsMention } from '../lib/supabase'
+import { useSEO } from '../useSEO'
 
 export default function News() {
+  useSEO('/news')
   const [news, setNews] = useState<NewsMention[]>([])
   const [loading, setLoading] = useState(true)
 
