@@ -1,5 +1,6 @@
 import { SectionHeading } from '../components/UI'
 import { Link } from 'react-router-dom'
+import { useSEO } from '../useSEO'
 
 const SECTIONS = [
   {
@@ -60,6 +61,7 @@ const SECTIONS = [
 ]
 
 export default function Methodology() {
+  useSEO('/methodology')
   return (
     <div className="section-pad container-pad">
       <div className="max-w-3xl mx-auto">
