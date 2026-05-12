@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { createCorrectionRequest } from '../lib/supabase'
 import { SectionHeading } from '../components/UI'
 import { Link } from 'react-router-dom'
+import { useSEO } from '../useSEO'
 
 type FormState = { name: string; email: string; subject: string; message: string; related_url: string }
 const EMPTY: FormState = { name: '', email: '', subject: '', message: '', related_url: '' }
@@ -9,6 +10,7 @@ const EMPTY: FormState = { name: '', email: '', subject: '', message: '', relate
 type Status = 'idle' | 'submitting' | 'success' | 'error'
 
 export default function Contact() {
+  useSEO('/contact')
   const [form, setForm] = useState<FormState>(EMPTY)
   const [status, setStatus] = useState<Status>('idle')
 
