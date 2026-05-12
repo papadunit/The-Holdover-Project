@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { fetchCases } from '../lib/supabase'
 import { STATIC_CASES } from '../lib/staticData'
 import type { Case } from '../lib/supabase'
+import { useSEO } from '../useSEO'
 import {
   CaseCard, SectionHeading, CitationBlock,
   TransparencyCallout, LoadingSpinner,
@@ -40,6 +41,7 @@ const HOW_TO_USE = [
 ]
 
 export default function Home() {
+  useSEO('/')
   const [previewCases, setPreviewCases] = useState<Case[]>([])
   const [loading, setLoading] = useState(true)
 
