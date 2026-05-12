@@ -28,10 +28,10 @@ const WHAT_WE_DOCUMENT = [
 ]
 
 const PATTERNS = [
-  { label: 'Multi-state filing activity', desc: 'Court records reflect eviction and civil filings across multiple U.S. states over a multi-year period.' },
-  { label: 'LSF9 trust entity involvement', desc: 'Multiple filings identify HHM acting on behalf of U.S. Bank Trust, N.A. as Trustee for LSF9 Master Participation Trust — a Delaware Statutory Trust within the Lone Star network.' },
-  { label: 'Standing challenges documented', desc: 'In at least one documented case, a court dismissed an eviction after HHM could not demonstrate its agency authority with the named trust.' },
-  { label: 'Regulatory enforcement history', desc: 'Affiliated entities have faced SEC enforcement actions and international criminal proceedings documented in public records.' },
+  { label: 'Multi-state filing activity', desc: 'Court records reflect eviction and civil filings across 21+ U.S. states over a multi-year period, with HHM operating a rental portfolio spanning 61 markets as of 2026.' },
+  { label: 'LSF9 trust entity involvement', desc: 'Multiple filings identify HHM acting on behalf of U.S. Bank Trust, N.A. as Trustee for LSF9 Master Participation Trust — a Delaware Statutory Trust within the Lone Star network. Investigative reporting and court records question whether this entity holds the assets it claims to enforce.' },
+  { label: 'Standing challenges documented in multiple states', desc: 'Courts in Ohio, New Mexico, Florida, and other states have dismissed cases after HHM or LSF9 failed to demonstrate standing or agency authority. In November 2024, an Ohio magistrate dismissed an eviction after HHM filed no evidence supporting its claimed agency relationship with LSF9.' },
+  { label: 'Regulatory and international legal actions', desc: 'Affiliated entities have faced SEC enforcement actions ($11.2M penalty, 2022), international criminal convictions in South Korea (stock manipulation, 2011), a $230M international arbitration award annulled on due process grounds (ICSID, November 2025), and criminal charges against the founder in Delhi (2022).' },
 ]
 
 const HOW_TO_USE = [
