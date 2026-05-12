@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react'
+import { useSEO } from '../useSEO'
 import { createSubmission } from '../lib/supabase'
 import { SectionHeading } from '../components/UI'
 import { Link } from 'react-router-dom'
@@ -30,6 +31,7 @@ const US_STATES = [
 type Status = 'idle' | 'submitting' | 'success' | 'error'
 
 export default function Submit() {
+  useSEO('/submit')
   const [form, setForm] = useState<FormState>(EMPTY)
   const [files, setFiles] = useState<File[]>([])
   const [status, setStatus] = useState<Status>('idle')
